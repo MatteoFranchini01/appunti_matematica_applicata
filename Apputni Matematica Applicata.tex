@@ -1,0 +1,3548 @@
+\documentclass[a4paper, portrait]{book}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts} 
+\usepackage{ifthen}
+\usepackage{graphicx} %Mi permette di usare i colori
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{colortbl}
+\usepackage{chngcntr}
+\usepackage{longtable}
+\usepackage{cancel} %pacchetto per fare le semplificazioni delle equazioni con il comando \cancel
+\usepackage{calligra}
+
+
+\counterwithout{footnote}{section}
+\title{APPUNTI MATEMATICA APPLICATA}
+\author{\calligra{\LARGE Matteo Franchini}}
+\date{September 2022}
+\numberwithin{equation}{chapter} %mi permette di numerare l'equazione in base alla sezione
+\pagestyle{fancy}
+\fancyfoot[L]{\calligra{\large Matteo Franchini}}
+\fancyhead[R]{\leftmark}
+\fancyhead[L]{}
+\fancyfoot[R]{Appunti Matematica Applicata}
+\renewcommand{\footrulewidth}{0.4pt}
+\newtheorem{definition}{Definizione}
+\newtheorem{exercize}{Esercizio}
+\newtheorem{example}{Esempio}
+\newtheorem{theorem}{Teorema}
+\newcommand*\sepline{%
+  \begin{center}
+    \rule[1ex]{.5\textwidth}{.5pt}
+  \end{center}}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Lezione 21/09}
+    Dati tre punti nel piano trovare un polinomio che passa per questi tre punti, quindi vogliamo trovare una parabola che passa per questo piano.\\
+    I nostri punti sono $(x_0,y_0), (x_1,y_1), (x_2,y_2)$, quindi abbiamo:
+    \begin{gather*}
+        p(x_0)=y_0\\
+        p(x_1)=y_1\\
+        p(x_2)=y_2
+    \end{gather*}
+    dove \begin{equation}
+        p(x) = a_0 + a_1 x + a_2 x^2
+    \end{equation}
+    Quindi abbiamo:
+    \begin{equation}
+        \begin{cases}
+            y_0 = a_0 + a_1 x_0 + a_2 x_0^2\\
+            y_1 = a_0 + a_1 x_1 + a_2 x_1^2\\
+            y_2 = a_0 + a_2 x_2 + a_2 x_2^2
+        \end{cases}
+    \end{equation}
+    Questo sistema si può anche scrivere come una matrice
+    \begin{equation}
+        \underbrace{\begin{bmatrix}
+            1&x_0&x_0^2\\
+            1&x_1&x_1^2\\
+            1&x_2&x_2^2
+        \end{bmatrix}}_{\text{tabella dei coefficienti di a}} \cdot
+        \begin{bmatrix}
+            a_0\\a_1\\a_2
+        \end{bmatrix}
+        = 
+        \begin{bmatrix}
+            y_0\\y_1\\y_2
+        \end{bmatrix}
+    \end{equation}
+    Questo sopra equivale a scrivere $Va = t$. Dobbiamo calcolare il \textbf{determinante della matrice V}
+    \begin{equation}
+        \det V = x_1x_2 + x_0x_1^2 + x_2 x_0^2 - x_0^2x_1-x_2x_1^2-x_0x_1^2
+    \end{equation}
+    Possiamo ricordarci questa formula, oppure applicare un'altra regola:
+    \begin{figure}[h!]
+        \centering
+        \subfloat[\emph{Matrice di partenza}]{\includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-09-21 alle 16.55.03.png} \quad}
+        \subfloat[\emph{In rosso abbiamo aggiunto alla matrice di partenza le prime due colonne}]{\includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-09-21 alle 16.55.06.png}} \\
+        \subfloat[\emph{Partiamo dall'"1" in alto a sinistra e tracciamo le diagonali massime (quelle di 3 elementi in questo caso, mettendo dei + tra i prodotti)}]{\includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-09-21 alle 16.55.09.png}}\\
+        \subfloat[\emph{Facciamo la stessa cosa vista sopra ma partendo dal numero nella prima colonna e in ultima riga, questa volta metteremo dei segni - tra i prodotti}]{\includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-09-21 alle 16.55.14.png}}
+        \caption{}
+    \end{figure}
+    \newpage
+    Alla fine di queste operazioni vediamo che il determinante risulta essere:
+    \begin{gather}
+        \det V = \underbrace{1 \cdot x_1 \cdot x_2^2 + x_0 \cdot x_1^2 \cdot 1 + x_0^2 \cdot 1 \cdot x_2}_{parte \ verde} \underbrace{- 1 \cdot x_1 \cdot x_0^2 - x_2 \cdot x_1^2 \cdot 1 - x_2^2 \cdot 1 \cdot x_0}_{parte \ arancione} = \\
+        = ... =\\
+        = (x_2-x_1)(x_0-x_1)(x_0-x_2)
+    \end{gather}
+    Ora abbiamo trovato il determinante della nostra matrice e dobbiamo distinguere due casi \textbf{quando è $=0$ e quando è $\neq 0$}
+    \begin{itemize}
+        \item $\det V = (x_2-x_1)(x_0-x_1)(x_0-x_2)=0$. Ovviamente il determinante è uguale a 0 quando almeno uno dei tre sia uguale a 0 e quindi quando due celle 3 "x" sono uguali tra loro.\\
+        Quali sono le condizioni (le ipotesi) per cui questo sistema ammetta una sola soluzione:
+        \begin{itemize}
+            \item \begin{figure}
+                \centering
+                \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-09-21 alle 17.10.34.png}
+                \caption{Caso in cui abbiamo tre punti con diverse coordinate x e y}
+            \end{figure}
+            Nella figura 1.2 abbiamo che il det = 0 perché tutte le x sono diverse tra loro 
+            \item \begin{figure}
+                \centering
+                \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-09-21 alle 17.10.45.png}
+                \caption{Caso in cui i punti giacciono su una retta}
+            \end{figure}
+            Nella figura 1.3 abbiamo il det = 0, però vediamo che i tre punti sono allineati e quindi abbiamo una retta, deduciamo quindi che \begin{equation}
+                p(x) = a_0 + a_1 x + a_2 x^2 \Rightarrow \text{dati i punti allineati} \Rightarrow a_2 = 0 \Rightarrow p(x) = a_0 + a_1 x
+            \end{equation}
+            $a_2$ deve essere uguale a 0 perché abbiamo una retta e quindi il termine $x^2$ non può esserci
+            \item \begin{figure}
+                \centering
+                \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-09-21 alle 17.10.55.png}
+                \caption{Caso in cui abbiamo tre punti con la solita y}
+            \end{figure}
+            Nella figura 1.4 abbiamo un altro caso, quello in cui i punti stanno su una retta orizzontale; per quello detto al punto precedente abbiamo
+            \begin{equation}
+                p(x) = a_0 + \underbrace{a_1 x}_{=0} + \underbrace{a_2 x^2}_{=0}
+            \end{equation}
+        \end{itemize}
+        Dopo queste considerazioni notiamo che il polinomio sarà di \textbf{grado $\leq 2$}
+        \begin{theorem}
+            \textit{TEOREMA DEDOTTO DALL'ESEMPIO}\\
+            per 3 punti distinti esiste ed è unico un polinomio di grado $\leq 2$
+        \end{theorem}
+        \newpage
+        DOMANDA: se i tre punti non fossero distinti?
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-09-21 alle 17.21.49.png}
+            \caption{}
+        \end{figure}
+        \\Come si può vedere dalla figura questa non è una funzione in quanto al punto $x_0 = x_1$ sono associati due punti $y_0 = y_1$
+        \sepline
+        \begin{quotation}
+            CLASSE DI UN POLINOMIO: la classe di un polinomio è quante volte esso è derivabile rimanendo ancora continuo, per esempio la funzione $\sin (x)$ è di classe $C(\infty)$ perché è infinitamente derivabile.
+            \begin{example}
+                Polinomio $p(x) = a_0 + a_1 x$\\
+                \begin{gather*}
+                    p'(x) = a_1\\
+                    p''(x) = 0\\
+                    p'''(x) = 0\\
+                    ...
+                \end{gather*}
+                si può vedere che anche questo è di classe $C(\infty)$
+            \end{example}
+        \end{quotation}
+        \sepline
+        \begin{theorem}
+            Dati 3 punti $(x_i,y_i) \ i = 0,1,2$ con $x_i \neq x_j$ se $i\neq j$ allora $\exists!$ (esiste ed è unico) il polinomio $p(x)$ di grado $\leq 2$ tale che $p(x_i) = y_i \ i = 0,1,2$
+        \end{theorem}
+        \begin{center}\textit{vogliamo estendere questo teorema da 3 a n punti}\end{center}
+        \begin{theorem}
+            dati $n+1$ punti $(x_i,y_i) \ i = 0,...,n$ distinti $x_i \neq x_j \ i \neq j$ $$\exists! p(x) \leq P_n \ tale \ che \ p(x_i) = y_i \ i=0,...,n$$
+        \end{theorem}
+        \begin{center}
+            \textit{NB $P_n$ = grado del polinomio}
+        \end{center}
+        \textbf{Il problema fondamentale ora è come determinare il polinomio}, infatti parleremo di \\\underline{algoritmi risolutivi}\\
+        Prima abbiamo calcolato il determinante ma non abbiamo discusso dell'\underline{unicità} della matrice, quindi riprendiamola $$y = \begin{bmatrix}
+            1&x_0&x_0^2\\
+            1&x_1&x_1^2\\
+            1&x_2&x_2^2
+        \end{bmatrix}$$
+        Noi vogliamo risolvere $Va = Y$, per ora guardiamo $Va = 0$, questo sicuramente ha soluzioni perché basta prendere il vettore a e porlo uguale al vettore nullo.\\
+        Se la soluzione di $a = 0$ è l'\underline{unica}, allora la \textbf{matrice V NON è singolare}, \underline{altrimenti} \textbf{la matrice V è singolare}.\\
+        Supponiamo che esista \begin{equation}\bar{a} = \begin{bmatrix}
+            \bar{a}_0\\
+            \bar{a}_1\\
+            \bar{a}_2
+        \end{bmatrix} = 0
+    \end{equation}
+    che soddisfa il problema omogeneo \begin{equation}
+        V\bar{a} = 0
+    \end{equation}
+    Date le componenti di $\bar{a}$, ottengo il polinomio:
+    \begin{gather}
+        \bar{p}(x) = \bar{a}_0 + \bar{a}_1 x + \bar{a}_2 x^2\\
+        \bar{p}(x_0) = 0\\
+        \bar{p}(x_1) = 0\\
+        \bar{p}(x_2) = 0
+    \end{gather}
+    Per il \underline{Teo. fondamentale dell'algebra} vedo che ho costruito un polinimio di grado 2 (che può avere al massimo 2 radici) e io ho trovato 3 radici e questo mi dice che il determinante non può essere diverse da 0
+    \item $det \neq 0$ come scritto sopra vediamo che il determinante non potrà mai essere diverso da 0
+\end{itemize}
+\sepline
+\begin{quotation}
+TEOREMA FONDAMENTALE DELL'ALGEBRA\\
+Un polinomio di primo grado $p(x) = a_0 + a_1 x$ ha una radice, un polinomio di secondo grado $p(x) = a_0 + a_1 x + a_2 x^2$ ha due radici reali o complesse.\\
+Quindi possiamo capire che il grado è legato al numero di radici (Teo. Fond. dell'Algebra).\\
+Per un polinomio di III grado ovviamente abbiamo tre radici che possono essere:
+\begin{itemize}
+    \item 3 reali
+    \item 2 complesse e 1 reale
+\end{itemize}
+Il secondo punto perché le radici complesse sono sempre in coppia e non possiamo avere un numero dispari di radici complesse. Questo ci dice un'altra cosa importante \textbf{un polinomio di grado dispari ha sempre una radice reale}
+\end{quotation}
+\sepline
+Ora estendiamo quello che abbiamo visto a n x e n y:
+\begin{equation}
+    p(x) = a_0 + a_1 x + a_2 x^2 + ... + a_{n-1}x^{n-1} + a_n x^n
+\end{equation}
+\begin{gather*}
+    (x_0,y_0) \ \ \ y_0 = p(x_0) = a_0 + a_1 x_0 + a_2 x_0^2 + ... + a_n x_0^n\\
+    (x_1,y_1) \ \ \ y_1 = p(x_1) = a_0 + a_1 x_1 + a_2 x_1^2 + ... + a_n x_1^n\\
+    (x_2, y_2) \ \ \ y_2 = p(x_2) = a_0 + a_1 x_2 + a_2 x_2^2 + ... + a_n x_2^n\\
+    \vdots\\
+    (x_i, y_i) \ \ \ y_i = p(x_i) = a_0 + a_1 x_i + a_2 x_i^2 + ... + a_n x_i^n\\
+    \vdots \\
+    (x_n, y_n) \ \ \ y_n = p(x_n) = a_0 + a_1 x_n + a_2 x_n^2 + ... + a_n x_n^n
+\end{gather*}
+Quindi ho $n+1$ punti distinti. Ora da queste equazioni ricavo:
+\begin{gather}
+    V = \begin{bmatrix}
+        1&x_0&x_0^2&\cdots&x_0^n\\
+        1&x_1&x_1^2&\cdots&x_1^n\\
+        \vdots&\vdots&\vdots&&\vdots\\
+        1&x_n&x_n^2&\cdots&x_n^n
+    \end{bmatrix}\\
+    a = \begin{bmatrix}
+        a_0\\
+        a_1\\
+        \vdots\\
+        a_i\\
+        \vdots\\
+        a_n
+    \end{bmatrix}\\
+    y = \begin{bmatrix}
+        y_0\\
+        y_1\\
+        \vdots\\
+        y_i\\
+        \vdots\\
+        y_n
+    \end{bmatrix}
+\end{gather}
+Quindi abbiamo trovato $Va =y$, per risolvere questa matrice possiamo trasformarlo in un problema omogeneo, quindi studiando $Va = 0$ e vedere se c'è un vettore $\bar{a}$ che risolve il problema, se ci fosse diremo che il polinomio di grado n avrebbe n + 1 radici; quindi se ci fosse un vettore che produce questa uguaglianza sarebbe contraddetto il teorema fondamentale dell'algebra.\\
+Ora dobbiamo trovare delle \underline{strategie risolutive}: possiamo provare ad usare il metodo di Cramer (che si può utilizzare solo se la matrice è NON singolare). Quindi calcolo il determinante della matrice V e calcoliamo il vettore $$a_i = \frac{\det(V_i)}{\det {V}}$$ dove $V_i$ vuol dire che viene sostituita la colonna corrispondente nella matrice con la colonna dei termini noti.\\
+Il problema di questo metodo è che ha complessità $(n+2)!$. Quindi non va bene, durante questo corso cercheremo delle soluzioni più "umane" per risolvere questi problemi.
+\chapter{Lezione 23/09}
+\begin{example}
+    Prendiamo tre punti e ci assegnamo dei numeri, quindi abbiamo un polinomio di grado opportuno
+    \begin{gather}
+        (x_0,y_0) = (0,0)\\
+        (x_1,y_1) = (1,1)\\
+        (x_2,y_2) = (2,0)\\
+        \Rightarrow p(x) = a_0 + a_1 x + a_2 x^2\\
+        \Rightarrow \begin{cases}
+            a_0 + a_1 0 + a_2 0 = 0\\
+            a_0 + a_1 1 + a_2 1 = 1\\
+            a_0 + 2a_1 + 4 a_2 = 0
+        \end{cases} \rightarrow ... \rightarrow \begin{cases}
+            a_0 = 0\\
+            a_2 = 1\\
+            a_1 = 2
+        \end{cases} \Rightarrow p(x) = 2x - x^2 = x(2-x)
+    \end{gather}
+    Un metodo alternativo è quello di usare le matrici:
+    \begin{align}
+        &V = \begin{bmatrix}
+            1&1&0\\
+            1&1&1\\
+            1&2&4
+        \end{bmatrix} \rightarrow \det = 2 \neq 0\\
+        &a = \begin{bmatrix}
+            a_0\\a_1\\a_2
+        \end{bmatrix}\\
+        &y = \begin{bmatrix}
+            0\\1\\0
+        \end{bmatrix}
+    \end{align}
+\end{example}
+Ora, secondo il metodo di Cramer, andiamo a calcolare $a_0, a_1,a_2$
+\begin{align}
+    &a_0 = \frac{\det \begin{bmatrix}
+        \color{red}{0}&0&0\\
+        \color{red}{1}&1&1\\
+        \color{red}{0}&2&4
+    \end{bmatrix}}{\det V} = 0\\
+    &a_1 = \frac{\det \begin{bmatrix}
+        1&\color{red}{0}&0\\
+        1&\color{red}{1}&1\\
+        1&\color{red}{0}&4
+    \end{bmatrix}}{\det V} = \frac{4}{2}\\
+    &a_2 = \frac{\det \begin{bmatrix}
+        1&0&\color{red}{0}\\
+        1&1&\color{red}{1}\\
+        1&0&\color{red}{0}
+    \end{bmatrix}}{\det V} = \frac{-2}{2} = -1
+\end{align}
+\begin{center}
+    \textit{NB. i numeri in rosso sono le componenti del vettore y, secondo il metodo di Cramer i coefficienti $a_0,a_1,a_2$ si calcolano sostituendo il vettore v nella corrispondente colonna della matrice V, infatti per $a_0$ abbiamo sostituito la prima colonna, per $a_1$ la seconda e così via}
+\end{center}
+\begin{example}
+    \begin{align}
+        &(x_0,y_0) = (0,0)\\
+        &(x_1,y_1) = (1,1)\\
+        &(x_2.y_2) = (2,2)\\
+        \Rightarrow &p(x) = a_0 + a_1 x + a_2 x^2\\
+        &p(x_0) = a_0 + a_1 0 + a_2 0 = 0\\
+        &p(x_1) = a_0 + a_1 + a_2 = 1\\
+        &p(x_2) = a_0 + 2 a_1 + 4 a_2 = 2\\
+        \Rightarrow &V = \begin{bmatrix}
+            1&1&0\\
+            1&1&1\\
+            1&2&4
+        \end{bmatrix}\\
+        &a = \begin{bmatrix}
+            a_0\\
+            a_1\\
+            a_2
+        \end{bmatrix}\\
+        &y = \begin{bmatrix}
+            0\\1\\2
+        \end{bmatrix}
+    \end{align}
+    Dati questi dati possiamo pensare che i punti giacciano su una retta (sulla bisetrice)
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-09-24 alle 11.25.51.png}
+        \caption{}
+    \end{figure}
+    \\Quindi deduciamo che $a_2 = 0$ perché il termine $y^2$ non deve comparire, $a_1 = 1$ perché so che è la bisetrice o anche perché con Cramer vediamo che
+    \begin{equation}
+        a_1 = \frac{\det \begin{bmatrix}
+            1&\color{red}{0}&0\\
+            1&\color{red}{1}&1\\
+            1&\color{red}{2}&4
+        \end{bmatrix}}{\det V} = \frac{\det V}{\det V} = 1
+    \end{equation}
+\end{example}
+\begin{example}
+    \begin{align}
+        &(x_0,y_0) = (0,1)\\
+        &(x_1,y_1) = (1,1)\\
+        &(x_2,y_2) = (2,1)\\
+        \Rightarrow &p(x) = a_0 + a_1 x + a_2 x^2\\
+        &\begin{cases}
+            p(x_0) = a_0 + a_1 0 + a_2 0 = 1\\
+            p(x_1) = a_0 + a_1 + a_2 = 1\\
+            p(x_2) = a_0 + 2 a_1 + 4 a_2 = 1
+        \end{cases} \rightarrow \begin{cases}
+            a_0 = 1\\
+            a_1 = a_2 = 0
+        \end{cases} \rightarrow p(x) = a_0 = 1
+    \end{align}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-09-24 alle 11.36.39.png}
+        \caption{}
+    \end{figure}
+\end{example}
+\newpage
+\begin{example}
+    \begin{align}
+        (x_0,y_0) = (1,1)\\
+        (x_1,y_1) = (2,1)\\
+        (x_2,y_2) = (4,1)
+    \end{align}
+    Questa volta proviamo a vedere cosa succede se usiamo il polinimio $p(x) = a_0 + a_1 x$, quindi abbiamo un sistema di tre equazioni in due incognite
+    \sepline{}
+    \begin{quote}
+        NORMA: la norma è un oggetto matematico che indica una misura, il cui segno è sempre  maggiore di 0, qualunque sia. Gli integrali definiti indicano una norma.\\
+    \end{quote}
+    \sepline{}
+    Quello che si fa in questo caso, per affrontare la risoluzione di questo problema con un sistema dato da una matrice (A = 3 x 2), un vettore (a = 2 x 1) uguale ad un vettore (y = 3 x 2) è calcolare la NORMA\\
+\end{example}
+Ora riprendiamo una matrice di Vandermonde 3 x 3 
+\begin{equation}
+    \begin{bmatrix}
+        1&x_0&x_0^2\\
+        1&x_1&x_1^2\\
+        1&x_2&x_2^2
+    \end{bmatrix}
+\end{equation}
+Premessa:
+\begin{gather}
+    (x_0,y_0)\\
+    (x_1,y_1)\\
+    (x_2,x_2)\\
+    PREMESSA \ \ x_0 \neq x_1, x_1 \neq x_2, x_0 \neq x_2
+\end{gather}
+Allora sappiamo che il determinante è:
+\begin{gather}
+    \det V = (x_1 - x_0)(x_2 - x_0)(x_2-x_1)\neq 0\\
+    \det V = \prod_{i=0}^{1}(\prod_{j = i + 1}^{2}(x_j - x_i))
+\end{gather}
+In generale:
+\begin{gather}
+    V = \begin{bmatrix}
+        1&x_0&x_0^2&x_0^3&\cdots&x_0^n\\
+        1&x_1&x_1^2&x_1^3&\cdots&x_1^n\\
+        1&x_2&x_2^2&x_2^3&\cdots&x_2^n\\
+        \vdots\\
+        1&x_i&x_i^2&x_i^3&\cdots&x_i^n\\
+        \vdots\\
+        1&x_n&x_n^2&x_n^3&\cdots&x_n^n
+    \end{bmatrix}
+\end{gather}
+Si dimostra che 
+\begin{equation}
+    \det V = \prod_{i=0}^{n-1}\left(\prod^n_{j = i +1}\left(x_j - x_i\right)\right) \ \ se \ x_i\neq x_j \ \ i \neq j
+\end{equation}
+DOMANDA: se usiamo queste strategie risolventi, in pratica, cosa dobbiamo fare?\\
+Abbiamo 2 possibilità: \underline{risolvere per sostituzione} (molto complicato), \underline{usare Cramer}. In ognuno dei due casi siamo di fronte a metodi risolutivi molto pesanti, quindi ci chiediamo se abbiamo degli algoritmi più semplici per risolvere questo problema, quello più banale è quello di \textbf{Laplace}
+\begin{example}
+    Prendiamo 3 punti distinti $(x_0, y_0), (x_1,y_1), (x_2,y_2)$ e voglio costruire un polinomio $L_o (x) \in P_2$ ($P_2$ = polinomio di grado almeno 2)
+    \begin{gather}
+        L_0(x) = \begin{cases} 1 \ \ \ se \ x = x_0\\
+        0 \ \ \ se \ x = x_1, x = x_2
+    \end{cases}\\
+    \Rightarrow L_0(x) = \alpha_0 (x-x_1)(x_0 - x_2)
+    \end{gather}
+    \begin{center}
+        se calcolo $L_0$ in $x_0$ deve valere 1 e quindi la mia incognita diventa
+    \end{center}
+    \begin{gather}
+        1 = L_0(x_0) = \alpha_0 (x_0 - x_1)(x_0-x_2)\\
+        L_0(x_0) = \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}
+    \end{gather}
+    \begin{center}
+        nell'equazione 2.43 abbiamo un polinomio che, vedendo la figura 2.3, si capisce essere un tratto di parabola che parte da $x_0 = 1$ e si annulla in $x_1$ e $x_2$
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.3 \linewidth]{Foto/Schermata 2022-09-26 alle 10.44.01.png}
+            \caption{}
+        \end{figure}
+    \end{center}
+    Ora risolviamo la seconda equazione del sistema
+    \begin{equation}
+        a (x-x_1)(x-x_2) = 0
+    \end{equation}
+    \begin{center}
+        È un'equazione di secondo grado che si annulla in $x-x_1 = 0$ e in $x - x_2 = 0$. Questa non è l'unica equazione dhe si annulla nei punti $x_1,x_2$, ce ne sono infinite perché basta mettere una costante o un parametro che varia e l'equazione risulta annullata per gli stessi punti ma è differente
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-09-26 alle 11.05.21.png}
+            \caption{}
+        \end{figure}
+    \end{center}
+    \newpage
+    Ora proviamo a trovare un altro polinomio
+    \begin{gather}
+        L_1(x) \in P_2\\
+        L_1(x) = \begin{cases}
+            1 \ \ se \ x = x_1\\
+            0 \ \ se \ x = x_0, x = x_2
+        \end{cases}\\
+        L_1(x) = (x-x_0)(x-x_2)\color{red}{\alpha_1}\\
+        \alpha_1 \text{è una costante da determinare, per farlo posso usare un altro dato\ } L_1(x_1) = 1\\
+        1 = L_1(x_1) = \alpha_1 (x_1 - x_0)(x_1 - x_2) \rightarrow \alpha_1 = \frac{1}{(x_1- x_0)(x_1-x_2)}\\
+        L_1(x) = \frac{(x - x_0)(x-x_2)}{\color{red}{(x_1 - x_0)(x_1-x_2)}}
+    \end{gather}
+    Vediamo che il grafico corrispondente è:
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-09-26 alle 11.13.06.png}
+        \caption{}
+    \end{figure}
+    Ora vogliamo calcolare $L_2 \in P_2$
+    \begin{gather}
+        L_2 (x) = \begin{cases}
+            1 \ \ se \ x = x_2\\
+            0 \ \ se \ x = x_0, x = x_1
+        \end{cases}\\
+        L_2 (x) = \frac{(x-x_0)(x - x_1)}{(x_2 - x_0)(x_2 - x_1)}
+    \end{gather}
+    Vediamo che il grafico è il seguente:
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-09-26 alle 11.15.31.png}
+        \caption{}
+    \end{figure}
+    \newpage Ora facciamo una \textbf{combinazione lineare} tra i polinomi:
+    \begin{equation}
+        \underbrace{p(x)}_{\text{pol. della comb. lin}} = c_0 L_0(x) + c_1 L_1(x) + c_2 L_2(x)
+    \end{equation}
+    \begin{center}
+        NB. dato che $L_0,L_1,L_2$ sono $\in P_2$, $p(x) \in P_2$
+    \end{center}
+    \begin{gather}
+        y_0 = p(x_0) = c_0 \underbrace{L_0(x_0)}_{=1} + c_1\underbrace{L_1(x_0)}_{= 0} + c_2 \underbrace{L_2(x_0)}_{=0} = c_0 \Rightarrow y_0 = c_0\\
+        y_1 = p(x_1) = c_0 \underbrace{L_0(x_1)}_{=0} + c_1\underbrace{L_1(x_1)}_{= 1} + c_2 \underbrace{L_2(x_1)}_{=0} = c_1 \Rightarrow y_1 = c_1\\
+        y_2 = p(x_2) = c_0 \underbrace{L_0(x_2)}_{=0} + c_1\underbrace{L_1(x_2)}_{= 0} + c_2 \underbrace{L_2(x_2)}_{=1} = c_2 \Rightarrow y_2 = c_2\\
+        p(x) = y_0 L_0 (x) + y_1 L_1 (x) + y_2 L_2 (x)\\
+        p(x_0) = y_0\\
+        p(x_1) = y_1\\
+        p(x_2) = y_2\\
+        p(x) = y_0 \frac{(x-x_1)(x-x_2)}{(x_0 - x_1)(x_0 - x_2)}+y_1 \frac{(x- x_0)(x-x_2)}{(x_1 - x_0)(x_1 - x_2)}+ y_2 \frac{(x- x_0)(x-x_1)}{(x_2 - x_0)(x_2 - x_1)}
+    \end{gather}
+    Quindi abbiamo riscritto il poliniomio di partenza ma in un'altra forma
+\end{example}
+\chapter{Lezione 28/09}
+L'ultima lezione abbiamo visto che un polinomio può essere scritto anche usando i \textbf{polinomi di Lagrange}
+\begin{equation}
+    p(x) = y_0 L_0(x) + y_1 L_1(x) + y_2 L_2(x) = \sum_{i = 0}^2 y_i L_i(x)
+\end{equation}
+La base che usiamo per costruire un polinomio di secondo grado è $p(x) = a_0 + a_1 x + a_2 x^2$, $1,x,x^2$ sono la base per i polinomi di grado $\leq 2$. Quindi la base canonica è fatta dai monomi $x^0, x^1, x^2$ (per i polinomi di grado $\leq 2$).\\
+Nel nostro caso $p(x) = y_0 L_0(x) + y_1 L_1(x) + y_2 L_2(x)$ dove $L_0(x), L_1(x), L_2(x)$ questi diventano una base per i polinomi di grado $\leq 2$, quindi abbiamo trovato un altro.\\
+Andiamo a generalizzare:
+\begin{gather}
+    \begin{matrix}
+        x_0&x_1&\cdots&x_n\\
+        y_0&y_1&\cdots&y_n
+    \end{matrix}\\
+    p(x) \in P_n\\
+    p(x_i) = y_i \ \ \ \ i = 0,1,...,n
+\end{gather}
+Se partendo da 2 punti abbiamo costruito 3 polinomi lagrangiani, partendo da n punti ne avremo n + 1
+\begin{gather}
+    L_0(x) \leq P_n\\
+    L_0(x) = \begin{cases}
+        1 \ \ \ se \ x = x_0\\
+        0 \ \ \ se \ \underbrace{x = x_1,x=x_2,...,x = x_n}_{x=x_i, i = 1,...,n}
+    \end{cases}\\
+    L_0(x) = \frac{(x-x_1)(x-x_2)...(x-x_i)...(x-x_n)}{(x_0-x_1)(x_0 - x_2)...(x_0 - x_n)}\\
+    L_1(x) = \begin{cases}
+        1 \ \ \ se \ x = x_1\\
+        0 \ \ \ se \ x=x_i \ i = 0, i = 2,...,n
+    \end{cases}\\
+    L_1(x) = \frac{(x-x_0)(x-x_2)...(x-x_n)}{(x_1 - x_0)(x_1-x_2)...(x_1- x_n)}\\
+    L_i(x) = \frac{(x-x_0)(x-x_1)...(x-x_{i-1})(x-x_{i+1}...(x-x_n))}{(x_i-x_0)(x_i-x_1)...(x_i -x_{i-1})(x_i - x_{i+1})...(x_i-x_n)}\\
+    L_n(x) = \frac{(x-x_0)...(x-x_n)}{(x_n-x_0)...(x_n-x_{n-1})}
+\end{gather}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-09-28 alle 17.59.20.png}
+    \caption{Rappresentazione dei due polinomi}
+\end{figure}
+$L_0(x)$ si può anche scrivere come
+\begin{gather}
+    L_0(x) = \frac{x-x_1}{x_0-x_1}\frac{x-x_2}{x_0-x_2}\cdots \frac{x-x_n}{x_0-x_2}...\frac{x-x_n}{x_0-x_n} = \prod_{j=1}^{n} \frac{x-x_j}{x_0-x_j}\\
+    L_1(x) = \prod_{j=0, j \neq 1}^{n} \frac{x-x_0}{x_i-x_j}\\
+    L_i(x) = \prod_{j=0, j\neq 1}^n \frac{x-x_j}{x_i-x_j}
+\end{gather}
+Scriviamo il polinimio $p(x)$ generico
+\begin{equation}
+    p(x) = c_0 L_0(x) + ... + c_n L_n(x)
+\end{equation}
+Affinché valga l'interpolazione abbiamo
+\begin{gather}
+    \begin{matrix}
+        y_0 = p(x_0) = c_0 \underbrace{L_0(x_0)}_{=1}+ c_1 \underbrace{L_1(x_1)}_{x=0}+\underbrace{\dots}_{x=0}+c_n\underbrace{L_n(x_0)}_{=0} = c_0\\
+        \vdots\\
+        y_n = c_n
+    \end{matrix}\\
+    p(x) = y_0 L_0(x) + ... + y_nL_n(x) = \sum_{i=0}^{n}y_i L_i(x)
+\end{gather}
+In generale abbiamo le basi:
+\begin{gather}
+    \{1,x,...,x^n\}\ \text{base canonica}\\
+    \{L_0(x),...,L_n(x)\} \text{base lagrangiana per polinimi} \in P_n
+\end{gather}
+\newpage
+Quindi abbiamo visto un primo algoritmo per risolvere il problema, questa costruzione va bene se abbiamo \textbf{pochi punti} (già 25 sono tanti).\\
+Abbiamo costruito polinomi di grado $\leq 3$ però non possiamo dire che il fenomeno che stiamo studiando sia questo perché tra un punto e l'altro non sappiamo cosa succede (potrebbe essere sia quello rosso che quello blu)
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-09-28 alle 18.17.26.png}
+    \caption{}
+\end{figure}
+\\Quindi dobbiamo pensare di introdurre un errore: abbiamo un algoritmo ma non basta, dobbiamo capire se la tecnica di risoluzione è corretta
+\sepline{}
+PROBLEMA: prendiamo dei punti distinti
+\begin{equation}
+    \begin{matrix}
+        x_0&x_1&...&x_n\\
+        y_0&y_1&...&y_n
+    \end{matrix}
+\end{equation}
+Prendiamo i primi 3 punti e calcoliamo
+\begin{equation}
+    p(x) = \sum_{i=0}^2 y_i L_i(x)
+\end{equation}
+Ora vado a prender eil punto $x_3$ per vedere come cambia il polinomio
+\begin{equation}
+    q(x) = \sum_{i=0}^{3} y_i L_i(x) = \underbrace{\sum_{i=0}^{2}y_i L_i(x)}_{p(x)} + y_3 L_3(x)
+\end{equation}
+Quindi scritto così ci viene da fare una considerazione
+\begin{equation}
+    q(x) = p(x) + y_3 L_3(x)
+\end{equation}
+Quindi se abbiamo un valore $\bar{x}$ assegnato possiamo scrivere
+\begin{equation}
+    q(\bar{x}) = p(\bar{x}) + y_3 L_3(\bar{x})
+\end{equation}
+Quindi il valore del nuovo polinomio è uguale al valore del vecchio polinimio + una correzione
+\\\textbf{TUTTO QUESTO È SBAGLIATO}: perché se prendiamo per esempio il polinomio $L_0(x) = \frac{(x-x_1)(x-x_2)}{(x_0 - x_1)(x_0-x_2)}$ se aggiungo un punto $L_0(x) = \frac{(x-x_1)(x-x_2)(x-x_3)}{(x_0 - x_1)(x_0-x_2)(x_0-x_3)}$ quindi vedo che il ragionamento fatto sopra è completamente sbagliato perché tutti i polinomi di $p(x)$ non vanno più bene perché hanno ora un punto in più
+\sepline{}
+\chapter{Lezione 03/10}
+Nella scorsa lezione abbiamo visto come possiamo esprimere un polinomio usando come base i polinomi di Lagrange
+\begin{equation}
+    L_i (x) \ con \ i = 0,1,...,n
+\end{equation}
+Prendiamo per esempio $L_0(x)$
+\begin{gather}
+    L_0(x) = \delta_{0,i} = \begin{cases}
+        1 \ se \ x = x_0\\
+        0 \ se \ x = x_1,x_2,...,x_n
+    \end{cases}\\
+    L_0(x) = \frac{(x-x_1)(x-x_2)...(x-x_n)}{(x_0-x_1)(x_0-x_2)...(x_0-x_n)}
+\end{gather}
+Allo stesso modo come abbiamo definito $L_0(x)$, definiamo anche $L_i(x) = \delta_{i,i}$\\
+\begin{example}
+    Prendiamo un polinomio $p(x) = a_0 + a_1 x + a_2 x^2$
+    \begin{gather*}
+        x_0 = 0\\
+        x_1 = \frac{1}{2}\\
+        x_2 = 1
+    \end{gather*}
+    Eseguiamo una rappresentazione del polinomio secondo la base canonica (quella dei monomi)
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-03 alle 21.58.33.png}
+        \caption{}
+    \end{figure}
+    Ora vogliamo rappresentarlo rispetto alla base lagrangiana
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-03 alle 22.09.24.png}
+        \caption{}
+    \end{figure}
+\end{example}
+Nelle lezioni scorse abbiamo visto che al polinomio $L_i(x)$ manca al numeratore $x_i$ quindi proviamo a moltiplicare e dividere per $$\color{red}{\frac{(x-x_i)}{(x-x_i)}}$$
+\begin{equation}
+    L_i(x) = \frac{(x-x_0)(x-x_1)...(x-x_{i-1})(x-x_{i+1})...(x-x_n)}{(x_i-x_0)(x_i-x_1)...(x_i -x_{i-1})(x_i - x_{i+1})...(x_i-x_n)}{\color{red}{\frac{(x-x_i)}{(x-x_i)}}} = \frac{w_{n+1}(x)}{{\color{red}{(x-x_i)}}\prod_{j=0}^{n}(x_i-x_j)}
+\end{equation}
+Quindi ora $L_i(x)$ è di grado n + 1 perché abbiamo aggiunto un termine e prima era di grado n.\\
+Ora riprendiamo l'ultimo esempio della lezione scorsa, noi abbiamo visto che scrivere $q(\bar{x}) = p(\bar{x})+y_3 L_3(x)$ non va bene perché dovremo $p(\hat{x})$ non è il solito se lo calcoliamo con 2 o con 3 punti. Noi però vogliamo un algoritmo che mi permetta di non dover ricalcolare tutti i polinomi ma mi permetta di "tenere qualcosa".\\
+PROBLEMA: se ho una funzione, posso stimare l'errore che commetto sostituendo la funzione con il polinomio interpolatore?
+\begin{gather}
+    y_i = f(x_i) \ con \ i = 0,1,...,n\\
+    p(x) \in P_n\\
+    p(x_i) = f(x_i) \ i = 0,1,...,n\\
+    x \neq x_i \ i = 0,1,...,n \Rightarrow x_0 < x < x_n
+\end{gather}
+\begin{center}
+    \textit{l'ipotesi dopo la freccia la abbiamo inserita perché si parla di INTERPOLAZIONE e quindi i punti devono stare dentro l'intervallo, altrimenti se fosse stato $x < x_0$ o $x>x_n$ non si sarebbe parlato di interpolazione ma di ESTRAPOLAZIONE} 
+\end{center}
+\begin{equation}
+    E(x) = errore(x) = f(x) - p(x)
+\end{equation}
+Una prima osservazione è che l'errore nel punto $x_i \ i = 0,...,n$
+\begin{equation}
+    E(x_i) = errore(x_i) = f(x_i) - p(x_i) = 0
+\end{equation}
+possiamo pensare che $E(x) = 0$, se $p(x) = f(x)$, un modo per esprimere questo errore è $w_{n+1}R_n(x)$, la seconda parte $R_n(x)$ non la conosciamo ancora, mentre la prima $w_{n+1}(x)$ mi permette di dire che la condizione $E(x) = w_{n+1}(x)R_n$ scritta così va bene perché so che $w_{i+1}(x_i)=0 \ i = 0,...,n$\\
+Per capire $R_n$ introduco una funzione ausiliaria
+\begin{equation}
+    G(t) = f(t) - p(t) -w_{n+1}(t) R_n(x)
+\end{equation}
+\begin{center}
+    \textit{si noti che $R_n(x)$ dipende da x e mi permette di esprimere la proprietà G(t)}
+\end{center}
+Assumiamo che 
+\begin{equation}
+    f(x) \in C^{n+1}([x_0,x_1]) \ i = 0,...,n
+\end{equation}
+\begin{center}
+    dove "C" indica la classe, ovvero che la funzione è continua e lo sono anche le sue derivate fino alla $n+1-esima$ in un intervallo $[x_0,x_1]$
+\end{center}
+\sepline{}
+\begin{quote}
+    Per dire che una funzione è continua su a,b diciamo che $$f(x) \in C^0([a,b])$$\\
+    Per dire che la funzione è continua su a,b e lo è anche la sua derivata scriviamo $$f(x) \in C^1([a,b])$$
+    e così via
+\end{quote}
+\sepline{}
+Date queste premesse cosa possiamo dire della funzione G?
+\begin{itemize}
+    \item f(t) e p(t) sono continue, R(x) non dipende da t, $w_{1+i}(t)$ è continua perché è un polinomio $\rightarrow$ G è continua
+    \item È derivabile? Si perché f è derivabile, p(t) lo è e lo è anche $w_{1+i}(t)$
+    \item La sua derivata prima è continua? Si, G è almeno di classe $C^1$
+    \item In generale possiamo dire che $G(t) \in C^{n+1} ([x_0,x_n])$
+    \item Quanti zeri ha la funzione G? G(t) ha n+1 zeri, dove i punti $x_i$ sono i suoi zeri, però ne ha un altro, prendiamo il punto $x \neq x_i$, in questo punto quanto vale G?
+    \begin{gather}
+        G(x) = f(x) - p(x) - w_{n+1}(x)R(x) = 0\\
+        \text{prima abbiamo detto che } E(x) = f(x) - p(x) = w_{n+1}(x)R_n(x)
+    \end{gather}
+    quindi $E(x) = 0 \longrightarrow$ ha n+2 zeri
+\end{itemize}
+\begin{definition}
+    TEOREMA DI ROLLE:\\
+    se abbiamo una funzione continua e derivabile in un intervallo chiuso e limitato e ha lo stesso valore nei due esterni, la derivata prima si annulla in almeno un punto interno
+\end{definition}
+La derivata prima di G $\rightarrow G'(t) = f'(t) - p'(t) -w_{n+1}' (t) P_n(x)$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-03 alle 22.42.29.png}
+    \caption{sui punti $x_0,x_1,x_2,x_3$ si annulla ma anche in x}
+\end{figure}
+Per il teorema di Rolle tra $x_0$ e x la deriva prima si annulla e si annulla anche x e $x_1$ quindi G(t) ha $n+2$ zeri, $G'(t)$ ha n+1 zeri.\\
+Se provo a vedere la deriva seconda mi basta applicare il teorema di Rolle e vedo che $G''(t)$ ha n zeri e così via
+\newpage
+\begin{example}.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-03 alle 22.44.58.png}
+        \caption{}
+    \end{figure}
+\end{example}
+DOMANDA: quanti zeri ha $G^{n+1}(t)$? Ha uno zero\\
+\chapter{Lezione 05/11}
+La scorsa lezione abbiamo definito l'errore come:
+\begin{equation}
+    r(x) = e(x) = f(x) - p(x) = w(x) R_n(x)
+\end{equation}
+Abbiamo definito \begin{gather}
+    w(x) = (x-x_0)(x-x_1)...(x-x_n)\\
+    w(x) \in P_{n-1}\\
+    w(x_i) = 0 \ con \ i = 0,1,...,n
+\end{gather}
+Però non abbiamo ancora definito $R_n(x)$.\\
+Definiamo una funzione ausiliaria $G(t) = f(t) - p(t) - w(t)R_n(x)$.\\
+Quali sono le proprietà della funzione G(t)?
+\begin{itemize}
+    \item $p(t) \in C^{\infty}$, questo vale per qualunque polinomio, $f(t) \in C^{n+1}$ e quindi $G(t) \in C^{n+1}$ ovvero la funzione G(t) è continua e derivabile almeno fino a n+1
+    \item In generale G(t) assume tutte le proprietà delle funzioni al secondo membro
+    \item La funzione G(t) si annulla in tutti i punti $x_i \ i = 0,...,n$ e nel punto $x$, quindi G(t) ha $n+2$ zeri
+\end{itemize}
+Per vedere gli zeri delle varie derivate di G(t) abbiamo usato, la lezione scorsa, il teorema di Rolle e siamo arrivati a dire che la derivata di indice n+1 ha almeno 1 zero:
+\begin{equation}
+    G^{n+1}(t) \text{ ha almeno 1 zero}
+\end{equation}
+Quindi possiamo dire
+\begin{equation}
+    \exists \xi_x G^{n+1}(\xi_x) = 0    
+\end{equation}
+Dove $\xi$ è un punto in $[x_0,x_n]$.
+\textit{NB: abbiamo usato il pedice "x" perché $\xi$ dipende dalla posizione in cui inserisco x tra i punti $x_0,...,x_n$} 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-05 alle 18.21.30.png}
+    \caption{}
+\end{figure}
+Riprendiamo la formula di prima e ne vogliamo calcolare la sua derivata di indice $n+1$:
+\begin{gather}
+    G(t) = f(t) - p(t) - w(t)R_n(x)
+\end{gather}
+La derivata di indice n+1 di $f(t)$ è $f^{n+1}(t)$ e questo è possibile perché $f(t) \in C^{n+1}$.\\
+La derivata di indice n+1 di $p(t) \rightarrow p^{n+1}(t) = 0$ perché p(t) è di grado n e quindi possiamo vedere con un breve esempio come la sua derivata faccia 0
+\begin{gather*}
+    p(x) = x^2\\
+    p'(x) = 2x\\
+    p''(x) = 2\\
+    p'''(x) =0
+\end{gather*}
+La derivata di indice n+1 di $w(t)$, dato che il polinomio è di grado n+1, sarà una costante. Vediamo un altro esempio per chiarire la situazione
+\begin{gather*}
+    p(x) = x^3\\
+    p'(x) = 3x^2\\
+    p''(x) = 6x\\
+    p'''(x) = 6
+\end{gather*}
+Si può notare che in questo caso la derivata terza è $3! = 6$ ovvero il fattoriale dell'esponente del termine di grado più alto. Però vediamo anche che se il termine di grado più alto avesse un coefficiente diverso da uno avremo una costante che moltiplica il fattoriale. Però tornando al nostro caso vediamo che il termine a grado più alto del polinomio $w(t)$ ha coefficiente 1 e quindi possiamo dire che
+\begin{equation}
+    w^{n+1} = (n+1)!
+\end{equation}
+Mettendo insieme tutte queste considerazioni vediamo che la derivata di indice n+1 di G(t) è:
+\begin{gather}
+    G^{n+1}(t) = f^{n+1}(t) - 0 - (n+1)!R_n(x)\\
+    0 = G^{n+1}(\xi_x) = f^{n+1}(\xi_x) - 0 - (n+1)!R_n(\xi_x)\\
+    R_n(\xi_x) = \frac{f^{n+1}(\xi_x)}{(n+1)!}
+\end{gather}
+Quindi riprendendo l'equazione dell'errore o del resto
+\begin{equation}
+    e(x) = f(x)-p(x) = w(x) \frac{f^{n+1}(\xi_x)}{(n+1)!}
+\end{equation}
+\begin{example}.
+    \begin{gather}
+        r(x) = \frac{f^{n+1}(\xi_x)}{(n+1)!}(x-x_0)(x-x_1)...(x-x_n)\\
+        \begin{matrix}
+            x_0 = 0.49&x_1 = 0.64&x_2 = 0.81\\
+            y_0 = \sqrt{0.49} = 0.7&y_1 = \sqrt{0.64} = 0.8&y_2 = \sqrt{0.81} =0.9
+        \end{matrix}
+    \end{gather}
+    Posso pensare di costruire un polinomio interpolatore
+    \begin{gather}
+        p_2(x) = y_0L_0 + y_1L_1 + y_2L_2\\
+        p_2(x) = 0.7\frac{(x-0.64)(x-0.81)}{(0.49-0.64)(0.49-0.81)}+0.8\frac{(x-0.49)(x-0.81)}{(0.64-0.49)(0.64-0.81)}+0.9\frac{(x-0.49)(x-0.64)}{(0.81-0.49)(0.81-0.64)} =\\= 0.245089 x^2 + 0.943628 + 0.296471\\
+        p_2(0.6) = 0.7744118
+    \end{gather}
+    Ci chiediamo se questo valore è buono oppure no e quindi vogliamo calcolare il resto
+    \begin{gather}
+        r(x) = \frac{f'''(\xi_x)}{3!}(x-0.49)(x-0.64)(x-0.81)=\\
+        |r(x)| = r(x) = \frac{|f'''(\xi_x)|}{3!}\underbrace{|x-0.49||x-0.64||x-0.81|}_{x = 0.6 \rightarrow \text{questo è solo un numero}}\\
+        |r(x)| \leq \frac{\max_{x_0\leq x \leq x_2}|f'''(x)|}{3!}|0.6-0.49||0.6-0.64||0.6-0.81|\leq \frac{0.93\cdot 10^{-3}}{16\sqrt{0.495}}\leq 0.346\cdot 10^{-3}
+    \end{gather}
+    Noi abbiamo scritto una \textbf{maggiorazione dell'errore}, quindi l'errore sarà sicuramente minore di quel numero che abbiamo trovato.\\
+    Quando nell'equazione 5.21 abbiamo scritto $\max$ abbiamo fatto la seguente operazione: sapevamo che la funzione era $f(x) = \sqrt{x}$ e che la sua derivata terza è $f'''(x) = \frac{3}{8}\cdot \frac{1}{\sqrt{x^5}}$, la derivata terza per come è scritta vediamo che massima nel primo estremo $x_0 = 0.49$ ed è minima in $x_2 = 0.81$. Quindi $\max_{x_0\leq x \leq x_2}|f'''(x)|$ non è altro che la derivata terza calcolata in $x_0$
+    \\Per sapere \textbf{l'errore effettivo} devo fare $\sqrt{0.6} - p_2(0.6)$ ovvero il valore calcolato con la radice meno il valore che esce fuori dal polinomio interpolatore e questo valore sarà sicuramente $\leq 0.346 \cdot 10^{-3}$.\\
+    Proviamo a disegnare il grafico del modulo del resto:
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-05 alle 18.51.12.png}
+        \caption{}
+    \end{figure}
+    Quello arancione potrebbe essere il grafico del resto perché si deve annullare nei punti sopra e deve essere tutto positivo perché abbiamo il modulo
+\end{example}
+\begin{example}
+    \begin{gather}
+        y = \sin x\\
+        \begin{matrix}
+            x_0 = 0&x_1=\pi/2\\
+            y_0 = \sin 0 = 0&y_1 = \sin \pi/2 = 1
+        \end{matrix}
+    \end{gather}
+    Cercare di esprimere il resto e fare il grafico del modulo del resto
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-10-05 alle 19.15.36.png}
+        \caption{}
+    \end{figure}
+\end{example}
+\begin{example}
+    \begin{equation}
+        p_2(x) \in P_2\\
+        p_2(0) = 0 = y_1\\
+        p_2(1) = y_1\\
+        \int_0^1 p_2(x) dx=y_3 
+    \end{equation}
+    Dato che ho un integrale in questo caso non posso risolvere il problema con la base lagrangiana ma lo farò con la base dei monomi e quindi andrò a creare un sistema lineare
+\end{example}
+\section{Lezione 07/10}
+\begin{example}
+    Dati due punti 
+    $$\begin{matrix}
+        x_0&f(x_0)\\
+        y_1&f(x_1)
+    \end{matrix}$$
+\end{example}
+Dobbiamo costruire il polinomio interpolatore passante per questi due punti, $p_1(x)$ può anche essere espresso come $p_1(x) = ax + b$
+\begin{gather}
+    p_1(x) = f(x_0) L_0(x) + f(x_1)L_1(x) = f(x_0)\frac{x-x_1}{x_0 - x_1} + f(x_1) \frac{x-x_0}{x_1-x_0}\\
+    r(x) = e(x) = w(x) \frac{f''(\xi_x)}{2!} = (x-x_0)(x-x_1)\cdot \frac{f''(\xi_x)}{2!}\\
+    x_0 < \xi < x_1\\
+    M = \max_{x_0 < x < x_1}|f''(x)|\\
+    |r(x)| \leq |(x-x_0)(x-x_1)|\cdot \frac{M}{2!} \leq \max_{x_0 < x < x_1}|(x-x_0)(x-x_1)|\cdot \frac{M}{2!}
+\end{gather} 
+Quanto vale $|(x-x_0)(x-x_1)$? 
+\begin{equation}
+    y = (x-x_0)(x-x_1) = x^2 - xx_0 - xx_1 + x_0x_1
+\end{equation}
+Questa è una parabola e quindi il suo grafico sarà:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-08 alle 09.46.43.png}
+    \caption{Il grafico è questo perché $a\geq 0$ e perché $x_0$ e $x_1$ sono le radici della funzione}
+\end{figure}
+\\Per calcolare il punto di minimo posso usare la \textbf{derivata prima}
+\begin{equation}
+    y'(x) = 2x - x_1 - x_0
+\end{equation}
+Imponiamo $y'(x) = 0$
+\begin{gather}
+    2x - x_1 - x_0 = 0\\
+    x = \frac{x_0-x_1}{2}
+\end{gather}
+e quindi il punto medio è il punto di minimo\\
+Una volta fatto questo però dobbiamo applicare il modulo $|(x-x_0)(x-x_1)|$, quindi il grafico diventa
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-08 alle 09.50.50.png}
+    \caption{}
+\end{figure}
+Quindi il punto medio diventa il \textbf{punto di massimo relativo}.\\
+Quindi riprendendo l'equazione 5.29
+\begin{gather}
+    = \left|\left(\frac{x_0 - x_1}{2} - x_0\right)\left(\frac{x_0 - x_1}{2}\right)-x_1\right|\frac{M}{2!} = \cdots \Rightarrow\\
+    \Rightarrow |r(x)| \leq \frac{M}{8}(x_1-x_0)^2
+\end{gather}
+OSSERVAZIONE: cosa possiamo dire dell'errore che commettiamo?\\
+L'errore dipende dalla derivata e dall'intervallo (ampiezza). Quindi l'errore è piccolo se la derivata seconda è piccola (M) e sel'intervallo è contenuto.\\
+Se l'errore è piccolo allora ho trovato un polinomio che approssima bene, però prendendo solo due punti ho un errore ancora grossolano, quindi divido l'intervallo in due usando come esrtremo il punto medio e ricalcolo il polinomio e vedo che l'errore migliora, però in questo caso non cambia la derivata seconda ma cambia l'intervallo e quindi vedo che se diminuisce l'intervallo diminuisce anche l'errore
+\begin{example}
+    $f(x) = e^x$ con $x \in [0,1]$
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-08 alle 10.16.11.png}
+        \caption{}
+    \end{figure}
+    Vado a fare una decomposizione uniforme (quindi gli intervalli sono tutti della stessa ampiezza)
+    \begin{gather}
+        h = \frac{x_1 - x_0}{n} = \frac{1}{n}\\
+        M = e\\
+    \end{gather}
+    L'ultima equazioene perché noi stiamo cercando $\max_{x_0 < x < x_1}f''(x)$, quindi visto che $f''(x) = f(x)$ il grafico è sempre il solito per la derivata seconda e il massimo è il secondo estremo dell'intervallo (vedi figura 5.6) ed è "e".\\
+    Quanto deve valere h per avere un resto $< 10^{-k}$
+    \begin{gather}
+        |r(x)| < 10^{-k}\\
+        \frac{M}{8}(x_1 - x_0)^2 < 10^{-k}\\
+        \frac{e}{8}(h)^2 < 10^{-k} \ \ \text{(K DATO)}\\
+        h < \sqrt{\frac{8}{e}10^{-k}}\\
+        h < \frac{2\sqrt{2}}{\sqrt{e}} \cdot \frac{1}{10^{\frac{k}{2}}}
+    \end{gather}
+    Se per esempio prendiamo $k = 1$, allora abbiamo $h = 0.54$ però se voglio questa precisione di k non posso prendere proprio $0.54$ perché $0.54 \times 2 = 1.08$ e quindi è fuori dall'intervallo, per questo dobbiamo prendere $h = 0.5$. Lo stesso se per esempio volessimo $k = 3 \rightarrow h = 0.0542$ e quindi dobbiamo prendere, per quanto detto prima $h = 0.05$
+\end{example}
+DOMANDA: questi polinomi sono costruiti localmente sono del tipo:
+\begin{equation}
+    p(x) = \begin{cases}
+        p_1(x) \ \ \ x \in [x_0, x_1]\\
+        p_2(x) \ \ \ x \in [x_1,x_2]\\
+        \vdots
+    \end{cases}
+\end{equation}
+Che regolarità ha questo polinomio?
+\sepline{}
+\begin{quote}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-08 alle 10.31.16.png}
+        \caption{}
+    \end{figure}
+    Questa f(x) è continua a tratti, ma non è continua in $[x_0,x_1]$\\
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.3 \linewidth]{Foto/Schermata 2022-10-08 alle 10.35.03.png}
+        \caption{}
+    \end{figure}\\
+    $p_1$ e $p_2$ hanno in comune un punto e quindi p(x) è continuo ($p(x) \in C^0$), però la sua deriva prima non è continua perché c'è un punto angoloso e quindi i due coefficienti angolari sono distinti, perciò  le derivate non sono continue
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.3 \linewidth]{Foto/Schermata 2022-10-08 alle 10.37.43.png}
+        \caption{}
+    \end{figure}
+\end{quote}
+\sepline{}
+Quindi abbiamo un polinomio di classe $C^0$.\\
+Tornando all'errore vedo che 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-08 alle 10.40.06.png}
+    \caption{}
+\end{figure}
+Aggiungengo un punto (blu) vedo che l'errore è significativamente minore e quindi vedo che non servono polinomi enormi per abbasare l'errore.
+\section{Polinomio interpolatore di Newton/delle differenze divise}
+Partiamo da tre punti
+\begin{equation*}
+    \begin{matrix}
+        x_0&y_0\\
+        x_1&y_1\\
+        x_2&y_2
+    \end{matrix}
+\end{equation*}
+Costruiamo la tabella:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7 \linewidth]{Foto/Schermata 2022-10-08 alle 11.55.00.png}
+    \caption{}
+\end{figure}
+Come si può vedere le ordinate sono chiamate anche \textbf{differenze divise di ordine 0}.\\
+Costruiamo il polinomio interpolatore:
+\begin{gather}
+    p_0(x) = y_0\\
+    p_1(x) = y_0 + (x-x_0)f[x_0,x_1] = p_0(x) + (x-x_0)f[x_0,f_1]
+\end{gather}
+Dalla seconda equazione già si intuisce che il polinomio $p_1(x)$ è costruito uscndo $p_0(x)$ più un correttivo.\\
+Ci chiediamo se effettivamente il polinomio sia interpolatore dei due punti $x_0, x_1$ quindi dobbiamo verificare che il polinomio calcolato in quei due punti mi dia la sua ordinata
+\begin{gather}
+    p_1(x_0) = \underbrace{p(x_0)}_{y_0} + (x_0 - x_0) f[x_0,x_1] = y_0\\
+    p_1(x_1) = \cancel{\underbrace{p(x_0)}_{y_0}} + \cancel{(x_1 - x_0)}\frac{f(x_1)-\cancel{f(x_0)}}{\cancel{x_1-x_0}} \Rightarrow p_1(x_1) = f(x_1) = y_1
+\end{gather}
+Ora vogliamo calcolare $p_2(x) \in P_2$
+\begin{gather}
+    p_2(x) = \underbrace{f(x_0) + (x-x_0)f[x_0,x_1]}_{p_1(x)} + (x-x_0)(x-x_1)f[x_0,x_1,x_2]\\
+    p_2(x) = p_1(x) + (x-x_0)(x-x_1)f[x_0,x_1,x_2]
+\end{gather}
+Per verificare che sia un polinomio interpolatore devo verificare che 
+\begin{gather}
+    p_2(x_0) = f(x_0)\\
+    p_2(x_1) = f(x_1)\\
+    p_2(x_2) = f(x_2)
+\end{gather}
+Quindi:
+\begin{gather}
+    p_2(x_0) = p_1(x_0) + (x_0-x_0)(x_0-x_1)f[x_0,x_1,x_2]\\
+    p_2(x_0) = p_1(x_0) = y_0\\
+    p_2(x_1) = p_1(x_1) + (x_1-x_0)(x_1-x_1)f[x_0,x_1,x_2]\\
+\end{gather}
+Analogamente possiamo calcolare anche il polinomio in p2 ma per evitare conti molto lunghi non lo faremo.\\
+Si noti che in questo caso non abbiamo il problema di dover "buttare via tutto" ogni qual volta che venga aggiunto un punto come per il polinomio di Lagrange perché
+\begin{equation}
+    p_2(\bar{x}) = p_1(\bar{x}) + (\bar{x} - x_0)(\bar{x}-x_1) \underbrace{f[x_0,x_1,x_2]}_{\text{non cambia in base a } \bar{x}}
+\end{equation}
+Noi possiamo considerare delle DD di ordine arbitrario quindi possiamo scrivere:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1 \linewidth]{Foto/Schermata 2022-10-10 alle 22.45.50.png}
+    \caption{}
+\end{figure}
+\chapter{Lezione 10/10}
+Riprendiamo le differenze divise viste a lezione la volta scorsa.\\
+OSSERVAZIONE: se dati 3 punti calcolo la tabella sopra, se aggiungo un punto posso aggiornare la tabella senza dover ricalcolare tutto. Partendo dai punti $x_0,x_1,x_2$ e considerando $x_3$ (nuovo punto) non è necessario che sia dopo $x_2$ ma potrebbe essere tra $x_2$ e $x_0$ o prima di tutti i punti, infatti vediamo che vale
+\begin{equation}
+    f[x_0,x_1,x_2] = f[x_1,x_0,x_2]
+\end{equation}
+Quindi i termini sono indipendenti dall'ordinamento di $x_3$\\
+Partiamo da 3 punti
+\begin{equation}
+    \begin{matrix}
+        x_0&y_0&&\\
+        &&f[x_0,x_1]\\
+        x_1&y_1&&f[x_0,x_1,x_2]\\
+        &&f[x_1,x_2]\\
+        x_2&y_2&&
+    \end{matrix}
+\end{equation}
+Costruiamo $p_0(x)$ polinomio interpolatore passante per $x_0,y_0$
+\begin{equation}
+    p_0(x) = y_0
+\end{equation}
+Quindi ho usato la DD0.\\
+Ora voglio costruire $p_1(x) = y_0 + (x-x_0)f[x_0,x_1] = p_0(x) + (x-x_0)f[x_0,x_1]$
+La lezione scorsa abbiamo dimostrato che
+\begin{gather}
+    p_0(x_0) = f(x_0)\\
+    p_1(x_1) = f(x_1) 
+\end{gather}
+Proviamo a calcolare $p_2(x)$
+\begin{gather}
+    p_2(x_0) = f(x_0)\\
+    p_2(x_1) = f(x_1)\\
+    p_2(x_2) = f(x_2)
+\end{gather}
+Per fare questa verifica posso ragionare in questo modo:
+\begin{gather}
+    p_2(x) = \underbrace{y_0 + (x-x_0)f[x_0,x_1]}_{p_1(x)} + (x-x_0)(x-x_1)f[x_0,x_1,x-2]\\
+    p_2(x) = p_1(x) + (x-x_0)(x-x_1)f[x_0,x_1,x_2]\\
+    p_2(x_0) = y_0\\
+    p_2(x_1) = y_1\\
+    p_2(x_2) = \underbrace{f(x_0)}_{p_1(x_2)} + (x_2 - x_1 + x_1 - x_0)f[x_0,x_1] + (x_2-x_0)(x_2-x_1)\frac{f[x_1,x_2]-f[x_0,x_1]}{x_2-x_0} =\\
+    p_2(x_2) = f(x_0)+ \cancel{(x_1-x_0)f[x_0,x_1]} + (x_1-x_0)f[x_0,x_1]+(x_2-x_1)f[x_1,x_2]- \cancel{(x_2-x_1)f[x_0,x_1]}\\
+    p_2(x_2) = f(x_0)+ \cancel{(x_1-x_0)}\frac{f(x_1)-f(x_0)}{\cancel{x_1-x_0}} + \cancel{(x_2-x_1)}\frac{f(x_2)-f(x_1)}{\cancel{x_2-x_1}}\\
+    p_2(x_2) = f(x_0)+f(x_1)-f(x_0)+f(x_2)-f(x_1)\\
+    p_2(x_2) = f(x_2)
+\end{gather}
+OSSERVAZIONE: più un algoritmo costa e più operazioni vengono eseguite e quindi l'errore aumenterà perché ogni operazione introduce dell'errore per vua delle approssimazioni\\
+Prendiamo 4 punti e vediamo che il polinomio interpolante diventa
+\begin{equation}
+    \begin{matrix}
+        x_0&y_0\\
+        x_1&y_1&\\
+        &&&f[x_0,x_1,x_2,x_3]\\
+        x_2&y_2&\\
+        x_3&y_3
+    \end{matrix}
+\end{equation}
+Quindi calcoliamo $p_3(x)$
+\begin{equation}
+    p_3(x) = p_2(x) + (x-x_0)(x-x_1)(x-x_2)f[x_0,x_1,x_2,x_3]
+\end{equation}
+Usando l'intera tabella delle DD possiamo costruire il polinomio interpolare.\\
+Abbiamo DDN:
+\begin{equation}
+    f[x_0,x_1,...,x_{n-1},x_n]
+\end{equation}
+E quindi il polinomio interpolatore è
+\begin{equation}
+    p_n(x) = f(x_0) + (x-x_0)f[x_0,x_1]+(x-x_0)(x-x_1)f[x_0,x_1,x_2]+...+(x-x_0)(x-x_1)...(x-x_{n-1})f[x_0,x_1,...,x_n]
+\end{equation}
+Possiamo sfruttare questa tecnica per parlare di una nuova forma dell'errore?\\
+Consideriamo:
+\begin{equation}
+    x,x_0 \Rightarrow f[x,x_0] = \frac{f(x_0)-f(x)}{x_0-x} \Rightarrow (x_0-x)f[x-x_0] \Rightarrow\\
+    \Rightarrow \underbrace{f(x_0)}_{p_0(x_0)}+(x-x_0)f[x,x_0]
+\end{equation}
+Mentre la seconda parte non la conosco, so solo che $x \neq x_0$. Questo lo possiamo interpretare come l'errore, infatti se tolgo questo ho $f(x) \approx f(x_0)$ quindi f(x) è uguale ad un polinomio cosante più un errore.\\
+Riprendiamo ora la vecchia forma dell'errore:
+\begin{equation}
+    \omega(x) = (x-x_0)
+\end{equation}
+se abbiamo due punti e poi avremo $\omega(x) = (x-x_0)(x-x_1)$\\
+Quindi la $\omega$ c'è\\
+Il fattoriale del numero dei punti $(n+1)!$ c'è perché ho un punto $\rightarrow 1!$\\
+Quindi abbiamo:
+\begin{equation}
+    \frac{(x-x_0)f'(\xi_x)}{1!}
+\end{equation}
+Quindi la differenza divisa è \textbf{assimilabile alla derivata} calcolata in un punto opportuno $\xi_x$
+\begin{equation}
+    f(x) = \underbrace{f(x_0)+(x-x_0)f''(x_0)}_{\text{questo è il polinomio di Taylor}} + ... + \underbrace{\frac{(x-x_0)^k}{k!}f(x_0+\epsilon)}_{\text{sviluppo di Taylor, RESTO}}
+\end{equation}
+\chapter{Lezione 12/10}
+Riprendendo quanto visto la lezione scorsa notiamo che:
+\begin{equation}
+    f(x) = \underbrace{p_1(x)}_{\text{2 punti}} + \underbrace{(x-x_0)(x-x_1)f[x,x_0,x_1]}_{rersto}
+\end{equation}
+dove il resto è
+\begin{gather}
+    \frac{f''(\xi_x)}{2!}\omega(x)\\
+    w(x) = (x-x_0)(x-x_1)
+\end{gather}
+quindi $f[x,x_0,x_1] = \frac{f''(\xi_x)}{2!}$
+allo stesso modo se prendo i punti $x,x_0,x_1,x_2$
+\begin{gather}
+    f[x,x_0,x_1,x_2] = \frac{f[x_0,x_1,x_2]-f[x,x_1,x_2]}{x_2-x}\\
+    x_2-xf[x,x_0,x_1,x_2] = f[x_0,x_1,x_2]-f[x,x_1,x_2]\\
+    f(x) = \underbrace{f(x_0)+(x-x_0)f[x_0,x_1]+(x-x_0)(x-x_1)f[x_0,x_1,x_2]}_{p_2(x)}+\underbrace{(x-x_0)(x-x_1)(x-x_2)}_{\omega(x)}\underbrace{f[x,x_0,x_1,x_2]}_{\frac{f'''(\xi_x)}{3!}}
+\end{gather}
+Nello scrivere $\frac{f'''(\xi_x)}{3!}$ al denominatore vediamo che abbiamo il fattore dell'ordine di derivazione.\\
+Dato che non conosco $\xi_x$ non ho fatto altro che reinterpretare quello visto prima, per trovare $\xi_x$ dovrei fare il maggiorante ecc.\\
+Consideriamo i punti $x,x_0,x_1,x_2,...,x_n$
+\begin{equation}
+    f(x) = p_n(x) + \underbrace{(x-x_0)(x-x_1)...(x-x_n)}_{\omega(x)}f[x,x_0,...,x_n] = p_n(x) + \omega_x\cdot \frac{f^{(n+1)}(\xi_x)}{(n+1)!}
+\end{equation}
+\section*{Interpolazione generalizzata}
+Dati i punti:
+$$\begin{matrix}
+    x_0&x_1&...&x_n\\
+    y_0&y_1&...&y_n\\
+    y_0'&y_1'&...&y_n'
+\end{matrix}$$ 
+Voglio costruire un $p(x)$ che verifica le condizioni di interpolazione
+\begin{gather}
+    p(x_i) = y_i\\
+    p'(x_i) = y'_i\\
+    con \ i = 0,1,...,n
+\end{gather}
+Ho questi punti:
+$$\begin{matrix}
+    x_0&x_1&x_2\\
+    y_0&y_1&y_2\\
+    y'_0&y'_1&y'_2
+\end{matrix}$$
+quindi le condizioni sono:
+\begin{equation}
+    \begin{matrix}
+        p(x_0) = y_0&p'(x_0) = y'_0\\
+        p(x_1) = y_1&p'(x_1) = y'_1\\
+        p(x_2) = y_2&p'(x_2) = y'_2
+    \end{matrix}
+\end{equation}
+p(x) deve verificare queste 6 condizioni e qindi ho 6 vincoli e perciò il polinomio è di grado 5, $p(x) \in P_5$
+\begin{gather}
+    p(x) = a_0 + a_1x + a_2x^2 + a_3 x^3 + a_4 x^4 + a_5 x^5\\
+    p'(x) = a_1 + 2a_2 x + 3 a_3 x^2 + 4 a_4 x^3 + 5 a_5 x^4\\
+    \begin{cases}
+        p(x_0)=a_0 + a_1 x_0 + a_2 x_0^2 + a_3 x_0^3 + a_4 x_0^4 + a_5 x^5_0\\
+        p'(x_0) = a_1 + 2 a_2 x_0 + 3 a_3 x_0^2 + 4 a_4 x_0^3 + 5 a_5 x_0^4\\
+        ...\\
+        p(x_1)=a_0 + a_1 x_2 + a_2 x_2^2 + a_3 x_2^3 + a_4 x_2^4 + a_5 x^5_2\\
+        p'(x_0) = a_1 + 2 a_1 x_2 + 3 a_3 x_2^2 + 4 a_4 x_2^3 + 5 a_5 x_2^4
+    \end{cases}\\
+    B = \begin{bmatrix}
+        1&x_0&x_0^2&x_0^3&x_0^4&x_0^5\\
+        0&1&2x_0&3x_0^3&4x_0^4&5x_0^4\\
+        1&...\\
+        0&...\\
+        \vdots
+    \end{bmatrix}\\
+    a = \begin{bmatrix}
+        a_0\\a_1\\a_2\\a_3\\a_4\\a_5
+    \end{bmatrix}\\
+    b = \begin{bmatrix}
+        y_0\\y_0'\\y_1\\y_1'\\y_2\\y_2'
+    \end{bmatrix}
+    Ba = b\\
+    \det B \neq 0 \rightarrow \text{B non è singolare}
+\end{gather}
+So che l'ultima eqauzione rappresenta un sistema che, si può dimostrare con un teorema, ha una e una sola soluzione (se i punti sono distinti):
+\begin{equation}
+    a = B^{-1}b
+\end{equation}
+\sepline{}
+DOMANDA: se il determinante è $10^{-10}$, $10^{-20}$ si può affermare che quella matrice è quasi singolare?\\
+Prendiamo una matrice $A = \begin{bmatrix}
+    10^{-1}&0\\
+    0&10^{-1}
+\end{bmatrix}$ sappiamo che è una matrcie che ha gli unici elementi diversi da 0 sulla sua diagonale maggiore e so anche che il determinante si calcola moltiplicando gli elementi sulla diagonale $\det = 10^{-1} \cdot 10^{-1} = 10^{-2}$\\
+Proviamo a prendere una matrice più estesa della forma:
+\begin{gather}
+    A = \begin{bmatrix}
+        10^{-1}&0&0\\
+        0&10^{-1}&0\\
+        0&0&10^{-1}
+    \end{bmatrix}\\
+    \det A = 10^{-3}
+\end{gather}
+Prendiamo una matrice diagonale 10 x 10 con coefficienti $10^{-1}$ ottengo $\det A = 10^{-10}$e il determinante è diverso da 0 anche se molto prossimo allo 0\\
+\sepline{}
+Tornando al problema di prima, 
+\begin{equation}
+    \begin{matrix}
+        p(x_0) = y_0&p'(x_0) = y'_0\\
+        p(x_1) = y_1&p'(x_1) = y'_1\\
+        p(x_2) = y_2&p'(x_2) = y'_2
+    \end{matrix}
+\end{equation}
+guardiamo come interpretare le derivate
+\begin{equation}
+    f[x_0,x_0] \ DD1
+\end{equation}
+la differenza divisa di primo ordine calcolata su due punti coincidenti mi dà una forma indeterminata:
+\begin{equation}
+    \frac{f(x_0)-f(x_0)}{x_0-x_0} = \frac{0}{0}
+\end{equation}
+Per bipassare questo problema possiamo interpretare questa DD come un limite:
+\begin{gather}
+    \lim_{\epsilon \rightarrow 0} f[x_0,x_0 + \epsilon] = \lim_{\epsilon \rightarrow 0} \frac{(x_0 + \epsilon)-f(x_0)}{x_0 + \epsilon - x_0} = f'(x_0)
+\end{gather}
+Costruiamo una tabella delle DD opportune, in modo da sfruttare la derivata:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7 \linewidth]{Foto/Schermata 2022-10-12 alle 17.32.41.png}
+    \caption{}
+\end{figure}
+Da notare che nella tabella ho ripetuto gli stessi punti tante volte quanti sono i propri vincoli (ogni punto aveva anche la derivata seconda e quindi sono stati scritti 3 volte).\\
+Possiamo scrivere il \textbf{polinomio delle differenze divise generalizzato}
+\begin{align*}
+    p(x) = &f(x_0) + (x-x_0)f[x_0,x_0]+(x-x_0)^2 f[x_0,x_0.x_1] +\\
+    &+(x-x_0)^2(x-x_1)f[x_0,x_0,x_1,x_1]+\\
+    &+(x-x_0)^2(x-x_1)^2f[x_0,x_0,x_1,x_1,x_2,x_2] +\\
+    &+(x-x_0)^2(x-x_1)^2(x-x_2)f[x_0,x_0,x_1,x_1,x_2,x_2]
+\end{align*}
+Proviamo a modificare i dati mettendo anche la derivata seconda come segue:
+$$\begin{matrix}
+    x_0&x_1&x_2\\
+    y_0&y_1&y_2\\
+    y_0'&y_1'&y_2'\\
+    y_0''&&y_2''
+\end{matrix}$$
+si noti che non abbiamo la derivata seconda del punto $x_1$
+\sepline{}
+PROBLEMA ANALOGO:
+$$\begin{matrix}
+    x_0&x_1&x_2\\
+    &y_1&y_2\\
+    y_0'&y_1'&y_2'\\
+    &&y_2''
+\end{matrix}$$
+Questo problema non lo posso risolvere perché non abbiamo il punto di partenza, ovvero non abbiamo il punto $y_0$ e quindi non sappiamo da dove partire
+\sepline{}
+Se ho dei punti "buoni" come quelli visti sopra possiamo costruire un polinomio che interpola questi punti.\\
+Come possiamo costruire questo polinomio? Intanto ci chiediamo di che grado è: ho 8 vincoli e quindi il polinomio è di grado 7.\\
+\begin{equation}
+    p(x) = a_0 + a_1 x + ... + a_7 x^7
+\end{equation}
+DOMANDA: questo polinomio è sicuramente di grado 7? No perché posso avere dei coefficienti = 0 o avrei un grado ancora inferiore se il polinomio fosse una retta orizzontale.\\
+La tabella vista prima mi permette di produrre un'altra tabella, quella della DD generalizzata.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8 \linewidth]{Foto/IMG_EBFD3669B184-1.jpeg}
+    \caption{}
+\end{figure}
+Riprendendo la figura sopra vediamo che abbiamo scritto $f[x_0,x_0,x_0] = \frac{y''_0}{2!}$ questo perché in realtà sarebbe una forma indeterminata però la trattiamo come visto precedentemente e quidi quella relazione non risulta sbagliata. Seconda osservazione, guardiamo il fattoriale stto. Questo è presente perché, come visto nelle lezioni scorse, il resto del polinomio alle differenze divise è del tipo $\frac{f^i(\xi_x)}{i!}$, $\xi_x$ viaggia più su un intervallo ma su un singolo punto questo perché prima eravamo in una situazione del tipo $f[x_0,x_1,x_2] = \frac{f''(\xi_x)}{2!}$ e $\xi_x$ viaggiava tra $x_0$ e $x_2$, ma ora abbiamo che $x_0 = x_1 = x_2$ quindi $\xi_x$ non viaggia più su un intervallo ma coincide con un singolo punto
+\begin{theorem}
+    dati i punti $x_0,...,x_n$, quindi abbiamo $n+1$ punti e considero i loro possibili vincoli
+    \begin{equation}
+        \begin{matrix}
+            x_0&y_0^{(i)}&i = 0,...,\alpha_0&\alpha \in \mathbb{N}\\
+            x_1&y_1^{(i)}&i = 0,...,\alpha_1&\alpha \in \mathbb{N}\\
+            \vdots\\
+            x_n&y_n^{(i)}&i = 0,...,\alpha_n&\alpha \in \mathbb{N}\\
+        \end{matrix}
+    \end{equation}
+    Quindi per ogni $x_i$ ho $\alpha_i + 1$ vincoli con $i = 0,...,n$\\
+    NB: quando definisco $\alpha$ non ho salti, ovvero se prendo, per esempio, $\alpha_0 = 3$ vuol dire che ho $i = 0,1,2,3$ NON POSSO AVERE $i = 0,2,3$\\
+    Facciamo la somma dei vincoli per capire il grado del polinomio:
+    \begin{gather}
+        VINCOLI: 1 + \alpha_0 + 1 + \alpha_1 + ... + 1 + \alpha_n = (n+1)+\sum_{j = 0}^{n} a_j\\
+        p(x) \in P_{n+\sum^{n}_{j=0}a_j}
+    \end{gather}
+    TEOREMA: questo sistema lineare ha una matrice rappresentativa non singolare, quindi è UNICO il polinomio interpolatore che soddisfa questi vincoli
+\end{theorem}
+\chapter{Lezione 14/10}
+\begin{theorem}
+    \textbf{Teorema di Weiestrass}
+    Data una funzione continua $f: [a,b] \rightarrow \mathbb{R}$ per ogni valore reale $\epsilon > 0$, esiste un polinomio $p_{n_{\epsilon}}(x)$ tale che
+    \begin{equation}
+        \max_{x \in [a,b]}|f(x) - p_{n_{\epsilon}}(x)|\leq \epsilon
+    \end{equation}
+\end{theorem}
+OSSERVAZIONI:
+\begin{itemize}
+    \item il grado $n_{\epsilon}$ del polinomio dipende dalla tolleranza $\epsilon$
+    \item Il teorema non assicura la convergenza di una successione di polinomi di \underline{interpolazione} alla funzione $f(x)$
+    \item Esiste una dimostrazione costruttiva del teorema dovuta a Bernstein in cui si usa una famiglia di polinomi, oggi base dell'Isogeometric Analysis e della più nota CADG.\\
+\end{itemize}
+Vediamo cosa succede se costruiamo una successione di polinomi interpolatori una funzione $f(x)$ assegnata.\\
+Come prima cosa definiamo la matrice di interpolazione sull'intervallo $[a,b]$ della retta reale, la matrice
+\begin{equation}
+    \begin{matrix}
+        x_0&&&&&&p_0(x)\\
+        x_0^2&x_1^2&&&&&p_1(x)\\
+        x_0^3&x_1^3&x_2^3&&&&p_2(x)\\
+        x_0^4&x_1^4&x_2^4&x_3^4&&&p_3(x)\\
+        \cdots&\cdots&\cdots&\cdots&\cdots&\cdots&\cdots&\\
+        x_0^{n+1}&x_1^{n+1}&\cdots&\cdots&\cdots&x_n^{n+1}&p_n(x)\\
+        \cdots&\cdots&\cdots&\cdots&\cdots&\cdots&\cdots&\\
+    \end{matrix}
+\end{equation}
+Indichiamo con $p_n(x)$ il polinomio interpolatore della funzione $f(x) \in C^0 ([a,b])$ nei nodi della (n+1)-esima riga.\\
+PROBLEMA: la successione $p_n(x) \rightarrow f(x)$ per $n \rightarrow \infty$.\\
+È ragionevole pensare che aumentando il grado del polinomio. al limite converga con la funzione. Ma vediamo che non è così.\\
+\newpage
+\textbf{Funzione di Runge} $F(x) = \frac{1}{1+25 x^2} \ x \in [-1,1]$.\\
+NB questa funzione la possiamo trovare anche in questa forma $F(x) = \frac{1}{1+x^2} \ x \in [-5,5]$
+\begin{figure}[h!]
+    \centering
+    \subfloat[\emph{I punti con la stessa sono quelli da cui costruisco il polinomio interpolatore e vedo che non è molto indicativo della funzione di Ruge}]{\includegraphics[width=0.3 \linewidth]{Foto/Schermata 2022-10-14 alle 18.38.47.png}\quad}
+    \subfloat[\emph{Provo a prendere più punti rispetto a prima ma ho sempre valori che cadono nelle y < 0}]{\includegraphics[width=0.3 \linewidth]{Foto/Schermata 2022-10-14 alle 18.38.50.png}}\\
+    \subfloat[\emph{Anche mettendo più punti il polinomio interpolatore ha dei picchi molto pronunciati agli estremi dell'intervallo}]{\includegraphics[width=0.3 \linewidth]{Foto/Schermata 2022-10-14 alle 18.38.52.png}\quad}
+    \subfloat[\emph{}]{\includegraphics[width=0.3 \linewidth]{Foto/Schermata 2022-10-14 alle 18.38.54.png}}
+    \caption{}
+\end{figure}
+\\Questa situazione, è evidente, che contraddica il teorema di Weiestrass, il quale però non parla di usare dei polinomi interpolatori, mentre noi abbiamo usato dei polinomi interpolatori e quindi non è vero che all'aumentare del numero di punti il polinomio coneverge alla funzione
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-14 alle 18.47.38.png}
+    \caption{}
+\end{figure}
+\newpage
+\textbf{Polinomio interpolatore $p_n(x)$ associato alla funzione}
+\begin{equation}
+    f(x) = |x|, \ x \in [-1,1]
+\end{equation}
+e ai nodi (equispaziati)
+\begin{equation}
+    x_i = -1 + \frac{2i}{n}, \ i = 0,1,...,n
+\end{equation}
+quando $n \rightarrow \infty$ converge a $f(x)$ solamente nei punti $x = -1,0,1$
+\begin{figure}[h!]
+    \centering
+    \subfloat[\emph{Non è realizzato il punto angoloso, ma mi chiedo se questa è una buona rappresentazione per f(x) e quindi provo ad aumentare il numero di punti}]{\includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-14 alle 18.53.16.png}}\\
+    \subfloat[\emph{Aumentando il numero di punti, il polinomio approssima abbastanza bene la parte centrale però peggiora molto agli estremi dell'intervallo}]{\includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-14 alle 18.53.20.png}}
+    \caption{}
+\end{figure}
+\begin{theorem}
+    TEOREMA DI FABER\\
+    Per ogni matrice di interpolazione di un intervallo limitato $[a,b]$ della retta reale esiste una funzione continua $f(x)$ tale che la successione dei polinomi $p_n(x)$ \textbf{non converge uniformemente} ad f per $n \rightarrow \infty$
+\end{theorem}
+\begin{theorem}
+    Se $f(x)$ è una funzione continua su $[a,b]$ \textbf{si può scegliere} una matrice di interpolazione in modo che la corrispondente successione di polinomi di interpolazione converga uniformemente a $f(x)$ su $[a,b]$
+\end{theorem}
+\newpage
+\textbf{Nodi quasi Chebichev}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-14 alle 19.03.08.png}
+    \caption{Il numero di punti presi è dispari così ho un punto sul punto angoloso}
+\end{figure}
+NB: si noti che i punti di Chebichev non sono equidistanti uno dall'altro
+\begin{figure}[h!]
+    \centering
+    \subfloat[\emph{}]{\includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-14 alle 19.06.03.png}\quad}
+    \subfloat[\emph{}]{\includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-14 alle 19.06.08.png}}\\
+    \subfloat[\emph{}]{\includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-14 alle 19.06.14.png}}
+    \caption{}
+\end{figure}
+\\Se aumentassmo il numero di punti anche nel punto angoloso si avvicina ulteriormente al punto angoloso\\
+Vediamo un'altra funzione
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-10-14 alle 19.06.26.png}
+    \caption{}
+\end{figure}
+\newpage
+\begin{theorem}
+    \textbf{TEOREMA BERNSTEIN}: se $f(x) \in C^1([a,b])$, il polinomio $p_n(x)$ di interpolazione della funzione f relativo agli zeri del polinomio di Chebichev di grado (n+1) converge uniforme a f(x) su [a,b] per $n\rightarrow \infty$,\\
+    Se inoltre $f \in C^2([a,b])$ si ha la seguente stima dell'errore:
+    \begin{equation}
+        ||f(x) - p_n(x)||_{\infty} = O\left(\frac{1}{\sqrt{n}}\right)
+    \end{equation}
+\end{theorem}
+Se [a,b] = [0,1], per n = 1,2,... i polinomi di Bernstein sono definiti da:
+\begin{equation}
+    B_{n,k}(x) = \begin{pmatrix}
+        n\\k
+    \end{pmatrix}x^k (1-x)^{n-k}, \ k = 0
+\end{equation}
+dove:
+\begin{equation}
+    \begin{pmatrix}
+        n\\k
+    \end{pmatrix} = \frac{n!}{(n-k)!k!}
+\end{equation}
+\begin{theorem}
+    \textbf{TEOREMA HERMITTE-FEJET}\\
+    Sia $f(x) \in C^0([a,b])$, con $[a,b]$ limitato e chiuso e sia $p_{2n+1}(x)$ il polinomio di interpolazione di grado $2n + 1$, tale che:
+    \begin{gather}
+        p_{2n+1}(x_i) = f(x_i)\\
+        p'_{2n+1}(x_i) = 0\\
+        i = 0,1,...,n
+    \end{gather}
+    Se $x_i$ sono gli zeri del polinomio di Chebichev su [a,b] allora:
+    \begin{equation}
+        \lim_{n\rightarrow \infty} ||f(x) - p_{2n+1}(x)||_\infty = 0
+    \end{equation}
+\end{theorem}
+\sepline{}
+NB la notazione $||...||_\infty$ indica la norma infinito.\\
+La norma 2 di un vettore è la lunghezza del vettore, pertanto, per esempio:
+\begin{equation}
+    \underline{x} = [1,0,1] \rightarrow ||\underline{x}||_2 = \sqrt{1^2 + 2^2 + 1^2}
+\end{equation}
+Altro esempio
+\begin{gather}
+    \underline{x} = [x_1,...,x_n]\\
+    ||\underline{x}||_2 = \sqrt{x_1^2,...,x_n^2}
+\end{gather}
+La norma infinito è:
+\begin{equation}
+    ||\underline{x}||_\infty = \max_{1\leq i \leq n}|x_i|
+\end{equation}
+Esempio:
+\begin{equation}
+    \underline{x} = [1,0,2,-1]\\
+    ||\underline{x}||_\infty
+\end{equation}
+per calcolare la norma infinito prendo i valori assoluti e poi prendo il massimo
+\begin{equation}
+    ||\underline{x}||_\infty = 2
+\end{equation}
+NORMA = che proprietà deve avere una f(x) per essere chiamata così?
+\begin{enumerate}
+    \item deve essere $||x|| \geq 0$ dove = 0 se \underline{x} è il vettore nullo
+    \item $||\alpha \underline{x}|| = |\alpha| ||\underline{x}||$
+    \\deve esserci il valore assoluto perché se avessimo $\alpha < 0$ allora anche la norma sarebbe $<0$, ma non può esserlo
+    \item $||x+y|| \leq ||x|| + ||y||$
+\end{enumerate}
+Se la funzione rispetta contemporaneamente i tre vincoli si può chiamare norma.\\
+La norma EUCLIDEA della matrice è legata agli autovalori della matrice.\\
+La soluzione di un sistema lineare non dipende dalla "dimensione" del determinante, ma dipende dalla $||A||_\infty \cdot ||A^{-1}||_\infty$ se questo prodotto è grande dobbiamo avere un sentore che quello che calcoliamo sia sbagliato perché indica che abbiamo un errore molto grande. Questo lo posso calcolare prima di risolvere la matrice con la forma scala
+\chapter{Lezione 17/10}
+\section*{Funzioni Spline}
+Sono l'elemento di base per quello fatto ingegneria con gli \textbf{elementi finiti} (sono un po' come "i mattoncini Lego" che da soli hanno poco significato ma servono per costruire delle cose più complesse).\\
+"spline" prende il nome da un oggetto flessibile che può essere modellato in modo tale da creare un polinomio che passa per i punti assegnati.\\
+Le \underline{spline} sono di polinomi definiti a tratti.\\
+Consideriamo un \textbf{intervallo chiuso e limitato $[a,b]$}, consideriamo una \textbf{decomposizione $\Delta$ di $[a,b]$}, così definita
+\begin{equation}
+    \Delta = \{a \equiv x_0 < x_1 < x_2 < ... < x_{i-1}< x_i < x_{x+1}< ... < x_n \equiv b\}
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-17 alle 23.35.11.png}
+    \caption{}
+\end{figure}
+\\Per funzione spline \underline{di primo grado} costruita sulla decomposizione $\Delta$ intendiamo (\textbf{aggiungiamo che la funzione sia interpolante})
+\begin{gather}
+    \begin{matrix}
+        y_0&y_1&y_2&...&y_{i-1}&y_i&y_{i+1}&...&y_n\\
+    \end{matrix}\\
+    S_1(x_i) = y_i \ \ i = 0,1,...,n \rightarrow \text{condizione di interpolazione}
+\end{gather}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-17 alle 23.48.12.png}
+    \caption{}
+\end{figure}
+Nel caso generale $S_1(x)$ è descritto come l'insieme di tutti i polinomii che collegano i punti nei vari intervalli
+\begin{gather*}
+    S_1(x) =\\= \begin{cases}
+        S_1^{(1)}(x) = a_0^{(1)} + a_1^{(1)}(x-x_0) \ \ x_0 \leq x \leq x_1 \ \ = y_0 + f[x_0,x_1](x-x_0)=y_0\frac{y_1-y_0}{x_1-x_0}(x-x_0)\\
+        S_1^{(2)}(x) = a_0^{(2)} + a_1^{(2)}(x-x_1) \ \ x_1 \leq x \leq x_2 \ \ = y_1 + f[x_1,x_2](x-x_1)=y_1\frac{y_2-y_1}{x_2-x_1}(x-x_1)\\
+        \vdots\\
+        S_1^{(i)}(x) = a_0^{(i)} + a_1^{(i)}(x-x_{i-1}) \ \ x_{i-1} \leq x \leq x_i \ \ = y_{i-1} + f[x_{i-1},x_i](x-x_{i-1})=y_{i-1}\frac{y_i-y_{i-1}}{x_i-x_{i-1}}(x-x_{i-1})\\
+        \vdots\\
+        S_1^{(n)}(x) = a_0^{(n)} + a_1^{(n)}(x-x_{n-1}) \ \ x_{n-1} \leq x \leq x_n \ \ = y_{n-1} + f[x_{n-1},x_n](x-x_{n-1})=y_{n-1}\frac{y_n-y_{n-1}}{x_n-x_{n-1}}(x-x_{n-1})\\
+    \end{cases}
+\end{gather*}
+Quali sono le proprietà di $S_1(x)$? Per quanto riguarda i singoli tratti, come ad esempio, $S_1^{(2)}$, è di classe $C^{\infty}$, $S_1^{i} \in C^{\infty}([x_1,x_2])$.\\
+Mentre, ritornando alla funzione generale, $S_1$ è una funzione polinomiale definita a tratti ed è di classe $C^{0}([a,b])$.\\
+DOMANDA: supponiamo che le ordinate assegnate risultino il valore di una funzione f(x)
+\begin{equation}
+    y_i = f(x_i) \ \ i = 0,1,...,n
+\end{equation}
+supponiamo che la $f(x)$ la conosco ed individuo alcuni vincoli, come ad esempio $f(x) \in C^2([a,b])$ che errore posso avere se approssimo $f(x)$ con una spline lineare interpolante?
+\begin{equation}
+    r(x) = f(x) - S_1(x) = f(x) - S_1^{(i)} = \frac{f''(\xi_x)}{2!}(x-x_{i-1})(x-x_i)
+\end{equation}
+Abbiamo scritto $S_1^{(i)}$ quindi andiamo a considerare un generico sotto-intervallo, la dereivata che dovrei fare è la derivata II perché ho due punti (estremi dell'intervallo)
+\begin{equation}
+    |r(x)| \leq \max_{x_{i-1}\leq x \leq x_i} \frac{|f''(x)|}{2}|(x-x_{i-1})(x-x_i)| \leq ...
+\end{equation}
+$(x-x_{i-1})(x-x_i)$ rappresenta una parabola che ha il massimo nel vertice, ovvero nel punto medio ribaltato perché abbiamo il valore assoluto
+\begin{gather}
+    ... \leq \max_{x_{i-1}\leq x \leq x_i} \frac{|f''(x)|}{2}\frac{h!^2}{4} = \\
+    = \frac{\max_{x_{i-1}< x < x_i}|f''(x)|}{8}h_i^2\\
+    h_i = x_i - x_{i-1}
+\end{gather}
+Ora consideriamo l'intero intervallo
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-18 alle 00.34.40.png}
+    \caption{}
+\end{figure}
+\begin{equation}
+    |r(x)| \leq \frac{\max_{a< x < b}|f''(x)|}{8}h^2
+\end{equation}
+dove $h = \max_i h_i$ (norma della decomposizione)\\
+Ora cosa possiamo dire su questo resto che ha questo maggiorante, qui più punti abbiamo e più l'errore descresce fino a far tendere r(x) a 0. Al tendere della norma della decomposzione a 0 anche l'errore tende a 0. Se la f(x) non è derivabile laparte della f''(x) non si può scrivere ma ci sono dei teoremi che dicono che se la funzione è anche solo $C^0$, per $h\rightarrow 0$ la spline lineare tende alla funzione.\\
+Supponiamo che una delle y che avevano in input sia sbagliata, quindi 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-18 alle 00.39.40.png}
+    \caption{}
+\end{figure}
+Il punto $\tilde{y}_i$ è un punto sbagliato, nel senso che il valore esatto è $y_i$ e non $\tilde{y}_i$, quindi nel caso in cui avessi un'interpolazione che tiene conto di tutti i punti l'errore può determinare un errore nei coefficienti che calcolo e quindi il polinomio ha un grafico sbagliato in tutto $[a,b]$ e quindi anche lontano da $x_i$, nel caso dell'interpolazione vista ora l'errore sarebbe solo nel tratto in cui ho commesso l'errore, quindi nei due tratti che hanno come punto in comune il punto sbagliato.
+\chapter{Lezione 19/10}
+Prendiamo una spline che ha questo grafico
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-20 alle 09.48.43.png}
+    \caption{}
+\end{figure}
+\begin{equation}
+    S_1(x) \in C^0 ([x_0,x_4])
+\end{equation}
+DOMANDA: com'è il grafico della derivata prima in questa decomposizione
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-20 alle 09.52.56.png}
+    \caption{Nel primo tratto la funzione è crescente e quindi la derivata è positiva, nel secondo tratto la derivata è negativa perché la funzione decresce, nel terzo tratto la funzione è costante e quindi la derivata è uguale a zero, mentre nell'ultimo tratto è di nuovo positiva perché la funzione cresce}
+\end{figure}
+\newpage
+Consideriamo l'intervallo $[a,b]$ chiuso e limitato e consideriamo una decomposizione arbitraria (potrebbe essere uniforme, per esempio) e voglio costruire delle funzioni fatte in questo modo (una funzione polinomiale di II grado)
+\begin{equation}
+    \varphi_0 (x) = \begin{cases}
+        \frac{x_1-x}{x_1-x_0} \ \ x_0\leq x \leq x_1\\
+        0 \ \ se \ x \notin (x_0,x_1)
+    \end{cases}
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Schermata 2022-10-20 alle 10.06.13.png}
+    \caption{}
+\end{figure}
+\begin{equation}
+    \varphi_n (x) = \begin{cases}
+        \frac{x-x_{n-1}}{x_n - x_{n-1}} \ \ x_{n-1}\leq x \leq x_n\\
+        0 \ \ x \notin (x_{n-1},x_n)
+    \end{cases}
+\end{equation}
+Ora abbiamo definito gli estremi e quindi dobbiamo definire quello che sta "in mezzo"
+\begin{equation}
+    \varphi_i(x) = \begin{cases}
+        \frac{x-x_{i-1}}{x_i - x_{i-1}} \ \ x \in (x_{i-1},x_i)\\
+        \frac{x_{i+1}-x}{x_{i+1}-x_i} \ \ x \in (x_i, x_{i+1})\\
+        0 \ \ x \notin (x_{i-1},x_{i+1})
+    \end{cases}
+\end{equation}
+Ho costruito
+\begin{equation}
+    \varphi_0 (x), \varphi_1 (x),..., \varphi_i(x), ..., \varphi_n(x)
+\end{equation}
+quindi ho n+1 funzioni\\
+Se volessi interpretare la funzione come una spline lineare interpolante, che punti di partenza devo prendere in considerazione?\\
+\begin{equation}
+    \varphi_0(x)\\
+    \begin{matrix}
+        y_0 = 1&y_1 = 0&...&y_n=0
+    \end{matrix}
+\end{equation}
+I punti sono così per la definizione che abbiamo visto prima, inoltre questi punti così fanno pensare alla \textbf{Delta di Dirac}, che è una funzione che vale 1 in un punto e 0 negli altri punti.\\
+Prendiamo una generica $\varphi_i$ nel punto $x_j$ con $i = 0,...,n$ e $j = 0,...,n$, quindi abbiamo tutti i punti
+\begin{equation}
+    \varphi_i(x) = \delta_{ij} = \begin{cases}
+        1 \ \ se \ i=j\\
+        0 \ \ se \ i\neq j 
+    \end{cases}
+\end{equation}
+Proviamo ad interpretare le $\varphi_i$ come dei polinomi di Lagrange, le spline lineari le costruisco con le $\varphi_i$ quindi sono le funzioni di base per le spline lineari.\\
+Cosa dobbiamo fare per dire che le $\varphi_i$ sono una base per le spline lineari/per gli elementi finiti? Per essere una base per le spline devono essere \textbf{linearmente indipendenti}. Come dimostro che queste funzioni sono linearmente indipendenti?\\
+Prendiamo $\varphi_0(x), \varphi_1(x), \varphi_2(x)$ facciamo una combinazione lineare a coefficienti costanti e la uguagliamo a zero, per avere che sono uguali a zero e linearmente indipendenti i coefficienti devono essere contemporamente nulli
+\begin{equation}
+    a_0 \varphi_0(x) + a_1 \varphi_1(x) + a_2 \varphi_2(x)
+\end{equation}
+Per trovare questo non dobbiamo fare altro che prendere dei punti in maniera intelligente
+\begin{gather}
+    x = x_0 \ \ \ \ a_0\underbrace{\varphi_0(x_0)}_{1} + a_1 \underbrace{\varphi_1(x_0)}_{0} + a_2 \underbrace{\varphi_2(x_0)}_{0} = 0 \rightarrow a_0 = 0\\
+    x = x_1 \ \ \ \ a_0\underbrace{\varphi_0(x_1)}_{0} + a_1 \underbrace{\varphi_1(x_1)}_{1} + a_2 \underbrace{\varphi_2(x_1)}_{0} = 0 \rightarrow a_1 = 0\\
+    x = x_2 \ \ \ \ a_0\underbrace{\varphi_0(x_2)}_{0} + a_1\underbrace{\varphi_1(x_2)}_{0} + a_2\underbrace{\varphi_2(x_2)}_{1} = 0 \rightarrow a_2 = 0
+\end{gather}
+Altro modo per verificare
+\begin{gather}
+    \begin{cases}
+        a_0\varphi_0(x_0) + a_1\varphi_1(x_0)+a_2 \varphi_2(x_0) = 0\\
+        a_0\varphi_0(x_1) + a_1\varphi_1(x_1)+a_2 \varphi_2(x_1) = 0\\
+        a_0\varphi_0(x_2) + a_1\varphi_1(x_2)+a_2 \varphi_2(x_2) = 0
+    \end{cases} \longrightarrow\\
+    \longrightarrow \begin{bmatrix}
+        \varphi_0(x_0)&\varphi_1(x_0)&\varphi_2(x_0)\\
+        \varphi_0(x_1)&\varphi_1(x_1)&\varphi_2(x_1)\\
+        \varphi_0(x_2)&\varphi_1(x_2)&\varphi_2(x_2)
+    \end{bmatrix}\begin{bmatrix}
+        a_0\\a_1\\a_2
+    \end{bmatrix} = \begin{bmatrix}
+        0\\0\\0
+    \end{bmatrix} \longrightarrow\\
+    \longrightarrow \begin{bmatrix}
+        1&0&0\\
+        0&1&0\\
+        0&0&1
+    \end{bmatrix}\begin{bmatrix}
+        a_0\\a_1\\a_2
+    \end{bmatrix} = \begin{bmatrix}
+        0\\0\\0
+    \end{bmatrix}
+\end{gather}
+Essendo il sistema omogeneo, sicuramente la soluzione è quella banale e qui è l'unica soluzione possibile.\\
+Ora possiamo estenere ad n+1 funzioni:
+\begin{gather}
+    a_0\varphi(x)+a_1\varphi(x)+...+a_i\varphi(x)+...+a_n \varphi(x) = 0\\
+    \begin{cases}
+            a_0\varphi_0(x_0) + a_1\varphi_1(x_0)+...+a_n \varphi_n(x_0) = 0\\
+            a_0\varphi_0(x_1) + a_1\varphi_1(x_1)+...+a_n \varphi_n(x_1) = 0\\
+            \vdots\\
+            a_0\varphi_0(x_n) + a_1\varphi_1(x_n)+...+a_n \varphi_n(x_n) = 0
+    \end{cases}\\
+    \begin{bmatrix}
+        1&0&0&...&0\\
+        0&1&0&...&0\\
+        0&0&1&...&0\\
+        \vdots\\
+        0&0&0&...&1
+    \end{bmatrix}\begin{bmatrix}
+        a_0\\a_1\\a_2\\\vdots\\a_n
+    \end{bmatrix} = \begin{bmatrix}
+        0\\0\\0\\\vdots \\0
+    \end{bmatrix}
+\end{gather}
+Anche in questo caso l'unica soluzione è quella banale e quindi sono linearmente indipendenti e quindi sono una base
+\begin{equation}
+    S_1(x) = \sum_{i = 0}^n C_i \varphi_i(x)
+\end{equation}
+Dove $C_i$ è il coefficiente della combinazione lineare, che valori hanno?\\
+Vado a calcolare $S_1(x_j) = y_i S_i(x)$, questa ha la stessa struttura di 
+\begin{equation}
+    p(x) = \sum_{i=0}^n y_i L_i(x)
+\end{equation}
+base lagrangiana
+\chapter{Lezione 21/10}
+La spline converge a $f(x)$ per $h\rightarrow 0$, se indico con $n$ il numero dei punti, questo limite è equivalente a scrivere $n\rightarrow +\infty$, cioè è uguale scrivere $n\rightarrow +\infty$ e $h\rightarrow h$, dove h è la \textbf{norma della decomposizione} (NB $h$ è legato a $n$)
+\begin{figure}[h!]
+    \centering
+    \subfloat[\emph{Qui faccio $h\rightarrow 0$}]{\includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-22 alle 10.55.23.png}\quad}
+    \subfloat[\emph{Qui faccio $n\rightarrow +\infty$ e vado ad infittire questa parte e quindi ho $n\rightarrow +\infty$ ma non ho $h\rightarrow 0$}]{\includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-22 alle 10.58.16.png}}
+    \caption{}
+\end{figure}
+Se lavorassimo con \textbf{decomposizioni a passo costante} allora $n\rightarrow \infty$ sarebbe uguale a $h \rightarrow 0$\\
+Noi però in generale non vogliamo decomposizioni uniformi, per esempio:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-22 alle 11.03.15.png}
+    \caption{}
+\end{figure}
+\\Nel primo intervallo abbiamo bisogno di molti punti per ottenere un'approssimazione di questa funzione, mentre nella seconda parte abbiamo bisogno di pochi punti
+\section*{Spline}
+Ci sono spline di ordine superiore? Sì. Possiamo arrivare a costruire spline di II e III ordine (sono quelle fondamentali per stimare la soluzione di alcune equazioni differenziali)
+PROBLEMA: abbiamo una decomposizione dell'intervallo [a,b]
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-22 alle 11.08.09.png}
+    \caption{}
+\end{figure}
+\begin{equation}
+    \Delta = \{a \equiv x_0 < x_1 < ... < x_n \equiv b\}
+\end{equation}
+Quindi abbiamo 
+$$\begin{matrix}
+    x_0&x_1&...&x_n\\
+    y_0&y_1&...&y_n\\
+    y'_0&y'_1&...&y'_0
+\end{matrix}$$
+Voglio costruire un polinomio interpolatore $p(x)$ tale che $p(x_i) = y_i$, $p'(x_i) = y'_i$ e lo vogliamo definire a tratti ed esso, sul singolo intervallo, è la restrizione di un polinomio di III grado
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-22 alle 11.21.41.png}
+    \caption{}
+\end{figure}
+\begin{gather}
+    p_i(x) \ con \ x \in [x_{i-1},x_i]\\
+    p_i(x_{i-1}) = y_{i-1} \ \ p_i(x_i) = y_i\\
+    p'_i(x_{i-1}) = y'_{i-1} \ \ p_i'(x_i) = y'_i\\
+    p_i(x) = a_i + b_i (x-x_{i-1}) + c_i (x-x_{i-1})^2 + d_i (x-x_{i-1})^2(x-x_i)
+\end{gather}
+come ultimo termine non ho scritto $(x-x_{i-1})^3$ perché è utile per i prossimi passaggi per calcolare i coefficienti
+\begin{equation}
+    p_i'(x) = b_i + 2c_i (x-x_{i-1}) + 2 d_i (d-x_{i-1})(x-x_i) + d_i (x-x_{i-1})^2
+\end{equation}
+Una volta scritto questo possiamo usare i vincoli.\\
+Calcolo i vinccoli
+\begin{gather}
+    y_{i-1} = p_i (x_{i-1}) = \color{red}{a_1}\\
+    y_{i-1}' = p_i'(x_{i-1}) = \color{blue}{b_i}\\
+    y'_i = p'_i (x_i) = {\color{red}{a_1}} + {\color{blue}{b_i}} \underbrace{h_i}_{h_i = x_i - x_{i-1}} + a_i h_1^2 \rightarrow y_i = y_{i-1} + y'_{i-1} h_i + c_i h_i^2 \rightarrow\\
+    \rightarrow \frac{y_i - y'_{i-1}}{h_i^2} - \frac{y'_{i-1}\cancel{h_i}}{h^{\cancel{2}}} = c_i\\
+    y_i' = p_i'(x_i) = b_i + 2c_i \cdot h_i + d_i h_i^2 \rightarrow d_i = \frac{y_i' - y'_{i-1}}{h_i^2}- 2 \frac{y_i - y_{i-1}}{h^3}
+\end{gather}
+Quindi abbiamo determinato tutti i coefficienti, questo polinomio è di terzo grado e quindi ho bisogno di 4 punti, posso costruire un modello che è continuo e ha la derivata continua in questo intervallo? Sì, le spline sono un modello che soddisfa questo.
+\begin{definition}
+    SPLINE QUADRATICA:\\
+    l'idea è quella di partire da $[a,b]$, da una decomposizione $\Delta$ e costruire una \textbf{spline quadratica interpolante}
+\end{definition}
+$S_2(x)$ è una funzione polinomiale a tratti, dove i tratti sono gli intervalli che posso costruire $[x_{i-1},x_i]$ su ciascun tratto è un polinomio di grado $\leq 2$, interpolante $S_2(x_i) = y_i$, e $S_2(x) \in C^1([a,b])$.\\
+La funzione $S_2(x)$ è una sequenza di polinomi
+\begin{equation}
+    S_2(x) = \begin{cases}
+        S_2^{(1)} = a_0^{(1)} + a_1^{(1)}(x-x_0)+a_2^{(1)}(x-x_0)^2 \ \ x_0 \leq x \leq x_1\\
+        S_2^{(2)} = a_0^{(2)} + a_1^{(2)}(x-x_0)+a_2^{(2)}(x-x_0)^2 \ \ x_1 \leq x \leq x_2\\
+        \vdots\\
+        S_2^{(i)} = a_0^{(i)} + a_1^{(i)}(x-x_0)+a_2^{(i)}(x-x_0)^2 \ \ x_{i-1} \leq x \leq x_i\\
+        \vdots\\
+        S_2^{(n)} = a_0^{(n)} + a_1^{(n)}(x-x_0)+a_2^{(n)}(x-x_0)^2 \ \ x_{n-1} \leq x \leq x_n\\
+    \end{cases}
+\end{equation}
+Quante sono le incognite da determinare? Abbiamo $3n$ incognite, quante sono le equazioni? $n$ equazioni, per soddisfare le condizioni di interpolazione abbiamo:
+\begin{example}
+    .
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.3 \linewidth]{Foto/Schermata 2022-10-22 alle 14.59.15.png}
+        \caption{}
+    \end{figure}
+    \begin{equation}
+        S_2(x) = \begin{cases}
+            S_2^{(1)} = a_0^{(1)} + a_1^{(1)}(x-x_0)+a_2^{(1)}(x-x_0)^2 \ \ x_0 \leq x \leq x_1\\
+            S_2^{(2)} = a_0^{(2)} + a_1^{(2)}(x-x_0)+a_2^{(2)}(x-x_0)^2 \ \ x_1 \leq x \leq x_2\\
+        \end{cases}
+    \end{equation}
+    Qui ho 6 incognite, ora scriviamo le equazioni in modo tale da avere un sistema con 6 equazioni in 6 incognite, in paticolare ora scriviamo le condizioni di interpolazione:
+    \begin{equation}
+        \begin{cases}
+            S_2^1(x_0) = y_0\\
+            S_2^1(x_1) = y_1\\
+            S_2^2(x_1) = y_1\\
+            S_2^2(x_2) = y_2
+        \end{cases}
+    \end{equation}
+    Queste equazioni soddisfano le condizioni $C^0$, ma io vogio che sia $C^1$ quindi devo aggiungere una condizione, ovvero
+    \begin{equation}
+        [S_2^1(x)]'_{x = x_1} = [S_2^2(x)]'_{x = x_1}
+    \end{equation}
+    \begin{equation}
+        S_2'(x) = \begin{cases}
+            a_1^1 + 2a_2^1 (x-x_0) \ \ x_0 \leq x \leq x_1\\
+            a_1^2 + 2a_2^2 (x-x_0) \ \ x_1 \leq x \leq x_2
+        \end{cases}
+    \end{equation}
+    Quindi ora ho 5 equazioni in 6 incognite. Perà NON abbiamo altre equazioni da aggiungere perché per essere una spline quadratica interpolante ho solo 5 equazioni, infatti ho infinite spline quadratiche interpolanti perché ho una variabile libera.
+\end{example}
+\begin{itemize}
+    \item La spline interpolante lineare è una sola, nessun grado di libertà
+    \item Le spline quadratiche sono infinite, ho 2-1 gdl e quindi sono $\infty^1$
+    \item Le spline cubiche hanno 3-1 gdl e quindi sono $\infty^2$
+\end{itemize}
+Quindi, per esempio per le spline quadratiche, abbiamo bisogno di un parametro come per esempio la $y'_0(x)$ e abbiamo il nostro sesto vincolo
+\chapter{Lezione 24/10}
+DOMANDA: supponiamo di considerare un intervallo $a,b$ e una decomposizione $\Delta ={a \equiv x_0 < x_1 < x_2 < ... < x_{i-1} < x_i < x_{i+1} < ... < x_n}$ quindi in totale ho $n+1$ nodi:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-24 alle 17.17.10.png}
+    \caption{}
+\end{figure}
+abbiamo n tratti che possono essere uguali oppure diversi tra loro.\\
+$S_2(x)$ spline quadratica interpolante
+\begin{equation}
+    S_2(x) \begin{cases}
+        S_2^{(1)}\\
+        S_2^{(2)}\\
+        \vdots\\
+        S_2^{(n)}
+    \end{cases}
+\end{equation}
+Quindi ho n polinomi di II grado, quindi $3n$ incognite.\\
+Quali e quanti sono i vincoli per ricavare questo $S_2(x)$? La $S_2^1$ impone 2 condizioni di vincolo per l'interpolazione, $S_2^{(1)} (x_1) = y_1 \ e \ S_2^{(1)} (x_0) = y_0$ e così per tutte le altre funzioni polinomiali, quindi ho $2n$ vincoli interpolatori e questo produce una $S_2$ continua, se voglio raggiungere la continuità anche della derivata prima devo avere $n-1$ vincoli. Il numero di equazioni che costruisco dalla definizione sono $3n-1$. Le spline quadratiche interpolanti sono $\infty^1$.\\
+COM'È FATTA LA MATRICE?
+Torniamo al problema con 9 equazioni in 9 incognite (9 equazioni perché abbiamo aggiunto un vincolo dato dal problema).
+\begin{gather}
+    \begin{cases}
+        \color{red}{a_0^{(1)} = y_0}\\
+        \color{blue}{a_0^{(1)}+a_1^{(1)}(\underbrace{h_1}_{x_2-x_1})+a_2^{(1)}(h_1^2) = y_1}\\
+        \color{green}{a_0^{(2)}=y_1}\\
+        a_0^{(2)} +a_1^{(2)}(h_2)+a_2^{(2)}(h_2^2) = y_2\\
+        a_0^{(3)} = y_2\\
+        a_0^{(3)} + a_1^{(3)}(h_3)+ a_2^{(3)}(h_3^2) = y_3
+    \end{cases}\\
+    \begin{matrix}
+        a_0^{(1)}&a_1^{(1)}&a_2^{(1)}&a_0^{(2)}&a_1^{(2)}&a_2^{(2)}&a_0^{(3)}&a_1^{(3)}&a_2^{(3)}\\
+        \hline
+        1&0&0&0&0&0&0&0&0\\
+        1&h_1&h_1^2&0&0&0&0&0&0\\
+        0&0&0&1&0&0&0&0&0\\
+        0&0&0&1&h_2&h_2^2&0&0&0\\
+        0&0&0&0&0&0&1&0&0\\
+        0&0&0&0&0&0&1&h_3&h_3^2\\
+        \dots\\
+        \dots
+    \end{matrix}
+\end{gather}
+NB. nella matrice (nelle ultime due righe mancano le CONDIZIONI SULLE DERIVATE)\\
+Qui abbiamo una matrice 9x9, quindi ho 81 elementi di cui però molti sono nulli, quindi dal punto di vista informatico lo possiamo trattare memorizzando i valori e i rispettivi indicativo
+\begin{example}
+    Calcolare le spline in $\bar{x}$\\
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-24 alle 17.58.26.png}
+        \caption{}
+    \end{figure}
+    ammettiamo di avere una funzione di questo tipo
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4 \linewidth]{Foto/Schermata 2022-10-24 alle 17.58.42.png}
+        \caption{}
+    \end{figure}
+    \\Vogliamo determinare $\alpha$.\\
+    Posso fare una ricerca biniaria dividendo l'intervallo in 2 finché i due estremi di segno opposto e restringo il campo fino ad arrivare all'approssimazione che desidero per $\alpha$.\\
+    Tornando alla determinazione della splina nel punto in cui cade $\bar{x}$ e proviamo a calcolare la spline quadratica. Per trovare l'intervallo facciamo una ricerca dicotomica come visto prima cercando se $\bar{x}$ è all'interno dell'intervallo e vado avanti restringendo l'intervallo via via.
+\end{example}
+\section{Spline cubiche}
+\begin{definition}
+    DEFINIZIONE SPLINE: Sia $\Delta = {a = x_0 < x_1 < ... < x_i < ... < x_n = b}$ una decomposizione di $[a,b]$. Una funzione \textbf{spline} di grado $m$ con nodi $x_i$, $i= 0,1,...,n$ è una funzione $S_m(x)$ in $[a,b]$ tale che:
+    \begin{itemize}
+        \item su ogni intervallo $[x_{i-1},x_i]$, $S_m(x)$ è un polinomio di grado m
+        \item la funzione $S_m(x)$ e le sue derivate fino all'ordine $m-1$ sono continue su $[a,b], S_m(x) \in C^{m-1}([a,b])$.\\
+    \end{itemize}
+\end{definition}
+Dati $y_0,y_1,...,y_n$, diremo \textbf{spline interpolante} la spline $S_m(x)$ tale che
+\begin{equation}
+    S_m(x_i) = y_i, \ \ \ i = 0,1,...,n
+\end{equation}
+Sia $[a,b]$ un intervallo dell'asse reale e $\Delta$ una sua decomposizione
+\begin{equation}
+    \Delta = {a = x_0 < x_1 < ... < x_n = b}
+\end{equation}
+Assegnati arbitrariamente i valori $y_0,y_1,...,y_n$ si dice \textbf{spline cubica interpolante} relativa alla decomposizione $\Delta$ la funzione $S_{3,\Delta}(x)$ tale che:
+\begin{enumerate}
+    \item $S_{3,\Delta}(x)$ è una funzione polinomiale definita a tratti, e ciascun tratto $[x_{i-1},x_i]$ è un polinomio di terzo grado
+    \item $S_{3,\Delta}(x) \in C^2[(a,b)]$
+    \item .\begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Schermata 2022-10-24 alle 18.22.49.png}
+        \caption{}
+    \end{figure}
+\end{enumerate}
+I gradi di libertà del problema (incognite) sono $4n$ (coefficienti della spline).\\
+Mentre i vincoli (condizioni date dal problema) sono:
+\begin{itemize}
+    \item $3(n-1)$ per imporre la regolarità $C^2([x_0,x_n])$
+    \item $n+1$ vincoli per l'interpolazione degli $n+1$ nodi
+\end{itemize}
+\textit{Per avere la classe $C^2$ devo imporre la continuità della funzione, della derivata prima e della derivata seconda}
+Oppure:
+\begin{itemize}
+    \item $2(n-1)$ vincoli dall'interpolazione nodi interni $+2$ vincoli dall'interpolazione nei nodi estremi $x_0$ ed $x_n \rightarrow 2n$
+    \item Continuità della derivata prima: $n-1$ vincoli
+    \item Continuità della derivata seconda: $n-1$ vincoli
+\end{itemize}
+In totale: $2n+n-1+n-1 = 4n -2$\\
+Abbiamo in totale $4n-2$ vincoli e quindi possiamo costruire $\infty^2$.\\
+\begin{example}
+    spline cubiche interpolanti \textbf{naturali/periodiche/vincolate}. Tutti gli aggettivi in grassetto sono espressioni che indicano vincoli aggiuntivi che mi permettono di avere i due vincoli mancanti.
+\end{example}
+\chapter{Lezione 26/10}
+Riprendendo quanto detto la volta scorsa vediamo che se aggiungiamo due vincoli, indicati dal problema, alle spline cubiche, possiamo costruire in modo univoco la spline.\\
+Possiamo procedere alla determinazione diretta dei coefficienti:
+\begin{equation}
+    a_i^j  \ \ i = 0,1,...; \ j = 1,...,n
+\end{equation}
+dobbiamo risolvere un sistema lineare con $4n$ equazioni in altrettante incognite.\\
+Cerchiamo un metodo che permette di ridurre la dimensione del sistema lineare e consenta di determinare in modo indiretto tutti i coefficienti della spline. A questo scopo introduciamo la definizione di \textbf{momento della spline} nel modo generico $x_i$
+\begin{equation}
+    M_i = \left[S'''_{3,\Delta}(x)\right]_{x = x_i} \ \ \ i = 0,1,...,n
+\end{equation}
+Nel genertico tratto $[x_{i-1},x_i]$ la derivata seconda della spline è un polinomio lineare, quindi se fossero noti i momenti (non lo sono ma lo ipotizziamo) $M_{i-1}$ e $M_i$ potremmo scrivere, sull'intervallo, la derivata seconda nella seguente forma:
+\begin{equation}
+    \left[S_{3,\Delta}^n(x)\right]'' = \frac{(x-x_{i-1})M_i+(x_i-x)M_{i-1}}{h_i} \ \ \ h_i = x_i - x_{i-1}
+\end{equation}
+Integrando otteniamo
+\begin{equation}
+    \left[S_{3,\Delta}^n(x)\right]' = \frac{(x-x_{i-1})^2}{2h_i}M_i + \frac{(x_i-x)^3}{2h_i}M_{i-1}+A_i
+\end{equation}
+Integrando una seconda volta abbiamo:
+\begin{equation}
+    S_{3,\Delta}^n (x) = \frac{(x-x_{i-1}^3)}{6h_i}M_i + \frac{(x_i - x)^3}{6h_i}M_{i-1} + A_i(x-x_{i-1}) + B_i
+\end{equation}
+Dove $A_i$, $B_i$ sono due costanti (da determinare) introdotte dalla doppia integrazione. Per determinarle imponaimo le condizioni di interpolazione agli estremi dell'intervallo $[x_{i-1},x_i]$
+\begin{gather}
+    in \ x_{i-1} \ \ y_{i-1} = S^i_{3,\Delta}(x_{i-1}) = \frac{(x_i-x_{i-3})^3}{6h_i}M_{i-1}+B_i \rightarrow B_i = y_{i-1}-\frac{h_i^2M_{i-1}}{6}\\
+    in \ x_i \ \ y_i = S_{3.\Delta}^i(x_i) = \frac{h_i^3}{6h_i}M_i + A_ih_i + B_i \rightarrow A_i = \frac{y_i}{h_i}-\frac{h_iM_i}{6}-\frac{B_i}{h_i}
+\end{gather}
+sostituendo a $B_i$ la forma precedentemente ottenuta abbiamo:
+\begin{equation}
+    A_i = \frac{y_i - y_{i-1}}{h_i} + \frac{h_i}{6}(M_{i-1}-M_i)
+\end{equation}
+\newpage
+Infine sostituendo le espressioni di $A_i$ e $B_i$ otteniamo la forma della spline sull'intervallo $[x_{i-1},x_i]$ in funzione dei momenti $M_{i-1}$ e $M_i$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7 \linewidth]{Foto/Screenshot 2022-10-27 alle 11.52.28.png}\
+    \caption{}
+\end{figure}
+\\Abbiamo ora i seguenti problemi:
+\begin{enumerate}
+    \item Costruire un sistema per determinare i momenti
+    \item Calcolare i coefficienti $a_0^i, a_1^i,a_2^i,a_3^i$ a partire dai mommenti calcolati (NB con le spline cubiche siamo passati da $4n$ incognite a $n+1$)
+\end{enumerate}
+DOMANDA: la condizione data dalla classe $C_2$, quindi che la derivata seconda deve essere continua, l'abbiamo già sfruttata o possiamo usarla? Prendiamo due intervalli consecutivi con un punto in comune $x_1$, in $x_1$ chi c'è come momento? $M_1$, il momento $M_1$ del polinomio a sx e del polinomo a dx. Quindi $M_1$ è il momento della spline in $x_1$, ma c'è anche il valore della derivata II in $x_1$ sia per la spline cubica di sx che per quella di dx. Quindi, l'interpolazione l'abbiamo usata e abbiamo usato anche la condizione della classe $C^2$ quando abbiamo definito i momenti. Quindi usiamo la classe $C^1$ per aggiungere delle condizioni.\\
+Per fare questo andiamo a creare un sitema con $n+1$ incognite (perché abbiamo $M_0,...,M_n$ momenti perché avevamo $x_0,...,x_n$ nodi).\\
+Su 3 punti la continuità della derivata prima è su $x_1$ ponendo le due derivate uguali.\\
+Nel caso generale, dato che dobbiamo escludere gli estremi, abbiamo $n-1$ condizioni.\\
+Abbiamo $n+1$ incognite e poniamo $n-1$ equazioni, quindi abbiamo 2 parametri liberi e quindi è $\infty^2$
+\sepline{}
+Una spline lineare si può rappresentare come una matrice con due (coeff. $a_0,a_1$) colonne ed n righe.\\
+Una spline quadratica è una matrice nx3\\
+Una spline cubica è una matrice nx4
+\sepline{}
+\newpage
+Partiamo dal PROBLEMA 2:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Screenshot 2022-10-27 alle 12.02.58.png}
+    \caption{}
+\end{figure}
+\\PROBLEMA 1 (calcolo dei momenti)\\
+Dobbiamo costruire un sistema che ha come incognite i momenti $M_i$. Poiché abbiamo già usato il vincolo dell'itnerpolazione e la continuità seconda, useremo la continuità della derivata prima \textbf{in tutti i nodi interni}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Screenshot 2022-10-27 alle 12.07.03.png}
+    \caption{}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Screenshot 2022-10-27 alle 12.07.52.png}
+    \caption{}
+\end{figure}
+\newpage
+NB: $h_i$ è la misura dell'intervallo (quindi una lunghezza), ovvero un numero e perciò $h_i>0$\\
+$\alpha_i$ essendo un rapporto tra due lunghezze è $0<\alpha_i<1$ e lo stesso vale per $0<\beta_i<1$, quindi $\alpha_i + \beta_i = 1$\\
+Possiamo esprimere le condizioni di continuità della derivata prima nei nodi interni con
+\begin{equation}
+    \alpha_i M_{i-1}+2M_i+\beta M_{i+1}=d_i \ \ \ i = 1,2,...,n-1
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Screenshot 2022-10-27 alle 12.11.14.png}
+    \caption{}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Screenshot 2022-10-27 alle 12.13.28.png}
+    \caption{}
+\end{figure}
+\newpage
+\section{Spline cubica naturale}
+La dicitura \textbf{naturale} indica che il momento iniziale e quello finale sono nulli:
+\begin{gather}
+    \left[S_{3\Delta}^1\right]''_{x=x_0} = M_0 = 1\\
+    \left[S_{3\Delta}^n\right]''_{x=x_0} = M_n = 1\\
+\end{gather}
+Con queste condizioni il sistema precedente diventa
+\begin{equation}
+    \begin{cases}
+        2M_1 + \beta_1M_2 = d_1\\
+        \alpha_2M_1 + 2M_2 + \beta_2M_3 = d_2\\
+        \vline\\
+        \alpha_{n-1}M_{n-2}+2M_{n-1}=d_{n-1}
+    \end{cases}
+\end{equation}
+Quindi un sistema di $n-1$ equazioni in $n-1$ incognite:
+\begin{equation}
+    \begin{bmatrix}
+        {\color{red}{2}}&{\color{blue}{\beta_1}}&0&\dots&0\\
+        {\color{blue}{\alpha_2}}&{\color{red}{2}}&{\color{blue}{\beta_2}}&&\vdots\\
+        0&\ddots&\ddots&\ddots&0\\
+        \vline&&{\color{blue}{\alpha_{n-2}}}&{\color{red}{2}}&{\color{blue}{\beta_{n-2}}}\\
+        0&\dots&0&\dots&{\color{blue}{\alpha_{n-2}}}&{\color{red}{2}}
+    \end{bmatrix}\begin{bmatrix}
+        M_1\\M_2\\\vdots\\M_{n-2}\\M_{n-1}
+    \end{bmatrix} = \begin{bmatrix}
+        d_1\\d_2\\\vdots\\d_{n-2}\\d_{n-1}
+    \end{bmatrix}
+\end{equation}
+La matice è tridiagonale con le seguenti proprietà:
+$$\alpha_i + \beta_i = 1, \ \ i = 2,...,n, \ \ 0<\beta_1 \leq 1, \ \ 0 < \alpha_{n-1}\leq 1$$
+Quindi la matrice è \textbf{diagonal dominante} ovvero l'elemento sulla diagonale (rosso) è maggiore della della somma dei valori assoluti dei termini sulla stessa riga (blu)\\
+DOMANDA: cosa possiamo dire dal punto di vista degli autovalori di una matrice singolare?\\
+Supponiamo che la matrice sia singolare, $\det(A) = 0$, scriviamo il polinomio caratteristico $\det(A-\lambda I)$ e abbiamo un'equazione nel parametro $\lambda$? Qual è sicuramente una radice del polinomio caratteristico e quindi autovalore della matrice?
+\begin{gather}
+    A \in \mathbb{R}^{n\times n}\\
+    \det A = 0 \rightarrow \text{A è singolare}\\
+    (A - \lambda I) \rightarrow p(\lambda) = \det(A-\lambda I) \rightarrow \det(A-\lambda I) = 0
+\end{gather}
+Se prendo $\lambda = 0$ ho $\det(A) = 0$ quindi se la matrice è singolare ho sicuramente un autovalore nullo, quindi se calcolo gli autovalori e trovo quello nullo so che la matrice è non singolare.\\
+La nostra matrice è DIAGONAL DOMINANTE, quindi un teorema (?) ci dice che possiamo costruire un cerchio di raggio pari alla somma dei valori assoluti della riga meno l'elemento sulla diagonla, nel nostro caso, la matrice è sicuramente o 1 o minore, quindi posso scrivere:
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Screenshot 2022-10-27 alle 12.35.15.png}
+    \caption{Gli autovalori stanno all'interno del cerchio rosso e quindi 0 non c'è per cui la matrice non è singolare}
+\end{figure}
+\\NB se tra gli autovalori di una matrice c'è lo 0 allora la matrice è sicuramente SINGOLARE
+\chapter{Lezione 28/10}
+\section{Teorema di Gerschoring}
+\begin{gather}
+    A\in \mathbb{C}^{n\times m}\\
+    A = \begin{bmatrix}
+        a_{11}&a_{12}&a_{13}&\dots&a_{1n}\\
+        a_{21}&a_{22}&a_{23}&\dots&a_{2n}\\
+        \vdots&\vdots&\vdots\\
+        a_{i1}&a_{i2}&a_{i3}&\dots&a_{in}\\
+        \vdots&\vdots&\vdots\\
+        a_{n1}&a_{n2}&a_{n3}&\dots&a_{nm}
+    \end{bmatrix}\\
+    k_i = \left\{z \in \mathbb{C}: |z-a_{ij}|\leq \sum_{j=1 \ j \neq i}^n|a_{ij}|\right\} \ \ i = 1,...,n
+\end{gather}
+Dove $k_i$ è un cerchio che ha raggio pari al risultato della sommatoria e centro pari a $z- a_{ij}$
+\begin{definition}
+    I TEOREMA DI GERSCHORING\\
+    Tutti gli autovalori cadono nell'unione di $k_i$
+    \begin{equation}
+        \bigcup_{i=1}^n k_i
+    \end{equation}
+    costruisco i cerchi, ne faccio l'unione, e posso affermare che tutti gli autovalori cadono in quell'unione. Questa informazione mi permette di localizzare gli autovalori della matrice.\\
+\end{definition}
+DOMANDA: possiamo migliorare questo risultato? Quindi migliorare la localizzazione. Domanda, la matrice $A^T$ (A trasposta), che autovalori ha? sono gli stessi autovalori di A, perché $A \in \mathbb{C}^{n+m} \ \ p(\lambda) = \det(A-\lambda I)$ dove $p(\lambda)$ è il polinomio caratteristico.\\
+\begin{equation}
+    A^T \in \mathbb{C}^{n\times m} \ \ p(\lambda) = \det(A^T - \lambda I^T) = \det(A - \lambda I)
+\end{equation}
+Calcoliamo $H_i$ i cerchi della matrice trasposta
+\begin{gather}
+    H_i = \left\{z \in \mathbb{C}: |z-a_{ij}|\leq \sum_{j=1 \ j\neq 1}^n |a_{ij}|\right\}
+    U^n_{i=1} H_i 
+\end{gather}
+sono gli autovalori della matrice trasposta (che sono uguali alla matrice A).\\
+Gli autovalori di A devono stare in $\bigcup_{i=1}^n H_i$ ma anche in $\bigcup_{i=1}^n K_i$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-10-31 alle 17.07.13.png}
+    \caption{}
+\end{figure}
+\newpage
+gli autovalori stanno nell'intersezione
+\begin{equation}
+    \left(\bigcup_{i=1}^n k_i\right) \bigcap \left(\bigcup_{i=1}^n h_i\right)
+\end{equation}
+\begin{example}
+    \begin{gather}
+        A = \begin{bmatrix}
+            15&-2&2\\
+            1&10&-3\\
+            -2&1&0
+        \end{bmatrix}\\
+        k_1 = \left\{ z \in \mathbb{C}: |z-15|\leq |-2|+|2|\right\} = \left\{z\in \mathbb{C}: |z-15|\leq 4\right\}\\
+        k_2 = \left\{ z\in \mathbb{C}: |z-10|\leq 4\right\}\\
+        k_3 = \left\{ z\in \mathbb{C}: |z|\leq 3\right\}
+    \end{gather}
+    gli autvalori considerando k:
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6 \linewidth]{Foto/Screenshot 2022-10-31 alle 17.17.58.png}
+        \caption{}
+    \end{figure}
+    \\Sicuramente qui abbiamo una radie reale (perché il polinomio è di grado dispari e quindi avremo una radice complessa che non ha la sua congiugata e quindi è reale).
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6 \linewidth]{Foto/Screenshot 2022-10-31 alle 17.29.53.png}
+        \caption{}
+    \end{figure}
+    \newpage
+    \begin{definition}
+        II TEOREMA DI GERSCHORING:\\
+        se $M_1$ è l'unione di K cerchi ed è disgiunta dall'unione $M_2$ di $n-k$ cerchi allora k autovalori stanno in $M_1$ e $n-k$ stanno in $M_2$
+    \end{definition}
+    I nostri vettori intersezione sono quello rappresentato da $K_3$ (interamente) e l'intersezione tra $K_2$ e $K_1$, quindi abbiamo un autovalore in $K_3$ e due autovalori nella restante intersezione.\\
+\end{example}
+\section*{Spline cubica vincolata}
+Vuol dire che oltre al concetto interpolatorio abbiamo anche delle informazioni indipendenti dalle precedenti e nei suoi estremi si dà il valore della derivata prima in $x_0$ e in $x_n$. In questo caso andiamo ad aumentare il numero di equazioni per risolvere il sistema, invece che diminuire il numero di incognite come nel caso precedente\\
+Le condizioni che caratterizzano questa famiglia di spline cubiche sono
+\begin{equation}
+    \left[S_{3\Delta}(x)\right]'_{x=x_0} = y_0' \ \ \left[S_{3\Delta}\right]'_{x=x_n}=y'_n
+\end{equation}
+Usando il primo vincolo e ricordando la forma della derivata prima della spline nel primo tratto abbiamo:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Screenshot 2022-10-31 alle 17.39.25.png}
+    \caption{}
+\end{figure}
+\\Dunque posto $d_0 = \frac{6}{h_1}\left(\frac{y_1-y_0}{h_1}-y_0'\right)$, abbiamo una nuova equazione
+\begin{equation}
+    2M_0+M_1 = d_0
+\end{equation}
+{\Huge MANCA L'ULTIMA PARTE PERCHÈ NON È ANCORA STATA CARICATA LA SLIDE}
+\chapter{Lezione 02/11}
+Nello spazio 3D, dati una serie di punti, si potrà parlare sempre di unicità del polinomio interpolatore che passa per quei punti?\\
+Sulle due dimensioni abbiamo visto che c'è un teorema che dimostra che è possbile, date certe condizioni, avere un unico polinomio interpolatore.\\
+Se invece abbiamo, sulle tre dimensioni:
+\begin{gather}
+    x_i \ \ i = 0,...,n\\
+    y_j \ \ j = 0,...,m\\
+    f(x_i,y_j)
+\end{gather}
+Proviamo ad immaginare tutti i punti allineati su una retta che parte, per esempio dall'origine, e cresce, per quella retta passano infiniti piani.\\
+Nello spazio il teorema di esistenza ed unicità del polinomio interpolatore "casca".\\
+Ci sono alcuni casi particolari in cui il teorema vale ancora, ma appunto sono dei casi particolari.
+\section{Calcolo degli integrali}
+\begin{equation}
+    F(x) = \int_0^x \frac{1}{1+t^4} dt
+\end{equation}
+Per calcolare questo possiamo calcolare la primitiva e poi sostituire i valori degli estremi:
+\begin{equation}
+    F(x) = \frac{1}{4\sqrt{2}}\log{\frac{x^2+\sqrt{2}+1}{x^2- \sqrt{2}+1}}+\frac{1}{2\sqrt{2}}\left[\arctan\frac{x}{\sqrt{2}-x}+\arctan\frac{x}{\sqrt{2}+x}\right]
+\end{equation}
+questo sarebbe la soluzione dell'integrale, supponiamo di voler calcolare $F(1)$ e $F(0)$.\\
+Il calcolo di queste funzioni è dispendioso anche perché sono da sviluppare in serie. L'altra osservazione è che di fronte a questi termini porta ad un errore che potrebbe essere molto grande.\\
+Quindi ci chiediamo se ci sia una strategia che mi permmette di arrivare a quell'integrale, di fronte al calcolo in generale di una funzione continua, quindi se ho una funzione:
+\begin{equation}
+    F: [a,b] \rightarrow \mathbb{R} \ \ continua
+\end{equation}
+posso stimare questo integrale:
+\begin{equation}
+    I(f) = \int_a^b f(x) dx
+\end{equation}
+\begin{enumerate}
+    \item $\int_a^b f(x) dx = F(b) - F(a)$ così otteniamo un valore che potrebbe essere soggetto alle cose viste prima
+    \item $\int_a^b f(x) dx = f(x)(b-a)$ si può arrivare all'integrale definito anche usando la funzione integranda $f(c)$, però il punto c è un punto opportuno di $[a,b]$
+\end{enumerate}
+\newpage
+\begin{definition}
+    TEOREMA DELLA MEDIA INTEGRANDA:\\
+    cerchiamo di costruire una possibile dimostrazione: quali sono le proprietà di una funzione conitnua in un intervallo chiuso e limitato $[a,b]$: abbiamo un massimo e un minimo
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-02 alle 18.15.36.png}
+        \caption{}
+    \end{figure}
+    \\Si può dire che la funzione sta tra m (minimo) e M (massimo) $m\leq f(x) \leq M$
+\end{definition}
+Quali sono le proprietà degli integrali definiti su qeuste disuguaglianze:
+\begin{gather}
+    x\leq x^2 \ \ [1,2]\\
+    \int_1^2 x dx \leq \int_1^2 x^2 dx
+\end{gather}
+Quindi tornando a sopra:
+\begin{equation}
+    \int_a^b m dx \leq \int_a^b f(x) dx \leq \int_a^b M dx
+\end{equation}
+m e M sono costanti e quindi le porto fuori
+\begin{gather}
+    m\int_a^b dx \leq \int_a^b f(x) dx \leq M\int_a^b dx\\
+    m\underbrace{(b-a)}_{\geq 0} \leq \int_a^b f(x) dx \leq M\underbrace{(b-a)}_{\geq 0}\\
+    m\leq \frac{\int_a^b f(x) dx}{b-a} \leq M
+\end{gather}
+ho un numero compreso tra un minimo e un massimo, quindi essendo appunto continua assume tutti i valori tra un minimo e un massimo.\\
+Quindi tornando ancora una volta a quanto scritto sopra, sappiamo che ci sarà un opportuno c tale che:
+\begin{gather}
+    f(x) = \frac{\int_a^b f(x) dx}{b-a}\\
+    I(f) = \int_a^b f(x) dx = F(b) - F(a)
+\end{gather}
+Andiamo a dividere l'intervallo in figura 15.1 con una decomposizione:
+\begin{equation}
+    \Delta = (a\equiv x_0,x_1,...,x_n\equiv b)
+\end{equation}
+facendo uno zoom:
+\begin{gather}
+    I(f) = \int_a^b f(x) dx = \int_{x_0}^{x_1} f(x) dx + ... + \int_{x_i}^{x_{i-1}}f(x) dx + ... + \int_{x_{n-1}}^{x_n}f(x) dx \simeq\\
+    \simeq \frac{(x_1 - x_0)}{2}\left[f(x_0) + f(x_1)\right] + ... + \frac{x_n - x_{n-1}}{2}\left[f(x_n)+f(x_{n-1})\right] \simeq \\
+    \simeq \sum_{i=0}^{n-1}\frac{x_{i+1}-x_{i}}{2} \left[f(x_i)+f(x_{i-1})\right]\simeq \int_a^b f(x) dx
+\end{gather}
+In pratica abbiamo costruito una spline lineare (abbiamo approssimato una retta tra due punti e ne abbiamo calcolato l'area sottesa).\\
+Fissato n abbaimo, il passo $h = \frac{b-a}{n}$ e costruisco dei punti $x_i \ (nodi) \ = a+ih \ \ i = 0,1,...,n$.\\
+Abbiamo usato anche gli estremi, però ci sono formule di quadratura che non considerano gli estremi.
+\begin{equation}
+    \int_a^b f(x) dx \simeq \sum_{i= 0}^{n-1}\frac{h}{2}\left[f(x_i)+f(x_{i+1})\right]
+\end{equation}
+andiamo a sviluppare la somma:
+\begin{equation}
+    \frac{h}{2}[f(x_0)+f(x_1)+f(x_1)+f(x_2)+f(x_2)+...+f(x_{n-1}+f_n)]
+\end{equation}
+si può osservare che $f(x_1)$ è presente due volte perché è l'estremo di due sottointervalli adiacenti e così via:
+\begin{gather}
+    \frac{h}{2}\sum_{i=0}^{n-2}\left[f(x_0)+2f(x_{i+1})+f(x_n)\right]\\
+    \int_a^b f(x) dx \simeq \frac{h}{2}\left[\underbrace{f(a)}_{x_0}+2\sum_{i=0}^{n-2}+f(b)\right] = T_n(f)
+\end{gather}
+Dove $T_n(f)$ è la regola del trapezio iterata.\\
+Supponiamo $n = 1 \rightarrow h = b-a$, $x_0 \equiv a, x_1 \equiv b$ quindi quello che abbiamo visto diventa:
+\begin{equation}
+    \int_a^b f(x) dx \simeq \left[f(a)+f(b)\right]\frac{b-a}{2}
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4 \linewidth]{Foto/Screenshot 2022-11-02 alle 18.45.05.png}
+    \caption{}
+\end{figure}
+\\Quanto vale l'errore?
+\begin{equation}
+    \int_a^b f(x) dx - \frac{b-a}{2}\left[f(a) - f(b)\right] = errore/resto
+\end{equation}
+Sappiamo dare una forma di questo errore?
+\begin{gather}
+    \int_a^b f(x) dx = \int_a^b \underbrace{p_1(x)+r(x)}_{f(x)}dx =\\
+    = \underbrace{\int_a^b p_1(x) dx}_{\frac{b-a}{2}[f(x_a)+f(x_b)]} + {\color{red}{\int_a^b r(x)dx}}
+\end{gather}
+quello in rosso è il resto ed è l'integrale dell'errore interpolatorio.\\
+Quindi il resto è \begin{equation}
+    \int_a^b \frac{f''(\xi_x)}{2!}(x-a)(x-b)dx
+\end{equation}
+\chapter{Lezione 04/11}
+\begin{gather}
+    I(f) = \int_a^b f(x) dx \simeq \int_a^b p(x) dx = \int_a^b \sum_{i=0}^{n}f(x_i)L_i(x)dx = \\
+    = \sum_{i=0}^n f(x_i)\underbrace{\int_a^b L_i(x)dx}_{w_i} = \sum_{i=0}^n w_i f(x_i)\\
+    \int_a^b f(x) dx \simeq \sum_{i=0}^n w_1 f(x_i)
+\end{gather}
+L'approssimazione da cosa è fatta? L'integrale definito tra a e b è la somma di acluni valori della funzione integranda pesati.\\
+Qualunque formula useremo andremo sempre a calcolare la funzione in questo modo, andando a modificare i pesi.\\
+Se vogliamo modificare il simbolo di approssimazione con quello di uguaglianza dobbiamo scrivere:
+\begin{equation}
+    \int_a^b f(x) dx = \sum_{i=0}^n w_1 f(x_i) + \text{RESTO}
+\end{equation}
+Per costruire questo primo polinomio prendo due punti:
+\begin{gather}
+    x_0 = a \ \ \ f(x_0)=f(a)\\
+    x_1 = b \ \ \ f(x_1) = f(b)\\
+    p_1 (x) = f(a) L_0(x) + f(b) L_1(x)\\
+    I(f) = \int_a^b f(x) dx \simeq \int_a^b f(a) L_0(x) + f(b) L_1(x) dx = \\
+    = f(a) \int_a^b L_0(x) dx + f(b) \int_a^b L_1(x) dx
+\end{gather}
+dove $L_0(x) = \frac{x-b}{a-b}$ oppure $= \frac{x-x_1}{x_0-x_1}$ e $L_1(x) = \frac{x-a}{b-a}$ oppure $\frac{x-x_0}{x_1-x_0}$
+\begin{gather}
+    = f(a) \int_a^b \frac{x-b}{a-b} dx + f(x) \int_a^b \frac{x-a}{b-a}dx = \\
+    = f(a) \frac{1}{a-ba} \int_a^b x-b dx + f(b) \frac{1}{b-a}\int_a^b (x-a) dx =\\
+    = f(a) \frac{1}{a-b}\left[\frac{(x-b)^2}{2}\right]^b_a + f(b) \left[\frac{(x-a)^2}{2}\right]_a^b = \\
+    = f(a) \frac{1}{a-b}\left(-\frac{(a-b)^2}{2}\right) + f(b) \frac{1}{b-a} \left(\frac{(b-a)^2}{2}\right) = \\
+    = f(a) \frac{b-a}{2} + f(b) \frac{b-a}{2} = \\
+    = \frac{b-a}{2}(f(a)+f(b))
+\end{gather}
+Abbiamo ottenuto che l'integrale:
+\begin{equation}
+    \int_a^b f(x) dx \simeq \frac{b-a}{2}(f(a)+f(b))
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-06 alle 10.05.41.png}
+    \caption{}
+\end{figure}
+\\Abbiamo calcolato l'area sottostante al grafico del polinomio $p_1$ e abbiamo che $f(a) + f(b)$ è la somma delle basi che è moltiplicata per l'altezza $\frac{b-a}{2}$ e diviso per 2. Quindi abbiamo l'area di un trapezio\\
+DOMANDA: come posso sistemare il residuo che mi manca per valutare l'integrale?\\
+Tornando a prima, per sostituire $\simeq$ con $=$ devo sommare il resto:
+\begin{gather}
+    I(f) = \int_a^b f(x) dx = \int_a^b p_1(x) + resto(x) dx = \\
+    = \int_a^b p_1(x) dx + \int_a^b resto(x) \ dx =
+    \underbrace{\frac{b-a}{2}(f(a)+f(b))}_{T(f)} + ...
+\end{gather}
+Per quanto riguarda il resto dobbiamo ricondurci alla forma del resto interpolatorio e aggiungere dei vincoli alla funzione:
+\begin{gather}
+    \int_a^b \frac{f''(\xi_x)}{2}(x-a)(x-b) dx = \\
+    \frac{b-a}{2}(f(a)+f(b)) + \int_a^b \frac{f''(\xi_x)}{2}(x-a)(x-b)dx
+\end{gather}
+Ora per trovare il resto dobbiamo introdurre due teoremi:
+\begin{definition}
+    I TEOREMA DELLA MEDIA INTEGRALE:\\
+    $f:[a,b] \rightarrow \mathbb{R}$ continua, allora esiste (anche se non sappiamo dove cada) $c \in [a,b]$ tale che:
+    \begin{equation}
+        \int_a^b f(x) dx = f(x) (b-a)
+    \end{equation}
+\end{definition}
+Quindi l'area sottostante il grafico della funzione è equivalente all'area del rettangolo, dove l'altezza è $f(c)$ e $(b-a)$ è il lato.\\
+\begin{definition}
+    II TEOREMA DELLA MEDIA INTEGRALE:\\
+    Questo teorema contiene anche il primo (visto come caso particolare).\\
+    \begin{equation}
+        \int_a^b f(x) g(x) dx = f(c) \int_a^b g(x) f(x)
+    \end{equation}
+    ammettiamo che $g(x)$ sia di segno costante su $[a,b] \Rightarrow \exists c \in [a,b]$\\
+    Questo secondo teorema della media integrale contiene anche il primo, quando $g(x) = 1$
+\end{definition}
+Ora cerchiamo di usare questi risultati applicandoli a quello visto prima.\\
+Le due funzioni sono
+\begin{equation}
+    \int_a^b \underbrace{\frac{f''(\xi_x)}{2}}\underbrace{(x-a)(x-b)}
+\end{equation}
+di queste funzioni, ce n'è una che ha segno costante su $[a,b]$, sulla prima non ho idea, ma sulla seconda ho che:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4 \linewidth]{Foto/Screenshot 2022-11-06 alle 10.18.29.png}
+    \caption{}
+\end{figure}
+quindi la funzione:
+\begin{equation}
+    \underbrace{(x-a)}_{+}\underbrace{(x-b)}_{-}
+\end{equation} è sempre negativa.\\
+Quindi da questo so che il resto:
+\begin{gather}
+    resto = \frac{f''(c)}{2}\cdot \int_a^b (x-a)(x-b)dx = \\
+    = \frac{f''(c)}{2}\int_a^b (x-a)(x-a+a-b)dx =\\
+    = \frac{f''(c)}{2}\int_a^b (x-a)^2 - (x-a)(b-a)dx = \\
+    = ... = \frac{f''(c)}{2}\left[\frac{2(b-a)^3-3(b-a)^3}{6}\right] = -\frac{f''(c)(b-a)^3}{12}
+\end{gather}
+quindi:
+\begin{equation}
+    I(f) = ... = \frac{b-a}{2}\left[f(a)+f(b)\right] \underbrace{- \frac{f''(c)}{12}(b-a)^3}_{resto}
+\end{equation}
+OSSERVAZIONI:   uando questo resto è piccolo?
+Quando b e a sono vicini ma soprattutto è piccolo quando l'ampiezza dell'intervallo è \textbf{minore dell'unità}, però c'è anche la derivata seconda e quindi dobbiamo dire anche che se il valore numerico della derivata è abbastanza contenuto, allora il risultato della regola del trapezio è accettabile.\\
+IDEA: prendiamo una decomposizione dell'intervallo.\\
+Se applichiamo quello visto la volta scrosa:
+\begin{equation}
+    \sum_{i=0}^{n-1}\int_{x_i}^{x_{i+1}}f(x) dx
+\end{equation}
+e ci applico la regola del trapezio
+\begin{gather}
+    \int_{x_i}^{x_{i+1}} f(x) dx = \frac{x_{i+1}-x_i}{2}\left[f(x_i)+f(x_{i+1})\right]+r_i\\
+    r_i = -\frac{f''(c)}{12}\left(x_{i+1-x_i}\right)^3\\
+    \sum_{i=0}^{n-1}\int_{x_i}^{x_{i+1}}f(x) dx = \sum_{i=0}^{n-1}\left(\frac{x_{i+1}-x_i}{2}\left(f(x_i)+f(x_{i+1})\right)\right) + r_i = \\
+    = ...\\
+    \int_a^b f(x) dx \simeq \sum_{i=0}^{n-1}\frac{x_{i-1}-x_i}{2}(f(x_i)+f(x_{i+1}))
+\end{gather}
+Consideriamo $f:[a,b] \rightarrow \mathbb{R}$ continua:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-06 alle 10.35.54.png}
+    \caption{}
+\end{figure}
+\\n fissato\\
+$h = \frac{b-a}{n}$ è il passo\\
+$x_i = a+ih \ \ i = 0,1,...,n$\\
+Quindi è a passo costante, perciò $x_{i+1}-x_i = h$
+\begin{gather}
+    \sum_{i=0}^{n-1}\underbrace{\frac{x_{i-1}-x_i}{2}}_{h}(f(x_i)+f(x_{i+1})) \rightarrow
+    \rightarrow \frac{h}{2}\sum_{i=0}^{n-1}f(x_i)+f(x_{i+1}) + \sum_{i=0}^{n-1}r_i =\\
+    \frac{h}{2}[f(x_0)+f(x_1)+f(x_1)+f(x_2)+...+ f(x_{n-1})+f(x_{n-1})+f(n)] = \\
+    = ... = \frac{h}{2}[f(x_0) + 2\sum_{i=1}^{n-1}(f(x_i)) + f(x_n)] + \sum_{i=0}^{n-1}r_i
+\end{gather}
+Se abbiamo il resto che tende a 0 allora l'integrale della spline lineare si avvicina all'integrale della funzione
+\chapter{Lezione 07/11}
+\section*{Formule di quadrature interpolatorie}
+Sia $f(x)$ una funzione reale definita su un intervallo chiuso e limitato $[a,b]$ e a valori in $\mathbb{R}$:
+\begin{equation}
+    f: [a,b] \rightarrow \mathbb{R}
+\end{equation}
+PROBLEMA: approssimare 
+\begin{equation}
+    I(f) = \int_a^b f(x) dx
+\end{equation}
+Nel caso in cui $f(x)$ sia una funzione continua il teorema fondamentale del calco integrale assicura l'esistenza su $[a,b]$ di una funzione $F(x)$ (primitiva di $f(x)$) tale che:
+\begin{equation}
+    I(f) = \int_a^b f(x) dx = F(b) - F(a)
+\end{equation}
+Non sempre però la $F(x)$ è esprimibile con funzioni elementari e quando questo risulta possiile tali funzioni devono essere valutate numericaente e quindi il calcolo di $F(a)$ e $F(b)$ può essere costoso e approssimato. Nel caso in cui la funzione è nota solo per punti l'approccio analitico non può essere preso in considerazione.\\
+Supponiamo ora che la funzione $f(x)$ sia continua in $[a,b]$, il metodo più semplice per approssimare un integrale definito è utilizzare la definiione di integrale di Riemann.\\
+Sia $\Delta$ una decomposizione dell'intervallo $[a,b]$:
+\begin{equation}
+    \Delta = \{a \equiv x_0 < x_1 < ... < x_n \equiv b\}
+\end{equation}
+Per la proprietà additiva dell'integrale si ha:
+\begin{equation}
+    I(f) = \sum_{i=0}^{N-1}\int_{x_i}^{x_{i+1}} f(x) dx
+\end{equation} 
+Si approssima poi la funzione f(x) su ciascun sottointervallo $[x_i,x_{i+1}]$ con un polinomio interpolatorio lineare nei nodi $x_i$ e $x_{i+1}$ (spline lineaere interpolatoria) e si apprssima l'integrale su $[x_i,x_{i+1}]$ con l'area del trapezio avente come basi rispettivamente $f(x_i)$ e $f(x_{i+1})$ e come altezza $x_{i+1}$ e $x_i$. Il valore dell'integrale sarà quindi approssimato alla somma 
+\begin{gather}
+    T_N(f) = \frac{1}{2}\sum_{i=0}^{N-1}(x_{i+1}-x_i)[f(x_i)+f(x_{i+1})]\\
+    I(f) \approx T_N(f)
+\end{gather}
+La formula costruita risulta più semplice se i punti $x_i$ sono presi equidistanti di passo $h$, dove $h = (b/a)/N$. In questo caso otteinamo:
+\begin{equation}
+    T_N(f) = \frac{b-a}{2N}[f(a) + 2\sum_{i=1}^{N-1}f(x_i)+f(b)]
+\end{equation}
+Questa è la \textbf{formula di quadratura dei trapezi}\\
+Nel caso semplice $N = 1$ la formula del trapezio diventa:
+\begin{equation}
+    T(f) = \frac{b-a}{2}[f(a)+f(b)]
+\end{equation}
+Quando questa formula è esatta? Quindi quando restituisce il valore della funzione? Quando la funzione è una retta.\\
+Quando si approssima $I(f)$ con $T_N(f)$ si commette un errore dato dall'area compresa fra la $f(x)$ e la spezzata di vertici $f(x_i)$. Questo errore o resto della formula dei trapezi è definito a:
+\begin{equation}
+    resto(T_N) = I(f) - T_N(f) = \sum_{i=0}^{N-1}r_i
+\end{equation}
+dove $r_i$ è il resto del sottointervallo.\\
+Usando la formula di quadratura dei trapezi otteniamo alcuni semplici integrali:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6 \linewidth]{Foto/Screenshot 2022-11-09 alle 18.33.50.png}
+    \caption{}
+\end{figure}
+Per vedere se all'aumentare di N si hanno approssimazioni migliori dell'integrale, cioè se per $N \rightarrow \infty$ il resto converga a zero, consideriamo il resto sul singolo sottointervallo $[x_i,x_{i+1}]$ di ampiezza $h = x_{i+1} - x_i$:
+\begin{equation}
+    r_i = \int_{x_i}^{x_{i+1}} f(x) dx - h \frac{f(x_i)+f(x_{i+1})}{2} = \int_{x_i}^{x_{i+1}} [f(x)-p_i(x)] dx
+\end{equation}
+ma chi è $p_i(x)$? È il polinomio interpolatore sul singolo tratto, una forma algebrica di questo polinomio può essere l'equazione della retta che passa per $x_i$ e per $x_{i+1}$, però più precisamente, dal punto di vista matematico potrebbe essere un polinomio di Lagrange o di Newton (come metodo di costruzione), se uso per esempio Lagrange ho due polinomi lagrangiani (perché ho 2 punti) e questi due polinomi sono, per esempio: $L_0 = \frac{x-x_1}{x_0-x_1}, L_1 = \frac{x-x_0}{x_1-x_0}$; oppure possiamo usare la tecnica delle DD.\\
+Se $f \in C^2[a,b]$ si ha:
+\begin{equation}
+    r_i = \int_{x_i}^{x_{i+1}} res. \ int \ dx = \frac{1}{2} \underbrace{\int_{x_i}^{x_{i+1}}(x-x_i)(x-x_{i+1})f''(\xi_x) dx}
+\end{equation}
+Come si può leggere l'espressione sottolineata sopra alla luce della formula del trapezio iterata? Qualcosa che ci può dare indicazioni sulla bontà dell'equazione è la presenza della derivata seconda. Infatti prima abbiamo dtto che per non avere errore la funzione deve essere una retta e allo stesso modo qui, vediamo che la $f''(x)$ deve essere uguale a 0 per ridurre l'errore interpolatorio. \textbf{L'ordine di precisione della regola del trapezio è 1}\\
+Dato che la funzione $f''(x)$ è continua, si può applicare il secondo teorema della media integrale.
+\begin{equation}
+    r_i = \frac{1}{2}f''(c_i)\int_{x_i}^{x_{i+1}}(x-x_i)(x-x_{i+1})dx = ... = -\frac{h^3}{12}f''(c_i)
+\end{equation}
+dove $c_i$ è un punto opportuno in $(x_i, x_{i+1})$. Applicando questa relazione a ciascun sottointervallo possiamo esprimere (determinare) il resto su tutto l'intervallo $[a,b]$
+\begin{equation}
+    resto(T_n) = \sum_{i=0}^{N-1} r_i = -\frac{h^3}{12}\sum_{i=0}^{N-1} f''(c_i) = -\frac{h^3}{12}N f''_M
+\end{equation}
+dove $f''_M$ è la media degli N valori $f''(c_i)$. Poiché $f''_M$ è compreso fra il più piccolo e il più grande dei valori della funzione $f''(x)$, che è continua per ipotesi, esiste un punto $\xi \in (a,b)$ tale che $f''(\xi) = f''_M$.\\
+Si ottiene in tal modo l'espressione del resto della formula dei trapezi:
+\begin{equation}
+    resto(T_N) = -\frac{1}{12}\left(\frac{b-a}{N}\right)^3 N f''(\xi) = -\frac{(b-a)^3}{12N^2}f''(\xi)
+\end{equation}
+OSSERVAZIONE sulla formula: per rendere piccolo l'errore, dato che non possiamo manipolare la derivata, ma possiamo lavorare su a,b,N dobbiamo fare in modo che $(b-a)<1$, perché se fosse maggiore, al cubo, potrebbe esplodere questo valore e quindi avremo un errore enorme. Oppure posso anche prendere un N molto grande. Con questi due accorgimenti posso "combattere" la derivata seconda.
+\newpage
+\begin{example}
+    Approssimare l'integrale:
+    \begin{equation}
+        I(f) = \int_0^\pi exp(x) sin (x) dx = (e^\pi +1)/2 = 12.070346
+    \end{equation}
+    con la formula dei trapezi
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-09 alle 18.59.23.png}
+        \caption{}
+    \end{figure}
+\end{example}
+\newpage
+\begin{example}
+    Approssimare l'integrale
+    \begin{equation}
+        \int_0^{\pi^2} \sin \sqrt{x} dx 
+   \end{equation}
+    Rappresentiamo il grafico della funzione e della sua derivata prima
+   \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-09 alle 19.02.47.png}
+        \caption{}
+    \end{figure}
+    \\Perché abbiamo rappresentato sia la derivata che la funzione? Perché l'errore dipende dalla derivata, infatti in questo caso sappiamo che avremo un errore molto grande in quanto la derivata ha un massimo grande.\\
+    Una primitiva della funzione integranda è:
+    \begin{equation}
+        F(x) = 2\sin \sqrt{x} - 2 \sqrt{x}\cos \sqrt{x} + c
+    \end{equation}
+    e quindi possiamo calcolare il valore dell'integrale 
+    \begin{equation}
+        \int_0^{\pi^2} \sin \sqrt{x} dx = F(\pi^2) - F(0) \approx 6.2831853
+    \end{equation}
+    ed esaminare con il resto la convergenza della regola dei trapezi
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[]{Foto/Screenshot 2022-11-09 alle 19.10.31.png}
+        \caption{}
+    \end{figure}
+    Possiamo anche riscrivere l'interale precedenza nella forma:
+    \begin{gather}
+        \int_0^{\pi^2} \sin \sqrt{x} dx = \int_0^{\pi^2} \sin \sqrt{x} - \sqrt{x} dx + \int_0^{\pi^2} \sqrt{x} dx = \\
+        = \int_0^{\pi^2} \sin \sqrt{x} dx = \int_0^{\pi^2} [\sin \sqrt{x} - \sqrt{x}] dx + \frac{2}{3} \pi^3
+    \end{gather}
+    possiamo applicare la regola dei trapezi al primo integrale ed otteniamo per l'integrale di partenza la seguente tabella:
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-09 alle 19.14.38.png}
+        \caption{}
+    \end{figure}
+    \\I valori con $N = 1024$ e con $N = 4096$ per l'integrale precedente sono una buona approssimazione del corrispondente integrale esatto, ma il calcolo ha richiesta in entrambi i casi un numero elevato di valori della funzione integranda $f(x)$. Se ogni valutazione di $f(x)$ ha un elevato costo computazione, è opportuno cercare (usare) un metodo che converga più rapidamenta al valore esatto dell'integrale per $N \rightarrow \infty$
+\end{example}
+\chapter{Lezione 09/11}
+\begin{gather}
+    I(f) = \int_a^b f(x) dx = \sum_{i=0}^1 w_i^{(1)}f(x_i) = w_0^{(1)}f(x_0) + w_1^{(1)}f(x_1) = \\
+    = w_0^{(1)}f(x_0) + w_1^{(1)} f(x_1) = \\
+    = w_0^{(1)}f(x_0) + w_1^{(1)}f(x_1) = \frac{b-a}{2}[f(a)-f(b)]\\
+    w_0^{(1)} = \frac{b-a}{2}, w_1^{(1)} = \frac{b-a}{2}\\
+    w_0^{(1)} = (b-a)\alpha_0, w_1^{(1)} = (b-a)\alpha_1
+\end{gather}
+dove $\alpha_0, \alpha_1$ sono chiamati "pesi newtoniani", e valgono $\frac{1}{2}$.\\
+Non è un caso che $\alpha_0 + \alpha_1 = 1/2 + 1/2 = 1 = n$. La somma dei pesi newtoniani è uguale all'n che ho scelto per iniziare a scrivere $w_0$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-09 alle 22.22.31.png}
+    \caption{}
+\end{figure}
+\begin{gather}
+    p_1(x) = f(x_0)L_0(x) + f(x_1)L_1(x)\\
+    \int_{x_0}^{x_1}p_1(x) + resto(x) dx \rightarrow \frac{f''(\xi_x)}{2!}(x-x_0)(x-x_1)
+\end{gather}
+per il teorema della media integrale:
+\begin{gather}
+    \frac{f''(c)}{2!}\int_{x_0}^{x_1}(x-x_0)(x-x_1) dx = \\
+    = \frac{f''(c)}{12} (b-a)^3
+\end{gather}
+L'errore, nella formula iterata, dipende dalla derivata II.\\
+Introduciamo il concetto di \textbf{ordine di precisione}.\\
+DOMANDA: la regola del trapezio è esatta (resto 0) per quali funzioni? Per dei polinomi di grado $\leq 1$. Dire che una formula di quadratura ha ordine di precisione D, significa che integra esattamente tutti i polinomi di grado $\leq D$.\\
+Il resto o errore nella formula iterata o composta dipende dalla derivata seconda nella formula iterata. Il risultato numerico sarà più preciso, l'integrale, attraverso l'uso della formula.\\
+La formula iterata della regola del trapezio ha ordine di precisione uguale a 1.
+\section*{Formula di Cavalieri-Simpson}
+È il nome della formula di quadratura con n = 2.\\
+\begin{gather}
+    h = \frac{b-a}{2}\\
+    x_i = a + ib \ \ i = 0,1,2\\
+    x_0 = a, \ \ x_1 = a + h = a + \frac{b-a}{2}, \ \ x_2 = b
+\end{gather}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-09 alle 22.31.17.png}
+    \caption{}
+\end{figure}
+\begin{gather}
+    \sum_{i=0}^2\underbrace{w_i^{(2)}}_{pesi}f(x_i)\\
+    w_0^{(2)} \ \ \int_a^b f(x) dx \simeq \int_a^b p_2(x) dx = 
+\end{gather}
+\sepline{}
+\begin{gather}
+    p_2(x) = f(x_0)L_0(x) + f(x_1)L_1(x) + f(x_2)L_2(x)\\
+    L_0(x) = \frac{(x-x_1)(x-x_2)}{(x_0 - x_1)(x_0 - x_2)}\\
+    L_1(x) = \frac{(x-x_0)(x-x_2)}{(x_1 - x_0)(x_1 - x_2)}\\
+    L_2(x) = \frac{(x-x_0)(x-x_1)}{(x_2 - x_0)(x_2 - x_1)}
+\end{gather}
+\sepline{}
+\begin{gather}
+    = \int_{x_0}^{x_2}f(x_0)L_0(x) + f(x_1)L_1(x) + f(x_2) L_2(x) dx = \\
+    = f(x_0)\underbrace{\int_{x_0}^{x_2} L_0(x) dx}_{w_0^{(2)}} + f(x_1) \underbrace{\int_{x_0}^{x_2}L_1(x) dx}_{w_1^{(2)}} + f(x_2) \underbrace{\int_{x_0}^{x_2}L_2(x) dx}_{w_2^{(2)}}
+\end{gather}
+Determinare questi 3 pesi equivale a integrare rispettivamente $L_0, L_1, L_2$
+\begin{gather}
+    w_0^{(2)} = \int_{x_0}^{x_2} \frac{(x-x_1)(x-x_2)}{(x_0 - x_1)(x_0 -x_2)} dx = \frac{1}{(x_0 - x_1)(x_0 - x_2)} \int_0^1 (x - x_1)(x-x_2)dx = \\
+    = ... = \frac{1}{(x_0 - x_1)(x_0 - x_2)}\left[-\frac{(x_0 - x_1)^2}{2}(x_0 -x_2) - \frac{(x_2 - x_1)^3}{6}+\frac{(x_0 - x_1)^3}{6}\right]
+\end{gather}
+Ora dobbiamo tradurre questa equazione in termini di h:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-09 alle 22.45.24.png}
+    \caption{}
+\end{figure}
+\begin{gather}
+    = \frac{1}{(-h)(-2h)}\left[-\frac{(-h^2)}{2}(-2h)-\frac{(h^3)}{6}+ \frac{(-h^3)}{6}\right] = ... = \\
+    = \frac{h}{3} = w_0^{(2)} = h \cdot \alpha_0 \rightarrow \alpha_0 = \frac{1}{3}
+\end{gather}
+Ora allo stesso modo calcoliamo $w_1^{(2)}, w_2^{(2)}$
+\begin{gather}
+    w_1^{(2)} = \frac{4}{3} h\\
+    w_2^{(2)} = \frac{h}{3}\\
+    \int_{x_0}^{x_2} f(x) dx \simeq \int_{x_0}^{x_2}p_2(x) dx = w_0^{(2)}f(x_0) + w_1^{(2)}f(x_1)+w_2^{(2)}f(x_2) = \\
+    = \frac{h}{3}f(x_0) + \frac{4}{3}h f(x_1) + \frac{h}{3} f(x_2)\\
+    \int_a^b f(x) dx \simeq \frac{b-a}{6} f(a) + \frac{4}{3}(b-a)f(\frac{a+b}{2}) + \frac{b-a}{6}f(b) = \\
+    = \frac{b-a}{2}\left[f(a) + 4 f(\frac{a+b}{2}) + f(b)\right] \rightarrow \text{Formula di Cavielieri-Simpson}
+\end{gather}
+Indicativamente, questa formula, che ordine di precisione ha almeno? 2 perché se f è un polinomio di II grado o minore, posso ricostruire lo stesso polinomio.\\
+\newpage
+DOMANDA: come posso calcolare l'errore? Il resto?
+\begin{equation}
+    \int_a^b f(x) dx = CS (cav. simps.) + resto
+\end{equation}
+Il resto della formula di quadratura è:
+\begin{gather}
+    \int_a^b errore \ interpolatorio \ (x)\\
+    \int_{x_0}^{x_2} \frac{f''(\xi_x)}{3!} (x-x_0)(x-x_1)(x-x_2) \rightarrow\\
+    \rightarrow \frac{f''(c)}{3!} \int_{x_0}^{x_2}g(x)
+\end{gather}
+Per usare il teorema della media integrale dobbiamo verificare che $g(x)$ sia di segno costante:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-09 alle 23.04.34.png}
+    \caption{}
+\end{figure}
+\\Quindi $g(x)$ non è di segno costante e quindi non posso applicare il teorema della media integrale generalizzata.
+\chapter{Lezione 11/11}
+Per poter scrivere quello visto la volta scorsa riguardo al resto, ovvero che:
+\begin{equation}
+    \int_a^b resto \ dx = \int_a^b \frac{f'''(\xi_x)}{3!}(x-a)(x-\frac{a+b}{2})(x-b)dx = -\frac{f^{IV}(c)}{2880}(b-a)^5
+\end{equation}
+La funzione $f(x) \in C^4 ([a,b])$\\
+$(b-a)^5$ fa da amplificatore se $b-a>1$, quindi deve essere $<1$; se la derivata è maggiore dell'unità il suo massimo sarà molto elevato.\\
+Questo resto dipende dalla $f^{IV}$ ma ancor di più da $(b-a)^5$.\\
+Possiamo scrivere il resto come:
+\begin{gather}
+    NB: \ 90 \cdot 32 = 2880\\
+    -\frac{f^{IV}(c_2)}{90} \frac{(b-a)^5}{32} = -\frac{f^{IV}(c_2)}{90}\left(\frac{b-a}{2}\right)^5 = \\
+    = \frac{f^{IV}(c_2)}{90}(h)^5
+\end{gather}
+Riprendiamo la formula del trapezio:
+\begin{equation}
+    \int_a^b f(x) dx = b-a(\frac{1}{2}f(a)+\frac{1}{2}f(b)) - \frac{f''(c_1)}{12}(b-a)^3
+\end{equation}
+dove il primo $\frac{1}{2} = \alpha_0$ e il secondo $\frac{1}{2} = \alpha_1$ che sono i coefficienti newtoniani.\\
+NB sopra sono stati scelti $c_1$ e $c_2$ solo per non confondere le idee e per far presente che i due $c$ nelle formule sono distinti.\\
+Quello che differenzia i due errori (quello della formula di C.S. e del trapezio) è la derivata, nel trapezio abbiamo visto che il resto è nullo se la deriva secodna è nulla e quindi se il polinomio che andiamo ad integrare è di grado $\geq 0$, quindi ha \textbf{ORDINE DI PRECISIONE} = n.\\
+Mentre la regola di C.S. è esatta se il poliniomio è \textbf{di grado $\leq 3$}. Qui vediamo che non è come prima, infatti l'ordine di precisione è $n+1$ e non $n$.\\
+OSSERVAZIONE: 
+\begin{itemize}
+    \item Per \underline{n pari}, l'ordine di precisione è pari a $n+1$
+    \item Per \underline{n dispari}, l'ordine di precisione della formula che costruisco è pari a n
+\end{itemize}
+\newpage
+Proviamo a risolvere questo integrale: 
+\begin{equation}
+    I(f(x,y)) = \int_a^b dx \int_c^d f(x,y)dy
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.5 \linewidth]{Foto/Screenshot 2022-11-12 alle 18.07.31.png}
+    \caption{}
+\end{figure}
+\\Per risolverlo usiamo la regola del trapezio
+\begin{equation}
+    \frac{b-a}{2}\left[\int_c^d f(a,y) dy + \int_c^d f(b,y)dy\right] =
+\end{equation}
+Applico la regola del trapezio su ognuna delle due parti (integrali in dy)
+\begin{gather}
+    \int_c^d f(a,c) dy \simeq \frac{d-c}{2}\left[f(a,c)+f(a,d)\right]\\
+    \int_c^d f(b,c) dy \simeq \frac{d-c}{2}\left[f(b,c)+f(b,d)\right]
+\end{gather}
+Riprendiamo l'equazione lasciata prima:
+\begin{gather}
+    = \frac{b-a}{2}\left[\frac{d-c}{2}(f(a,c)+f(a,d))+ \frac{d-c}{2}(f(b,c)+f(b,d))\right] = \\
+    = \frac{b-a}{2}\left[\frac{d-c}{2}\left(f(a,c)+f(a,d)+f(b,c)+f(b,d)\right)\right]
+\end{gather}
+Notiamo che $f(a,c), f(a,d),...$ sono i vertici del rettangolo e sono moltiplicati per una costante $\frac{b-a}{2} \cdot \frac{d-c}{2}$ che sono le semiampiezze degli intervalli su x e su y.\\
+\newpage
+Ammettiamo di voler avere un polinomio interpolare di questo tipo:
+\begin{equation}
+    p_{n,m}(x_i,y_i) = f(x_i,y_i)
+\end{equation}
+Sulle $x_i$ sappiamo costruire una base lagrangiana e posso fare lo stesso con la $y_i$, costruisco $L_i(x)$ e $L_i(y)$
+\begin{equation}
+    p_{n,m} (x,y) = \sum_{i=0}^{n}\sum_{j= 0}^{m} f(x_i,y_i)L_i(x)L_j(x)
+\end{equation}
+DOMANDA: $L_i(x) \cdot \bar{L}_j(x)$, se prendo $x_h,y_k \ con 0 \leq h \leq n, \ 0 \leq k \leq m$ quanto vale quello scritto?
+Se $i = h, L_i(x_h) = 1$, se $j = k, \bar{L}_j(y_k) = 1$, quindi:
+\begin{equation}
+    L_i(x_k)\bar{L}_j(y_k) = \begin{cases}
+        1 \ \ \ se \ i = h \ e \ j = k\\
+        0 \ \ \ se \ i\neq h \ e \ j \neq k
+    \end{cases}
+\end{equation}
+DOMANDA: faccio questo integrale:
+\begin{equation}
+    I(f(x,y)) = \int_a^b dx \int_{c(x)}^{d(x)} f(x,y) dy
+\end{equation}
+Come lo rappresento nel piano?
+\begin{figure}[h!]
+    \centering
+    \includegraphics[]{Foto/Screenshot 2022-11-12 alle 18.27.16.png}
+    \caption{}
+\end{figure}
+\begin{equation}
+    \int_a^b dx \int_{c(x)}^{d(x)} f(x,y)dy \simeq \frac{b-a}{2}\left[\int_{c(a)^{d(a)}f(a,y)dy + \int_{c(b)}^{d(b)}f(b,y)dy}\right]
+\end{equation}
+L'integrale dopo il simbolo di approssimazione è un integrale definito perché $d(a),c(a),d(b),c(b)$ sono dei numeri.\\
+Applico la regola del trapezio e ottengo un'approssimazione dell'integrale.\\
+\newpage
+DOMANDA: come sarebbe costruirta la regola di Newton per $n=3$?
+Prendo $h = \frac{b-a}{n} = \frac{b-a}{3}$ e poi costruisco i nodi: $x_i = a+ ih$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-12 alle 18.36.06.png}
+    \caption{}
+\end{figure}
+\chapter{Lezione 14/11}
+Consideriamo questa strategia: si prende l'integrale $I(f) = \int_a^b f(x) dx$ e lo vogliamo approssimare.\\
+Prendiamo una decomposizione, come già visto le lezioni scorse e calcoliamo il polinomio interpolatore $p_n(x)$ e costruiamo una stima dell'integrale con il polinomio $p_n(x)$:
+\begin{equation}
+    I(f) = \int_a^b f(x) dx \simeq \int_a^b p_n(x) dx
+\end{equation}
+mi chiedo se al crescere di n, i due integrali coincidono. Può aver senso, per un risultato migliore, un utilizzo locale dell'integrale/dell'approssimazione.\\
+\begin{equation}
+    I(f) = \int_a^b f(x) dx = \frac{b-a}{2}[f(a)+f(b)] - \frac{1}{2} f''(c) (b-a)^3
+\end{equation}
+con $f(x) \in C^2 ([a,b])$.\\
+Questa regola permette di stimare il valore dell'integrale e di avere un'espressione formale dell'errore che commetto.\\
+Prendo un N intero positivo e costruisco una decomposizione uniforme dell'intervallo con un $H = \frac{b-a}{N}$. Attraverso H costruisco: $x_i = a + iH$ con $i = 0,1,...,N$
+\begin{equation}
+    \int_a^b f(x) dx = \sum_{i=0}^{N-1} \int_{x_i}^{x_{i+1}} f(x) dx
+\end{equation}
+quindi l'integrale di partenza è valutato sui singoli sottointervalli che abbiamo introdotto
+\begin{equation}
+    = \sum_{i=0}^{N-1} \frac{x_{i+1}-x_i}{2} \left[f(x_i)+f(x_{i+1})\right] -\frac{1}{12}(x_{i+1}-x_i)^3 f''(c_i) =
+\end{equation}
+Abbiamo introdotto $c_i$ perché è c valutato su ogni sottointervallo
+\begin{equation}
+    = \sum_{i=0}^{N-1} \left[\frac{H}{2} \left[f(x_i)+f(x_{i+1})\right] - \frac{1}{12}H^3 f''(c_i)\right]
+\end{equation}
+Per semplificare analizziamo separatamente il resto dal polinomio:
+\begin{enumerate}
+    \item \begin{gather}
+        \sum_{i=0}^{N-1} \frac{H}{2}\left[f(x_i)+f(x_{i+1})\right] = \\
+        = \frac{H}{2}\left[f(x_0)+f(x_1)+f(x_1)+f(x_2)+f(x_2)+f(x_3)+...+f(x_{N-1}+f(x_N))\right] = \\
+        = \frac{H}{2} \left[f(x_0) + 2 \sum_{i=1}^{N-1}f(x_i)+f(x_N)\right]
+    \end{gather}
+    Questa che abbiamo ottenuto è la FORMULA DEL TRAPEZIO.\\
+    Che costo ha questo algoritmo? Il costo dipende da quante volte devo calcolare la funzione integranda, perché in base al tipo di funzione i costi cambiano.\\
+    \item \begin{equation}
+        -\sum_{i=0}^{N-1} \frac{1}{12} H^3 f''(c_i) = -\frac{H^3}{12} \sum_{i=0}^{N-1} f''(c_i)
+    \end{equation}
+    Cosa possiamo dire della somma se $f(x) \in C^2([a,b])$? La $f''(x)$ com'è su [a,b]? È continua, quindi assume tutti i valori tra il minimo e il massimo, quindi si può scrivere:
+    \begin{equation}
+        = -\frac{H^3}{12}Nf''(c)
+    \end{equation}
+    con $a < c < b$, prima avevamo $c_i$ che erano i "c" sui singoli sottointervalli, mentre ora abbiamo un "c" su tutto l'intervallo.
+    \begin{equation}
+        = -\frac{H^3}{12}\frac{b-a}{H}f''(c) = -\frac{H^2}{12}(b-a)f''(c) \ \ c \in [a,b]
+    \end{equation}
+\end{enumerate}
+OSSERVAZIONE:
+\begin{equation}
+    \int_a^b f(x) dx = \frac{H}{2}\left[f(x_0)+ 2 \sum_{i=1}^{N-1}f(x_i)+f(x_N)\right] - \frac{H^2}{12}(b-a)f''(c)
+\end{equation}
+Che osservazione possiamo fare sul resto? $f''(c)$ è una quantità che dovrebbe essere abbastanza limitata, quello su cui possiamo operare è H, se H si riduce anche il resto si riduce e quindi c'è un ERRORE DI TRONCAMENTO che ci dice che se H si riduce, l'errore di troncamento si riduce. Però non è vero che contemporaneamente si riduce anche quello di arrotondamento, perché l'errore di arrotondamento dipende solo dal numero di addendi.\\
+Dalla formula del trapezio iterata passiamo a considerare la formula di Cavalieri-Simpson iterata.
+\begin{gather}
+    I(f) = \int_a^b f(x) dx = \frac{b-a}{2}\left[f(a) + 4 f\left(\frac{a+b}{4}\right)+f(b)\right] - \frac{(b-a)^5}{2880} f^{(IV)}(\bar{c})
+    f(x) \in C^4([b-a])
+\end{gather}
+A questo punto possiamo interpretare l'integrale di partenza facendo una decomposizione dell'intervallo [a,b].\\
+N intero positivo:
+\begin{gather}
+    H = \frac{b-a}{N}\\
+    x_i = a + iH \ \ i = 0,...,N\\
+    \int_a^b f(x) dx = \sum_{i = 0}^{N-1} \int_{x_i}^{x_{i+1}}f(x) dx =\\
+    = \sum_{i=0}^{N-1} \frac{x_{i+1-x_i}}{6}\left[f(x_i)+4\left(\frac{x_i + x_{i+1}}{2}\right)+ f(x_{i+1})\right] - \sum_{i=0}^{N-1}\frac{(x_{i+1}-x_i)^5}{2880} f^{(IV)}(c_i) = \\
+    = ... = \frac{H}{6}\left[f(x_0) + 2 \sum_{i=1}^{N-1}f(x_i) + 4 \sum_{i=0}^{N-1}\left(\frac{x_i+x_{i+1}}{2}\right) + f(x_n)\right]
+\end{gather}
+DOMANDA: qual è il costo di questo algoritmo? Il costo dipende dalla valutazione della funzione integranda, questo costo è maggiore rispetto alla regola del trapezio.\\
+Per quanto riguarda il resto cosa possiamo dire?
+\begin{gather}
+    -\frac{H^5}{2880} \sum_{i=0}^{N-1} f^{(IV)}(c_i) = <<
+    = -\frac{H^5}{2880} N f^{(IV)}(c) = \\
+    = -\frac{H^4}{2880} \frac{b-a}{N} f^{(IV)}(c) = \\
+    = -\frac{H^4}{2880} (b-a) f^{(IV)}(c)
+\end{gather}
+Questo è l'errore nella regola di Cavalieri-Simpson iterata.\\
+OSSERVAZIONI: cosa possiamo notare dal passaggio dalla formula normale a quella iterata? Che per H piccolo, nell'iterata, l'errore di troncamento si riduce.\\
+Facendo l'applicazione iterata abbiamo la possibilità di ridurre l'errore di troncamento. Qual è un'altra osservazione nel confronto di errori semplici e di quelli iterati? L'ordine cambia? Per la regola del trapezio normale l'ordine di precisione è 1, per quella iterata è sempre 1; lo stesso vale per C-S, e per tutte le altre formule.\\
+Se dobbiamo integrare una funzione su un intervallo di integrazione non è intelligente scomporre una funzione, come per esempio un integrale, in sottointervalli uguali perché ci saranno dei "luoghi" in cui avrò bisogno di più punti e altri meno.\\
+OSSERVAZIONE: ammettiamo di non sapere l'ordine di precisione della formula del trapezio o del CS come lo ricaviamo? Possiamo prendere vari polinomi di grado via via crescene e capire fino a quanto integra esattamente, però non conviene lavorare su intervalli generici $[a,b]$, ma conviene usare dei sottointervalli particolari, come ad esempio [0,1]:
+\begin{equation}
+    \int_a^b f(x) dx \leadsto \int_0^1 f(t) dt
+\end{equation}
+devo fare un cambio di variabile:
+\begin{gather}
+    x \in [a,b]\\
+    x = \alpha t + \beta\\
+    t \in [0,1]
+\end{gather}
+Quanto valgono $\alpha, \beta$?
+Quindi:
+\begin{gather}
+    x = a \rightarrow t = 0\\
+    a = \alpha \cdot 0 + \beta \rightarrow \beta = a\\
+    x = b \rightarrow t = 1\\
+    b = \alpha \cdot 1 + \beta \rightarrow \alpha = b-a \rightarrow \beta = a\\
+    x = (b-a)\cdot t +a
+\end{gather}
+Questa è la formula per la trasformazione
+\begin{equation}
+    = \int_0^1 f([b-a] t + a) \alpha dt 
+\end{equation}
+Posso fare lo stesso, per esempio per l'intervallo [-1,1]
+\chapter{Lezione 16/11}
+Nella regola del trapezio iterata consideriamo due resti $Resto_T(N)$ e $Resto_T(2N)$, dove $N$ e $2N$ è il numero di sottointervalli e ne calcoliamo il rapporto:
+\begin{equation}
+    \frac{|Resto_T(N)|}{|Resto_T(2N)|} = \frac{\left|-\frac{(b-a)^3}{12 N^2}f''(c)\right|}{\left|-\frac{(b-a)^3}{12(2N)^2}f''(\bar{c})\right|}
+\end{equation}
+supponiamo che $f''(c) = f''(\bar{c})$, possiamo accettalo in termini di approssimazione anche se in generale quell'uguaglianza non è vera:
+\begin{equation}
+    = \frac{\frac{1}{N^2}}{\frac{1}{4N^2}} = \frac{1}{N^2}\cdot 4N^2 = 4
+\end{equation}
+Cosa vuol dire questo risultato? Vuole dire che $|Resto(N)| = 4|Resto(2N)|$.\\
+Se vado a scegliere, invece della regola del trapezio, la regola di Cavalieri-Simpson iterata?
+\begin{equation}
+    I(f) = \int_a^b f(x) dx = C-S \ (iterata) \ - \frac{(b-a)^5}{2880 \ N^4}f^{(IV)}(c)
+\end{equation}
+per 2N abbiamo:
+\begin{equation}
+    -\frac{(b-a)^5}{2880(2N)^4}f^{(IV)}(\bar{c})
+\end{equation}
+facciamo la stessa cosa di prima:
+\begin{equation}
+    \frac{|Resto_{CS}(N)|}{|Resto_{CS}(2N)} = \frac{\left|-\frac{(b-a)^5}{2880N^4}f^{(IV)}(c)\right|}{\left|-\frac{(b-a)^5}{2880(2N)^4}f^{(IV)}(\bar{c})\right|}
+\end{equation}
+supponiamo che $f^{(IV)}(c) = f^{(IV)}(\bar{c})$
+\begin{equation}
+    = \frac{\frac{1}{N^4}}{\frac{1}{16N^4}} = 16
+\end{equation}
+quindi abbiamo $|Resto_{CS}(N)| = 16|Resto_{CS}(2N)|$ se raddoppiamo i sotto-intervalli il resto diventa 1/16 del precedente.\\
+\sepline{}
+Come si potrebbe costruire i pesi di una formula di quadratura?
+\begin{equation}
+    I(f) = \int_a^b f(x) dx = \int_a^b p_n(x) + resto \ interpolatorio \ dx = \int_a^b p_n(x) dx + \int_a^b resto \ interpolatorio \ dx
+\end{equation}
+Il resto interpolatorio è:
+\begin{gather}
+    \frac{f^{(n+1)}(\xi_x)}{(n+1)!}w_n(x)\\
+    dove \ w_n(x) = (x-x_0)...(x-x_n)
+\end{gather}
+se cancello il termine del resto interpolatorio l'uguaglianza non sarà più vera e quello che trovo è un'approssimazione dell'integrale
+\begin{gather}
+    \int_a^b p_n(x) dx = \int_a^b \sum_{i=0}^{n}f(x_i) = \\
+    = \sum_{i=0}^{n}\int_a^b L_i(x) dx = \sum_{i=0}^n w_i^{(n)}f(x_i)\\
+    w_i^{(n)} = \int_a^b \frac{(x-x_0)(x-x_1)(x-x_2)...(x-x_{i-1})(x-x_{i+1})...(x-x_n)}{(x_i-x_0)(x_i-x_1)(x_i-x_2)...(x_i-x_{i-1})(x_i-x_{i+1})...(x_i-x_n)} dx
+\end{gather}
+Facciamo un cambiamento di variabile
+$x = x_0 +sh$ dove h è l'ampiezza della decomposizione o passo $h = \frac{(b-a)}{n}$ dove $n = 1$ per il trapezio, $n = 2$ per Cavalieri - Simpson ecc.\\
+Scriviamo l'integrale nella nuova variabile S, prima dobbiamo trovare gli estremi di integrazione $x = a+sh$, dove $x_0 = a$. Quindi ottengo $a$ quando $s = 0$, mentre $b$ lo ottengo quando $s = n$
+\begin{gather}
+    x_1 = x_0 + h\\
+    x_2 = x_0 + 2h\\
+    x_{i-1} = x_0 + (i-1)h\\
+    x_{i+1} = x_0 + (i+1)h\\
+    x_n = x_0 + nh
+\end{gather}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-16 alle 22.54.54.png}
+    \caption{}
+\end{figure}
+quindi ho:
+{\small
+\begin{gather}
+    w_i^{(n)} = \\
+    \int_0^n \frac{(x_0+sh-x_0)(x_0+sh-x_0-h)(x_0+sh-x_0-2h)...(x_0+sh-x_0-(i-1)h)(x_0+sh-x_0-(i+1)h...(x_0+sh-x_0-nh))}{(x_0+ih-x_0)(x_0+ih-x_0-h)(x_0+ih-x_0-2h)...(x_0+ih-x_0-(i+1)h)...(x_0+ih-x_0-nh)} h \ ds
+\end{gather}}
+\newpage
+DOMANDA: cosa succede con h?
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7 \linewidth]{Foto/Screenshot 2022-11-16 alle 23.03.38.png}
+    \caption{}
+\end{figure}
+\\Al numeratore abbiamo n termini h, senza considerare il differenziale, quindi, con il differenziale abbiamo $n+1$ h, al denominatore ne abbiamo n:
+\begin{equation}
+    = h \int_0^n \frac{\prod_{j=0, j\neq i}^{n}(s-j)}{\prod_{j=0,j\neq i}^{n}(i-j)}ds = w_i^{(n)}
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \subfloat[\emph{}]{\includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-16 alle 23.12.24.png}}
+    \subfloat[\emph{}]{\includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-16 alle 23.12.32.png}}
+    \caption{}
+\end{figure}
+\newpage
+DOMANDA: la regola per $n=3$, chiamata anche dei $3/4$, che ordine di precisione ha?\\
+Per studiare l'ordine di precisione della formula per $n=3$.\\
+Vogliamo far vedere che la regola del trapezio ha ordine di precisione 1. Facciamo questa verifica, prendiamo un integrale i cui estremi sono i più semplici possibili
+\begin{equation}
+    \int_0^1 f(x) dx
+\end{equation}
+per arrivare all'ordine deve essere esatta per il primo polinomio che incontro, $f(x) =1$
+\begin{equation}
+    \int_0^1 dx = x]_0^1 = 1
+\end{equation}
+ora provo a risolvere l'integrale con la regola del trapezio:
+\begin{equation}
+    \frac{b-a}{2}[f(a)+f(b)] = \frac{1}{2}[1+1] = 1
+\end{equation}
+quindi la regola del trapezio è valido per i polinomi di grado 0, proviamo con un polinomio di grado 1
+\begin{equation}
+    \frac{b-a}{2}[f(a)+f(b)] = \frac{1}{2}[0+1] = \frac{1}{2}
+\end{equation}
+prendiamo $x^2$ e calcoliamo l'integrale definito in $[0,1]$
+\begin{gather}
+    \int_0^1 x^2 dx = \frac{1}{3}\\
+    \frac{b-a}{2}[f(a)+f(b)] = \frac{1}{2}
+\end{gather}
+È diverso e quindi non integra polinomi di grado > 2
+\chapter{Lezione 18/11}
+\begin{exercize}
+    \begin{equation}
+        \int_{-1}^{1} f(x) dx
+    \end{equation}
+    calcolo i pesi $\alpha_1, \alpha_2, \alpha_3, \alpha_4$ in modo che la forma di quadratura sia:
+    \begin{equation}
+        Q(f) = \alpha_1 f(-1) + \alpha_2 f'(-0.5) + \alpha_3 f'(0.5) + \alpha_4 f(1)
+    \end{equation}
+    Questa formula di quadratura richiede anche il valore della derivata in -0.5 e in 0.5 oltre al valore della funzione negli estremi.\\
+    Voglio che l'ordine di precisione sia massimo:
+    \begin{gather}
+        E(f) = \int_{-1}^{1} f(x) dx - Q(f)\\
+        E(1) = \int_{-1}^{1} 1 dx - (\alpha_1(1) + \alpha_2 (0) + \alpha_3 (0) + \alpha_4(1)) = 
+    \end{gather}
+    Questa differenza tra il valore esatto dell'integrale e il risultato della formula di quadratura deve essere uguale a 0
+    \begin{gather}
+        E(x) = \int_{-1}^{1}x dx - (\alpha_1(-1) + \alpha_2(1) + \alpha_3(1) + \alpha_4(1)) = 0\\
+        E(x^2) = \int_{-1}^1 x^2 dx - (\alpha_1(1) + \alpha_2(-1) + \alpha_3(1)+ \alpha_4(1)) = \\
+        E(x^3) = \int_{-1}^{1} x^3 dx - (\alpha_1(-1)+\alpha_2(\frac{3}{4})+ \alpha_3(\frac{3}{4})+\alpha_4(1)) = 0\\
+        \begin{cases}
+            \alpha_1 + \alpha_4 = 0\\
+            -\alpha_1 + \alpha_2 + \alpha_3 + \alpha_4 = 0\\
+            \alpha_1 - \alpha_2 + \alpha_3 + \alpha_4 = 2/3\\
+            -\alpha_1 + 3/4 \alpha_2 + 3/4 \alpha_3 + \alpha_4 = 0
+        \end{cases}\\
+        \begin{cases}
+            \alpha_1 = 1\\
+            \alpha_2 = 2/3\\
+            \alpha_3 = -2/3\\
+            \alpha_4 = 1
+        \end{cases}
+    \end{gather}
+\end{exercize}
+\begin{exercize}
+    Sia f(x) una funzione di classe $C^1$. Sia $f(x) \in C^1 ([a,b])$
+    \begin{equation}
+        I(f) = \int_a^b f(x) dx
+    \end{equation}
+    si vuole costruire una formula di quadratura interpolatoria e il suo resto:
+    \begin{equation}
+        p(x) = f(a)
+    \end{equation}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-20 alle 23.58.21.png}
+        \caption{}
+    \end{figure}
+    \begin{gather}
+        \int_a^b f(x) dx = \int_a^b p(x) + errore \ int \ dx = \\
+        = \int_a^b f(a) dx + \int_a^b errore \ int \ dx = \\
+        f(a)(b-a) + \int_a^b \frac{f'(\xi_x)}{1!}(x-a) dx
+    \end{gather}
+    $x-a = w$, inoltre per il secondo teorema della media integrale, visto che $x-a$ è sempre positivo abbiamo:
+    \begin{gather}
+        = f(a) (b-a) + f'(c) \int_a^b (x-a) dx = \\
+        ...\\
+        = f(a) (b-a) + f'(c) \frac{(b-a)^2}{2}
+    \end{gather}
+    Qual è l'ordine di precisione di questa formule di quadratura?\\
+    sono le funzioni polinomiali costanti, questo perché la loro $f'(c)$ è nulla e quindi annulla il resto.\\
+    Cosa si ottiene se uso questa regola in modo iterato?\\
+    Definisco un N intero positivo:
+    \begin{equation}
+        H = \frac{b-a}{N} \ \ \ \ x_i = a+iH \ \ \ i = 0,...,N
+    \end{equation}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-20 alle 23.58.10.png}
+        \caption{}
+    \end{figure}
+    quindi
+    \begin{gather}
+        \int_a^b f(x) dx = \int_{x_0}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx + \\
+        + \int_{x_2}^{x_3} f(x) dx + \int_{x_3}^{x_4}f(x) dx = \\
+        = f(x_0) \underbrace{(x_1-x_0)}_h + f(x_1)\underbrace{(x_2 - x_1)}_h + f(x_2) \underbrace{(x_3 - x_2)}_{h} + f(x_3)\underbrace{(x_4 - x_3)}_{h} + errori = \\
+        = h \sum_{i= 0}^{3}f_{x_i} + errori
+    \end{gather}
+    studiamo l'\underline{errore}.
+    \begin{equation}
+        f'(c) \int_a^b(x-a) dx = ... = f'(c_1) \frac{h^2}{2} + f'(c_2)\frac{h^2}{2} + f''(c_3) \frac{h^2}{2} + f'(4) \frac{h^2}{2} = 
+    \end{equation}
+    ritorniamo alla formula completa
+    \begin{gather}
+        H \sum_{i = 0}^{3}f(x_i) + \frac{h^2}{2}\sum_{i=0}^{3} f'(c_i) = \\
+        H \sum_{i = 0}^{3}f(x_i) + \frac{h^2}{2}4f'(c)\\
+        \int_a^b f(x) dx = \sum_{i=0}^{n} \int_{x_i}^{x_{i+1}}f(x) dx = \\
+        = \sum_{i=0}^n [f(x_i)+\frac{h^2}{2}(f'(c_i))] = \\
+        = \sum_{i=0}^{n-1}(f(x_i)) H + \sum_{i = 0}^{n-1} \frac{h^2}{2}f'(c_i) = \\
+        = H \sum_{i = 0}^{n-1}f(x_i) + \frac{h^2}{2}Nf'(c)
+    \end{gather}
+\end{exercize}
+\begin{example}
+    costruire una formula di quadratura
+    \begin{equation}
+        \int_a^b f(x) dx = \alpha_0 f(c) + \alpha_1f'(c) + \alpha_2 f''(c) + O(b-a)^k
+    \end{equation}
+    con k più grande possibile.\\
+    Come possiamo costruire questi 3 valori? Notiamo che assomiglia molto allo sviluppo di Taylor del tipo:
+    \begin{equation}
+        f(x_0 + h) \approx f(x_0) + hf'(x_0) + \frac{h^2}{2}f''(x_0) + ...
+    \end{equation}
+    come possiamo determinare le costanti $\alpha_0, \alpha_1, \alpha_2$? Impostiamo il sistema lineare 3 x 3.\\
+    Costruiamo una formula di quadratura del tipo:
+    \begin{equation}
+        \int_a^b f(x) dx = \alpha_0 f(x_0) + \alpha_1f'(c) + \alpha_2f''(c) + O(b-a)^2
+    \end{equation}
+    questo è diverso da prima perché abbiamo $\alpha_0 \cdot x_0$ e questo mi porta a far cadere la linearità del sistema e quindi non è possibile risolverlo con gli strumenti visti fino ad ora.
+\end{example}
+\section{Equazioni non lineari}
+Uno dei problemi più frequenti nel lavoro scientifico è trovare le radici di equazioni della forma 
+\begin{equation}
+    f(x) = 0
+\end{equation}
+dove f(x) può essere data esplicitamente o può essere una funzione trascendente.
+\begin{itemize}
+    \item spesso la funzione $f(x)$ può essere conosciuta solo implicitamente, cioè, può essere nota una regola per la valutazione della funzione per un qualsiasi valore dell'argomento, ma la sua forma esplicita è sconosciuta
+    \item In rari casi sono disponibili formule (chiuse) risolutiva, per cui si deve ricorrere a metodi computazionali iterativi che consentono di approssimare le soluzioni con una precisione prestabilita
+    \item Sfortunamente il concetto di soluzione aprrossimata è piuttosto confuso. Una soluzione approssimatita ottenuta con un computer sarà sempre errata a causa dell'arrotondamento o instabilità.
+    \item inoltre possono esserci molte soluzioni approssimative che sono valide per l'eguaglianza $x= 0$ anche se la soluzione richiesta è unica. Non sempre risula utile un approccio grafico costruito con un elaboratore per farsi un'idea dell'andamento della funzione, per determinare il numero delle soluzioni e se possbile separare ogni soluzione che cade $[a,b]$
+\end{itemize}
+\begin{example}
+    facciamo il grafico del polinomio $p_s(x)$ seguente usando la sua forma estesa:
+    \begin{equation}
+        p_s(x) = (1-x)^8 = x^8 - 8x^7 + 28 x^6 - 56x^5 + 70x^4 -56x^3 + 28x^2 - 8x + 1
+    \end{equation}
+    che ha, come è evidente, la radice $x = 1$ con molteplicità 8
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-21 alle 00.42.53.png}
+        \caption{}
+    \end{figure}
+    \\si vede che questo polinomio vicino a 1 è quasi piatto in quanto si deve annullare 8 volte in 1.\\
+    Ora rappresentiamo il polinomio scritto sopra, che non è altro che lo sviluppo della potenza ottava
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth+]{Foto/Screenshot 2022-11-21 alle 00.43.06.png}
+        \caption{}
+    \end{figure}
+    \\Siccome ho dei valori che sono dell'ordine di $10^{-14}$ alla fine queste variazioni sono solo delle interferenze dovuta dal calcolo della macchina e quindi i grafici sono confrontabili e danno praticamente lo stesso risultato
+\end{example}
+\chapter{Lezione 21/11}
+\begin{gather}
+    I(f) = \int_a^b f(x) dx \simeq \int_a^b p(x)\\
+    a,f(a),f'(a)\\
+    b,f(b),f'(b)
+\end{gather}
+Costruisco la tabella delle differenze divise
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        &DD0&DD1&DD2&DD3\\
+        \hline   
+        a&f(a)&&&\\
+        a&f(a)&f[a,a] = f'(a)&&\\
+        b&f(b)&f[a,b]&f[a,a,b]&\\
+        b&f(b)&f[b,b] = f'(b)&f[a,b,b]&f[a,a,b,b]\\
+        \hline 
+    \end{tabular}    
+\end{center}
+\begin{gather}
+    p(x) = f(a) + f[a,b] (x-a) +f[a,a,b](x-a)^2 + f[a,a,b,b](x-a)^2(x-b)\\
+    \int_a^b f(a) + f'(a)(x-a) + f[a,a,b](x-a)^2 + f[a,a,b,b](x-a)^2(x-b) dx\\
+    = \int_a^b f(a) dx + \int_a^b f'(x) (x-a) dx + \int_a^b f[a,a,b](x-a)^2 dx + \int_a^b f[a,a,b,b](x-a)^2 (x-b) dx
+\end{gather}
+DOMANDA: si può uasre questa regola in modo iterativo? Devo costruire la derivata degli estremi e nel punto medio, quindi la derivata deve essere continua.\\
+Oppure, se mi vengono dati i valori nei vari punti, devo per forza aver il valore della derivata in tutti i punti assegnati.
+\newpage
+\begin{example}
+    Applichiamo ora le due tecniche numeriche di integrazione al calcolo:
+    \begin{equation}
+        I(f) = \int_{-0.2}^{0.15} \sin (30 \cdot \sin(10 \ x)) dx
+    \end{equation}
+    La funzione integranda è rappresentata dalla curva:
+    \begin{figure}[h!]
+        \centering
+        \subfloat[\emph{}]{\includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-21 alle 17.52.33.png}}\\
+        \subfloat[\emph{Si vede che da 301 in poi le cifre decimali (in rosso) si stabilizzano}]{\includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-21 alle 17.52.43.png}}
+        \caption{}
+    \end{figure}
+\end{example}
+\newpage
+DOMANDA: esiste una funzione che se integrata è esatta con trapezi ma non con Cav. Simpson?
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-21 alle 18.07.49.png}
+    \caption{}
+\end{figure}
+\\Se avessimo questa funzione cosa potremo dire? Che è esatta perché il valore della funzione che si usano con trapezi sono i valori nei due estremi e quindi avrei 0, con cavalieri simpson avrei anche il valore medio e quindi avrei la somma di tre contributi nulli che fa ancora 0 e quindi, dato che anche l'integrale è nullo, la integra esattamente.\\
+Facciamo il grafico di una situazione diversa:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-21 alle 18.12.10.png}
+    \caption{}
+\end{figure}
+\\il valore della parte positiva è uguale al valore della parte negativa anche se non sono simmetriche.\\
+Per CS dovrei avere i valori agli estremi e poi il valore del punto medio e l'area con CS non è esatta.
+\begin{example}
+    Si vuole determinare un numero N di sottointervalli in cui deve essere suddiviso l'intervallo [0,1] affinché l'integrale
+    \begin{equation}
+        I = \int_0^1 e^{-x^2}dx
+    \end{equation}
+    sia approssimato con la formula di CS con errore minimo in modulo di: $0.5 \cdot 10^{-4}$.\\
+    Ricordiamo il resto della formula
+    \begin{equation}
+        Resto(CS_N) = -\frac{(b-a)^5}{2880N^4}f^{(4)}(\xi)
+    \end{equation}
+    la derivata quadrta della funzione integranda $f(x)$ è:
+    \begin{equation}
+        f^{(4)}(x) = 4e^{-x^2}(4x^4-12x^2+3)
+    \end{equation}
+    con grafico sull'intervallo [0,1]
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-21 alle 18.31.53.png}
+        \caption{}
+    \end{figure}
+    \\inoltre 
+    \begin{equation}
+        \max{x\in(0,1)}|f^{(4)}(x)| = 12
+    \end{equation}
+    Prendendo il modulo del resto e ricordando che $b-a = 1$ abbiamo:
+    \begin{equation}
+        \frac{12}{2880 N^4} \leq 0.5 \cdot 10^{-4}
+    \end{equation}
+    segue che l'approssimazione richiesta con un errore minore di $0.5 \cdot 10^{-4}$ si ottiene prendendo $N\geq 4$
+\end{example}
+Nella seguente tabella sono riportati i coefficienti e i resti delle formule di Newton-Cotes per $n = 1,...,7$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-21 alle 18.37.34.png}
+    \caption{}
+\end{figure}
+\\per $n=1$ ho la regola del trapezio, mentre per $n=2$ ho la regola di Cavalieri-Simpson\\
+Si noti che con un coefficiente dispari ho derivata pari a $n+1$, mentre con un coefficiente pari ho derivata $n+2$\\
+DOMANDA: perché per la formula di Newton, il considerare $n=8$ è molto complicato? Intanto un problema è dato dalla derivata ottava. Secondo perché abbiamo dei pesi che sono affetti da errori in quanto sono delle frazioni complesse e quindi non è banale calcolare i coefficienti e sono anche affetti da errori (anche molto grossi) in quanto sono approssimati.
+\chapter{Lezione 23/11}
+\begin{equation}
+    f(x) = 0
+\end{equation}
+PROBLEMA: se ho una funzione come posso deterinare i punti in cui si annulla? Il problema \underline{a monte} è vedere se questa funzione ha degli zeri.\\
+Sotto questa ipotesi, ovvero che abbia degli zeri, possiamo discutere il problema.\\
+Quindi vogliamo determinare il radici di $f(x) = 0$, se $f(x)$ è un polinomio possiamo aggiungere qualcosa, ovvero che il numero di radici di un polinomio di grando n sono n.\\
+La funzione deve avere un'intersezione con l'asse x.\\
+Supponiamo $f(x) = p_n(x)$ (polinomio di grado n).\\
+Il teorema fondamentale dell'albegra dice che un polinomio di grado n ha n radici nei complessi.\\
+Ma dove cadono queste radici? Per esempio, se sono nei naturali, sono sicuro che le n radici cadono nei naturali? No.\\
+Se volessimo determinare le radici reali il teorema fondamentale "casca" perché non è detto che le n radici siano reali (se il polinomio è di grado dispari abbiamo sicuramente una radice reale, altrimenti non lo possiamo sapere).\\
+OSSERVAZIONE: il metodo delle tangenti e diNewton è usato per calcolare la radice o usiamo una serie.\\
+\newpage
+\subsection*{Teorema degli zeri}: sia $f:[a,b] \rightarrow \mathbb{R}$ continua in $[a,b]$, se $f(a)\cdot f(b) < 0$ allora esiste almeno un punto $\alpha \in (a,b)$ tale che $f(\alpha) = 0$.\\
+Abbiamo anche dei casi in cui $f(a) > 0$ e $f(b) > 0$ però si annulla lo stesso:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-23 alle 23.42.49.png}
+    \caption{}
+\end{figure}
+\\Quindi se abbiamo le condizioni di prima sappiamo che c'è almeno uno zero, però non è detto che in altri casi non ci siano zeri. La soluzione all'eccezione sopra è localizzare il problema e trovare, se ci sono, degli intervalli che soddisfano il teorema
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-23 alle 23.45.46.png}
+    \caption{}
+\end{figure}
+\\Se considero $(a,c)$ e $(c,b)$ vediamo che in questo caso il teorema è soddisfatto.
+\newpage
+\subsection*{Algoritmo di bisezione}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[]{Foto/Blank diagram.jpeg}
+    \caption{}
+\end{figure}
+Supponiamo di essere arrivati all'intervallo $[a_{k-1},b_{k-1}]$, le due proprietà diventano:
+\begin{enumerate}
+    \item $f(a_{k-1})\cdot f(b_{k-1}) < 0 \Rightarrow \exists \alpha \in (a_{k-1},b_{k-1}): f(\alpha) = 0$
+    \item $[a_{k-1},b_{k-1}] \ \ \ b_{k-1}-a_{k-1} = \frac{b_{k-2}-a_{k-2}}{2} = ... = \frac{b_1 - a_1}{2^{k-2}}$
+\end{enumerate}
+quindi ho $[a_{k-1},b_{k-1}] \subset ... \subset [a_1,b_1]$. Calcolo 
+\begin{equation}
+    C_{k-1} = \frac{a_{k-1}b_{k-1}}{2}
+\end{equation}
+quindi se $f(C_{k-1}) = 0, \alpha = C_{k-} \rightarrow STOP$, altrimenti:
+\begin{gather}
+    se \ f(a_{k-1})\cdot f(c_{k-1}) < 0 \rightarrow a_k = a_{k-1}, b_k = c_{k_1}\\
+    se \ f(c_{k-1})\cdot f(b_{k-1}) < 0 \rightarrow a_k = c_{k-1}, b_k = b_{k-1}
+\end{gather}
+da uno di questi due quindi otteniamo $[a_k, b_k]$, le proprietà di questo intervallo sono:
+\begin{enumerate}
+    \item $f(a_k)f(b_k) < 0$ allora $\exists \alpha \in (a_k,b_k): f(\alpha) = 0$
+    \item $b_k - a_k = \frac{b_{k-1}-a_{k-1}}{2} = ... = \frac{b_1-a_1}{2^{k-1}}$
+\end{enumerate}
+quindi abbiamo
+\begin{equation}
+    c_k = \frac{a_k+b_k}{2}
+\end{equation}
+sono in questa situazione:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-24 alle 00.45.55.png}
+    \caption{}
+\end{figure}
+\\Cosa posso fare? Posso andare avanti nella determinazione dei sottointervalli oppure dire che $c_k \simeq \alpha$ e quindi termino la costruzione di sottointervalli e dire che è un'approssimazione della radice $\alpha$.\\
+CHE ERRORE COMMETTO?
+\begin{equation}
+    |errore| = |c_k - \alpha|
+\end{equation}
+Posso maggiorare questo errore?
+\begin{gather}
+    |errore| = |c_k - \alpha| < \frac{b_k-a_k}{2} = \frac{b_{k-1}-a_{k-1}}{2^2} = ... = \frac{b_1 - a_1}{2^k}\\
+    |errore| = \frac{b_1 - a_1}{2^k}
+\end{gather}
+per $k \rightarrow \infty$ ho che $\frac{b_1 - a_1}{2^k} \rightarrow 0$.\\
+Quindi la successione $\{c_k\}$ tende a una radce dell'equazione $f(x) = 0$\\
+Se ho fissato una tolleranza $\epsilon$ e voglio commettere un errore:
+\begin{equation}
+    |errore| < tolleranza (\epsilon)
+\end{equation}
+Quante iterate devo fare?\\
+Per esempio $\epsilon = 10^{-3}$
+\begin{gather}
+    \frac{b_1 - a_1}{2^k} < \epsilon\\
+    \log_2 \frac{b_1 - a_2}{2^k} < \log_2 \epsilon\\
+    \log_2 b_1 - a_1 - \log_2 2^k < \log_2 \epsilon\\
+    \log_2 (b_1 - a_1) - k \log_2 2 < \log_2 \epsilon\\
+    \log_2(b_1 - a_1) - \log_2\epsilon < k\\
+    k> \log_2 \left(\frac{b_1-a_1}{\epsilon}\right)
+\end{gather}
+DOMANDA: se voglio portare questo con un logaritmo in base 10?
+\begin{equation}
+    k > \frac{\log_{10}\frac{b_1 - a_1}{\epsilon}}{\log_{10}2}
+\end{equation}
+\chapter{Lezione 25/11}
+Ammettiamo di aver trovato, con il metodo di prima, una radice. Come facciamo a trovare le altre?
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4 \linewidth]{Foto/Screenshot 2022-11-27 alle 11.57.57.png}
+    \caption{}
+\end{figure}
+Ammettiamo di aver trovato il punto medio (verde) e di aver lavorato nell'intervallo di destra. Non posso, dopo aver trovato $\alpha_3$ lavorare sull'intervallo sinistro per lo stesso motivo per cui l'ho scartato, ovvero che i due estremi sono di segno concorde.\\
+Una volta trovata una radice si può fare la divisione tra il polinomio e il monomio (del tipo $(x-\alpha)$) e poi si continua facendo il metodo dicotomico e così via.\\
+Supponiamo di avere un calcolatore ideale:
+\begin{equation}
+    [a_1,b_1] = [0.982, 0.984]
+\end{equation}
+questo calcolatore lavora con 3 cifre e arrotondamento.
+\begin{equation}
+    c_1 = \frac{a_1 + b_1}{2} = \frac{0.982 + 0.984}{2} = \frac{1.966}{2} = \frac{1.97}{2} = 0.985
+\end{equation}
+si noti che $0.985$ non è nell'intervallo. Inoltre si noti anche che abbiamo approssimato $1.966$ a $1.97$ in quanto, per ipotesi del problema, il calcolatore lavora con 3 cifre.\\
+Come posso aggiustare la cosa?\\
+\begin{gather}
+    c_1 = a_1 + (b_1 - a_1) \cdot 0.5 = \\
+    = 0.982 + (0.984 - 0.982) \cdot 0.5 = \\
+    = 0.982 + 0.0001 = 0.983
+\end{gather}
+e quindi abbiamo ottenuto effettivamente il punto medio
+\begin{gather}
+    |e_k| < \frac{b_1 - a_1}{2^k}\\
+    |e_{k-1} < \frac{b_1 - a_1}{2^{k-1}}\\
+    \frac{|e_k|}{|e_{k-1}|} \simeq \frac{\frac{b_1 - a_1}{2^k}}{\frac{b_1 - a_1}{2^{k-1}}} \simeq \frac{2^{k-1}}{2^k}\simeq \frac{1}{2}\\
+    \lim_{k\rightarrow +\infty} \frac{|e^k|}{|e^{k-1}|} = \frac{1}{2}
+\end{gather}
+L'equazione 25.9 è molto importante perché ci permette di introdurre l'ORDINE DI CONVERGENZA di un metodo\\
+DOMANDA: ad ogni passo del metodo dinotomico, quante cifre binarie il valore approssimato ha esatte? Se sto lavorando in binario ad ogni passo ottengo una cifra binaria e quante sono necessarie per ottenere una cifra decimale?
+\begin{equation}
+    10^{-1} \simeq 2^{-33}
+\end{equation}
+ogni circa 3 iterate ho una cifra decimale corretta.
+\begin{definition}
+    ORDINE DI CONVERGENZA:\\
+    Sia P un numero reale positivo, e c un numero numero reale positivo, se il $\lim_{k\rightarrow \infty}\frac{|e_k|}{|e_{k-1}|^p} = c$ allora il metodo ha ordine p.\\
+\end{definition}
+Se volessi costruire un metodo diverso, un punto di riferimento è cercare di velocizzare il suo metodo.\\
+Se $|e^k|$ è elevato alla p sappiamo che:
+\begin{equation}
+    |e_k| \simeq c|e_{k-1}|^p
+\end{equation}
+allora vediamo che abbiamo velocizzato il metodo. Però dobbiamo anche tenere conto della convergenza ad una radice.\\
+Se $p = 1 \rightarrow c$ come deve essere per parlare di convergenza deve essere tra 0 e 1 $\rightarrow e_k \simeq c|e_{k-1}|- c^2 |e_{k-2}| = ... = c^k |e_0|$ quindi per $k \rightarrow \infty$ se c fosse $>1$ non convergerebbe.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-27 alle 12.39.45.png}
+    \caption{}
+\end{figure}
+se dal punto di vista $y_0$ tracciato una rete posso trovare un'intersezione della retta con l'asse x (arancione) ho trovato un valore più vicino ad $\alpha$, posso trovare un'altra retta e trovare un punto ancora più vicino. Ho vari metodi a seconda del coefficiente angolare della retta che scelgo. Quindi abbiamo sostituiti una funzione con una retta.
+\chapter{Lezione 26/11}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-28 alle 23.28.20.png}
+    \caption{}
+\end{figure}
+\begin{gather}
+    f[a,b]\rightarrow \mathbb{R}\\
+    f(\alpha) = 0\\
+    y_0 = f(x_0)\\
+    k_0 (coeff \ angolare) \Rightarrow \begin{cases}
+        y = k_0 (x-x_0) + y_0\\
+        y = 0
+    \end{cases} \Rightarrow 0 = k_0 (x-x_0) + y_0 \\
+    x = - \frac{y_0}{k_0}x_0\\
+    x_1 = x_0 \cdot \frac{f(x_0)}{k_0}
+\end{gather}
+Da questa costruzione vedo che $x_0$ si è avvicinato alla radice $\alpha$\\
+Ora usiamo il punto $x_1$:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-28 alle 23.31.44.png}
+    \caption{}
+\end{figure}
+\begin{gather}
+    (x_1, f(x_1)), \ k_1 = coeff.\\
+    \begin{cases}
+        y = k_1 (x-x_1)+f(x_1)\\
+        y = 0
+    \end{cases} \text{determino l'intersezione con l'asse x}\\
+    0 = k_1(x - x_1) + f(x_1)\\
+    x_2 = -\frac{f(x_1)}{k_1} + x_1 = x_1 - \frac{f(x_1)}{k_1}
+\end{gather}
+e vedo che anche questa volta ci siamo avvicinati di più, però tutto questo vale se abbiamo di fronte un grafico e se possiamo scegliere precisamente il coefficiente angolare.\\
+\newpage
+COSA DICONO I METODI NUMERICI PER LA SCLETA DEL COEFF. ANGOLARE?
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-28 alle 23.35.38.png}
+    \caption{}
+\end{figure}
+\\$f(x)$ continua in $[a,b]$, se dividiamo l'intervallo in due parti chiamando $c_1$ il punto medio il metodo dicotomico mi butta già via due radici.\\
+CHE COEFFICIENTI ANGOLARI POSSO SCEGLIERE?\\
+Posso prendere un punto iniziale $x_0$ e prendere come coefficiente angolare $k_0$ quello della retta tangente in quel punto:
+\begin{equation}
+    y_0 = f(x_0) \rightarrow k_0 = f'(x_0)
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[]{Foto/Screenshot 2022-11-28 alle 23.37.54.png}
+    \caption{}
+\end{figure}
+\\Si vede che in questo caso il coefficiente angolare è infitnio e quindi non abbiamo intersezioni nei reali e perciò non possiamo trovare $x_1$\\
+Proviamo a prendere come punto $x_0$ un $x_0$ vicino ad una radice, ma avrei dei problemi dal punto di vista geometrico. Quindi vediamo che la determinazione del punto $x_0$ è molto sensibile al tipo di problema.
+\newpage
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-28 alle 23.41.22.png}
+    \caption{}
+\end{figure}
+Prendo il punto $x_2$ e costruisco la retta passante per $(x_2, y_2), (x_0, y_0)$ quindi l'idea è quella di scegliere $x_0$ e mantenerlo fisso, l'altro punto con cui cerco di costruire la retta invece cambia ed è il punto di intersezione del tipo $(x_i, f(x_i))$\\
+\newpage
+\section*{Metodi per la determinazione del coefficiente angolare}
+\subsection*{Regola Falsi}
+\begin{gather}
+    k_n = \frac{f(x_n) - f(x_0)}{x_n - x_0} \ n = 1,2,...\\
+    x_{n+1} = x_n - \frac{f(x_n)}{x_n} \Rightarrow x_{n+1} = x_n - f(x_n) \cdot \frac{x_0 - x_0}{f(x_0) - f(x_0)}\\
+    \{x_n\} \rightarrow \alpha \ per \ n \rightarrow \infty
+\end{gather}
+ci chiediamo se converga alla radice
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-28 alle 23.46.43.png}
+    \caption{}
+\end{figure}
+\\DOMANDA: questa situazione, nel mondo polinomiale cosa significa?\\
+Vuol dire che in quel punto il polinomio ha più di una radice, quindi ha molteplicità maggiore di 1.\\
+In questa sitauzione le tecniche numeriche possono creare qualche problema.\\
+Il metodo della regola Falsi ha la caratteristica che, una volta scelto $x_0$ e $f(x_0)$, questo punto rimane cardine per tutte le situazioni successive
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-28 alle 23.53.57.png}
+    \caption{}
+\end{figure}
+quindi costruisco una retta (rossa), poi prendo il punto di intersezione ($x_1$) e poi prendo $f(x_1)$ che è il corrispondente a $x_1$ sulla funzione e poi prendo la retta da $x_0$ a $f(x_1)$, prendo $x_2$ (punto di intersezione con l'asse x) e poi prendo $f(x_2)$ e traccio la retta da $x_0$ a $f(x_2)$.\\
+DOMANDA: qui abbiamo una situazione particolare e il metodo viene particolarmente bene per la crescenza e la continuità della funzione, se avessimo un altro tipo di concavità avremo dei punti che vanno da destra a sinistra di $\alpha$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-28 alle 23.57.43.png}
+    \caption{}
+\end{figure}
+\\Quindi vediamo che abbiamo $x_0, x_1, x_2$ che non sono tutti dalla stessa parte.\\
+DOMANDA: $|c_k| = |c_k - \alpha| < \epsilon$ che problema sussiste se vogliamo che questa disequazione sia soddisfatta?\\
+Se abbiamo una situazione di convergenza verso la radice abbiamo vari valori che si avvicinano sempre più alla radice:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-28 alle 23.59.40.png}
+    \caption{}
+\end{figure}
+vediamo che all'inizio i "salti" sono molto ampi, però poi dopo sono sempre più piccoli perché andiamo a fare dei piccoli aggiustamenti.\\
+Posso dire che la differenza tra due iterate deve essere minore della tolleranza, quando ciò succede mi fermo
+\subsection*{Metodo delle secanti}
+\begin{gather}
+    k_n = \frac{f(x_n) - f(x_{n-1})}{x_n - x_{n-1}}\\
+    x_{n+1} = x_n - f(x) \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}
+\end{gather}
+per generare questi punti che si devono avvicinare alla radice, cosa dobbiamo avere a disposizione?\\
+Abbiamo bisogno di due punti:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-29 alle 00.05.12.png}
+    \caption{}
+\end{figure}
+a questo punto prendo i punti $(x_1, y_1)$ e $(x_2, y_2)$ e costituisco la retta che passa per questi due punti
+\subsection*{Metodo delle tangenti}
+\begin{equation}
+    k_n = f'(x_n)
+\end{equation}
+questa ipotesi della derivabilità "casca" quando ho dei punti angolosi (di non derivabilità)
+\begin{equation}
+    x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \ n = 0,1,...
+\end{equation}
+cosa succederebbe ad una funzione come il valore assoluto (che ha un punto angoloso?). Ho che $x_{n+1} = 0$, quindi con un solo colpo ho determinato la radice
+\begin{example}
+    $f(x) = x^2 - c = 0 \ \ \ c \in \mathbb{R}^+$ voglio determinare le radici di questa equazione 
+    \begin{equation}
+        x = \pm \sqrt{c}
+    \end{equation}
+    come possiamo calcolare x senza usare la radice, provamo con il metodo di Newton:
+    \begin{gather}
+        x_{n+1} = x_n - \frac{f(x_n)}{f(x_n)'}\\
+        x_{n+1} = n_n - \frac{x_n^2-c}{2x_n}\\
+        x_{n+1} = ... = \frac{x_n}{2} + \frac{c}{2x_n}
+    \end{gather}
+    quindi posso calcolare la radice senza applicare direttamente la radice quadrata.\\
+    Geometricamente cosa vuol dire?
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[]{Foto/Screenshot 2022-11-29 alle 00.11.16.png}
+        \caption{}
+    \end{figure}
+    \\Se invece avessi preso $x_0$ a sinsita della radice?
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5 \linewidth]{Foto/Screenshot 2022-11-29 alle 00.11.19.png}
+        \caption{}
+    \end{figure}
+    \\nel caso in cui si prenda $0 < x_0 < \sqrt{c}$ la successione è convergente alla radice $\alpha$, è monotona descrescente escluso $x_0$, se prendessimo $x_0$ a destra tutta la successione convergerebbe
+\end{example}
+\chapter{Lezione 30/11}
+Prendiamo due punti a,b e calcoliamo le differenze divise
+\begin{equation}
+    f(x) = f(a) + f[a,b] (x-a) + f[x,a,b] (x-a) (x-b)
+\end{equation}
+$\alpha$ radice \underline{semplice} $\rightarrow f(\alpha) = 0, f'(\alpha) \neq 0$:
+\begin{gather}
+    0 = f(\alpha) = f(a) + f[a,b](\alpha - a) + f[\alpha,a,b](\alpha - a)(\alpha - b)\\
+    0 = \frac{f(a)}{f[a,b]}(\alpha - a) + \frac{f[\alpha,a,b]}{f[a,b]}(\alpha - a)(\alpha - b)\\
+    \alpha - a = \frac{f[a]}{f[a,b]} - \frac{[\alpha,a,b]}{f[a,b]}(\alpha - a)(\alpha - b)\\
+    \alpha = \color{red}{a- \frac{f(a)}{f[a,b]}} - \color{blue}{\frac{f[\alpha,a,b]}{f[a,b]}(\alpha - a)(\alpha -b)}
+\end{gather}
+Interpretiamo il secondo membro e chiamiamo:
+\begin{gather}
+    c = a - \frac{f(a)}{f[a,b]}\\
+    \alpha - c = - \frac{f[\alpha, a,b]}{f[a,b]}(\alpha - a)(\alpha -b)
+\end{gather}
+proviamo ad interpretare questa relazione, se prendo come c una stima di $\alpha$.\\
+\begin{center}
+    $\alpha - c$ = errore che commetto quando assumo come radice la quantità c
+\end{center}
+\begin{gather}
+    errore = \alpha - c = - \frac{f[\alpha, a,b]}{f[a,b]}(\alpha - a)(\alpha - b)\
+    c = a - \frac{f[a]}{f[a,b]} = a- \frac{f(a)}{\frac{f(b)-f(a)}{b-a}}\\
+    c = a - f(a) \cdot \frac{b-a}{f(b) - f(a)}
+\end{gather}
+questo assomiglia alle regole che abbiamo visto (falsi, secanti, ecc.).
+\begin{equation}
+    a - f(a) \frac{b-a}{f(b) - f(a)} = a-f(a) \frac{a-b}{f(a)- f(b)}
+\end{equation}
+supponiamo che $c = x_{n+1}, a = x_n, b = x_0$, dalla relazione ho che
+\begin{equation}
+    x_{n+1} = x_n - f(x_n) \frac{x_n - x_0}{f(x_n)-f(x_0)}
+\end{equation}
+Quindi con questa interpretazione ho ottenuto la REGOLA FALSI.\\
+Andiamo a prendere: $c = x_{n+1}, a = x_n, b = x_{n-1}$ e vado a scrivere c
+\begin{equation}
+    x_{n+1} = x_n - f(x_n) \frac{x_{n-1}-x_n}{f(x_{n-1})-f(x_n)}
+\end{equation}
+Cambiando segno della frazione abbiamo il METODO DELLE SECANTI.\\
+La stessa cosa la possiamo fare con il metodo delle TANGENTI: $c = x_{n+1}, a = x_n, b = x_{n}$. Abbiamo preso questi punti perché la DD di due punti coincidenti è la sua derivata prima. Infatti la DD può essere vista come un rapporto incrementale.\\
+Quindi abbiamo vist che i 3 metodi sono costruiti attraverso le differenze divise.
+\begin{equation}
+    errore = \alpha - c = - \frac{f[\alpha, a,b]}{f[a,b]}(\alpha - a)(\alpha - b) \ \ f(x) \in C^2
+\end{equation}
+DOMANDA: quanto vale l'errore?\\
+Prima guardiamo bene quanto vale quella frazione. Quando avevamo le DD e avevamo delle informazioni fino alla derivata seconda scrivevamo:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8 \linewidth]{Foto/Screenshot 2022-11-30 alle 18.29.41.png}
+\end{figure}
+Quindi la nostra frazione equivale a $ = \frac{\frac{1}{2}}f''(\beta){f'(\gamma)}$, dove $\gamma$ e $\beta$ sono punti opportuni.
+\begin{gather}
+    errore = \alpha - c = -\frac{f''(\beta)}{2f'(\gamma)}(\alpha - a)(\alpha -b)\\
+    |errore| = |\alpha - c| = \left|-\frac{f''(\beta)}{2f'(\gamma)}\right||(\alpha - a)||(\alpha -b)|\\
+    \left|\frac{1}{2}\frac{f''(\beta)}{f'(\gamma)}\right| \leq M |(\alpha - a)(\alpha - b)|
+\end{gather}
+ora voglio trovare una maggiorazione
+\begin{equation}
+    |errore| = |\alpha - c| \leq M |(\alpha - a)||(\alpha - b)|
+\end{equation}
+Per la regola FALSI:
+\begin{gather}
+    |errore| = |\alpha - x_{n-1}| \leq M |(\alpha - x_n)||(\alpha - x_0)| = \\
+    |e_{n+1}| \leq M |e_n||e_0|
+\end{gather}
+dove $|e_n|$ è l'errore del passo n-esimo, e $e_0$ è l'errore al passo precedente.\\
+Per il METODO DELLE SECANTI ho:
+\begin{gather}
+    |e_{n+1}| \leq M |\alpha - x_n||\alpha - x_{n-1}|\\
+    |e_{n+1}| \leq M |e_n||e_{n-1}|
+\end{gather}
+Per il METODO DELLE TANGENTI:
+\begin{gather}
+    |e_{n+1}| \leq M |\alpha - x_n||\alpha - x_n|\\
+    |e_{n+1}| \leq M |e_x^2|
+\end{gather}
+Da quello che abbiamo visto il metodo migliore è il metodo delle tangenti perché se avessimo un errore pari a $0.01$, alla volta dopo avremo $(0.01)^2$, quindi si riduce.\\
+Questo metodo però si può applicare solo se la funzione è derivabile.\\
+Il metodo più sicuro dal punto di vista dell'errore e dell'applicabilità è il metodo dicotomico.\\
+DOMANDA: questi metodi che abbiamo costruito sono convergenti?\\
+REGOLA FALSI: $e_{n+1}| \leq M|e_n||e_0|$ 
+\begin{gather}
+    k = M |e_0|\\
+    |e_{n+1}| \leq k |e_n| \leq ...
+    |e_n| \leq k |e_{n-1}|\\
+    |e_{n-1}|\leq k |e_{n-1}|
+    ...\leq k^2 |e_{n-1}| < k^3 |e_{n-1}|\\    
+\end{gather}
+Andando avanti in questa catena di relazioni abbiamo che:
+\begin{equation}
+    e_{n+1} \leq k^{n+1}|e_0|
+\end{equation}
+cosa deve succedere affinché la successione degli errori tenda a 0?
+\begin{gather}
+    k^{n+1} \rightarrow 0\\
+    k = M |e_0|
+\end{gather}
+quindi per affermare che l'errore della regola Falsi sia convergente $k<1$, inoltre sappiamo che k è positivo perché M è positivo e $|e_0|$ è sicuramente positivo.\\
+Il METODO DELLE SECANTI converge se $M|e_0| < 1$ ma contemporamente deve valore anche $M|e_1|<1$. Perché scrivo l'errore $e_1$? Nella regola Falsi, devo partire da $x_0$, mentre nelle secanti devo prendere due punti $x_0$ e $x_1$, per quanto riguarda le TANGENTI abbiamo una cosa analoga:
+\begin{equation}
+    |e_{n+1}| \leq M|e_n|^2
+\end{equation}
+moltiplicando entrambi i membri per M
+\begin{gather}
+    M|e_{n+1} \leq M^2 |e_n|^2 = (M|e_n|)^2 \leq ...\\
+    M|e_n| \leq (M|e_{n-1})^2
+    M|e_{n+1} \leq M^2 |e_n|^2 = (M|e_n|)^2 \leq (M|e_{n-1})^{2^2} \leq ... \leq \left(M|e_{n+1}\right)\leq \left(M|e_0\right)^{2^{n+1}}\\
+    |e_{n+1}| \leq \frac{1}{M}\left(M|e_0|\right)^{2^{n+1}}
+\end{gather}
+Quando converge? Quando: $M\cdot e_0 < 1$
+\chapter{Lezione 02/12}
+Cosa vuol dire fare la derivata di una funzione in due variabili?\\
+Faccio la derivata rispetto ad una variabile e poi rispetto all'altra. Quindi stiamo facendo delle derivate parziali della funzione (prima rispetto ad una variabile e poi rispetto all'altra). Quello che per il momento non considero una variabile la tratto come se fosse una cosante.\\
+\begin{theorem}
+    Sia $f(x) \in C^2([a,b])$ tale che $f(x) = 0$ ha un'unica soluzione $\alpha = [a,b]$ e $f'(x)$ e $f''(x)$ sono diversi da 0 per ogni $x \in [a,b]$. Detto $x_0 \in [a,b]$ tale che $f(x_0)f'(x_0) > 0$ allora la successioe generata dal metodo di Newton è monotona convergente ad $\alpha$.\\
+    $\{x_k\}$ è la successione generata dal metodo di Newton, $x_k \rightarrow \alpha$ se $k \rightarrow \infty$.
+    \begin{equation}
+        x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)} \ k = 0,1,...
+    \end{equation}
+\end{theorem}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1]{Foto/Screenshot 2022-12-14 alle 09.17.09.png} 
+	\caption{}
+\end{figure}
+Partendo da $x_0$ riesco a costruire una successione che si avvicina ad $\alpha$.\\
+Se prendessi un punto da $a$ ad $\alpha$ potrei avere un punto che esce da $[a,b]$ e quindi non saprei quanto vale $f(x_1)$\\
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{Foto/Screenshot 2022-12-14 alle 09.18.44.png} 
+	\caption{}
+\end{figure}
+\\Come posso vedere, se prendo punti da $\alpha$ a b ho una situazione che non mi porta a nulla, mentre nel secondo caso ho una soluzione.\\
+Essendo un processo infinito ad un certo punto dovremo fermare questo metodo. Come test di arresto potremo prendere il valore della funzione nell'ultimo punto calcolato oppure prendere un certo numero di iterate.\\
+Se avessimo una situazione di questo tipo:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7 \linewidth]{Foto/Screenshot 2022-12-14 alle 17.25.47.png}
+    \caption{}
+\end{figure}
+\\Supponiamo che sia il grafico di un polinomio di III grado e supponiamo di avere 3 radici reali. Cosa possiamo fare per valutare le tre radici? Possiamo prendere il polinomio che caratterizza questa funzione e con il metodo dicotomico trovare una radice, una volta trovata fare una divisione del tipo $p(x)/(x-\alpha)$ e così il grado del polinomo cala di uno e riapplichiamo il metodo dicotomico e così via.\\
+Però vediamo che per la determinazione di $\alpha_2$ va ancora bene il metodo dicomico, mentre per determinare $\alpha_3$ è meglio usare il metodo delle tangenti.
+\\TEOREMA: Sia $f(x) \in C^2([a,b])$:
+\begin{enumerate}
+    \item $f(a)f(b) < 0$
+    \item $f'(x) \neq 0 \forall x \in [a,b]$
+    \item $f''(x) \geq 0$ o $f''(x) \leq 0 \forall x \in [a,b]$
+    \item $\left|\frac{f(a)}{f'(a)}\right| < b-a$, $\left|\frac{f(b)}{f'(b)}\right| < b-a$
+\end{enumerate}
+allora il metodo di Newton converge all'unica soluzione (radice) $\alpha \in [a,b]$ per ogni scelta di $x_0$.\\
+Questo teorema dice che se sono verificate tutte le condizioni scritte, allora il problema della scelta di $x_0$ non c'è più.\\
+Il punto 2 indica che ci devono essere punti di massimo o minimo nell'intervallo.\\
+Il punto 3 indica che non ci deve essere cambio di concavità.\\
+Per quanto riguarda il punto 4? Proviamo a vedere una funzione che sodisfa tutte le condizioni:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8 \linewidth]{Foto/Screenshot 2022-12-14 alle 18.00.46.png}
+    \caption{}
+\end{figure}
+\\Quindi il punto 4 vuol dire che le tangenti disegnate negli estremi hanno come intersezione un punto interno all'intervallo
+\end{document}

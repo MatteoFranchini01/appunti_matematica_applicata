@@ -1,0 +1,1512 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.11.9)  14 DEC 2022 18:04
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/Users/matteofranchini/Library/CloudStorage/OneDrive-Universit^^c3^^a0degliStudidiParma/Universit^^c3^^a0/Appunti e slide/II anno/Matematica applicata/Appunti/Apputni Matematica Applicata.tex"
+(/Users/matteofranchini/Library/CloudStorage/OneDrive-Universit^^c3^^a0degliStudidiParma/Universit^^c3^^a0/Appunti e slide/II anno/Matematica applicata/Appunti/Apputni Matematica Applicata.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-10-26> (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/book.cls
+Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
+(/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/bk10.clo
+File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count194
+\Gm@cntv=\count195
+\c@Gm@tempcnt=\count196
+\Gm@bindingoffset=\dimen139
+\Gm@wd@mp=\dimen140
+\Gm@odd@mp=\dimen141
+\Gm@even@mp=\dimen142
+\Gm@layoutwidth=\dimen143
+\Gm@layoutheight=\dimen144
+\Gm@layouthoffset=\dimen145
+\Gm@layoutvoffset=\dimen146
+\Gm@dimlist=\toks17
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg)) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/babel.sty
+Package: babel 2022/10/23 3.82 The Babel package
+\babel@savecnt=\count197
+\U@D=\dimen147
+\l@unhyphenated=\language79
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count198
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/arabi/bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/babel-italian/italian.ldf
+Language: italian 2022/03/27 v.1.4.07 Italian support for the babel system
+\it@lettering=\count199
+\it@doublequoteactive=\count266
+\it@ISOcompliance=\count267
+)) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/locale/it/babel-italian.tex
+Package babel Info: Importing font and identification data for italian
+(babel)             from babel-it.ini. Reported on input line 11.
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count268
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen148
+)) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen149
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count269
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count270
+\leftroot@=\count271
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count272
+\DOTSCASE@=\count273
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen150
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count274
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count275
+\dotsspace@=\muskip16
+\c@parentequation=\count276
+\dspbrk@lvl=\count277
+\tag@help=\toks21
+\row@=\count278
+\column@=\count279
+\maxfields@=\count280
+\andhelp@=\toks22
+\eqnshift@=\dimen151
+\alignsep@=\dimen152
+\tagshift@=\dimen153
+\tagwidth@=\dimen154
+\totwidth@=\dimen155
+\lineht@=\dimen156
+\@envbody=\toks23
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+\stockwidth=\dimen157
+\stockheight=\dimen158
+))
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/05/18 v4.0.3 Extensive control of page headers and footers
+\f@nch@headwidth=\skip52
+\f@nch@O@elh=\skip53
+\f@nch@O@erh=\skip54
+\f@nch@O@olh=\skip55
+\f@nch@O@orh=\skip56
+\f@nch@O@elf=\skip57
+\f@nch@O@erf=\skip58
+\f@nch@O@olf=\skip59
+\f@nch@O@orf=\skip60
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen161
+\captionmargin=\dimen162
+\caption@leftmargin=\dimen163
+\caption@rightmargin=\dimen164
+\caption@width=\dimen165
+\caption@indent=\dimen166
+\caption@parindent=\dimen167
+\caption@hangindent=\dimen168
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count281
+\c@continuedfloat=\count282
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count283
+\sf@farskip=\skip61
+\sf@captopadj=\dimen169
+\sf@capskip=\skip62
+\sf@nearskip=\skip63
+\c@subfigure=\count284
+\c@subfigure@save=\count285
+\c@lofdepth=\count286
+\c@subtable=\count287
+\c@subtable@save=\count288
+\c@lotdepth=\count289
+\sf@top=\skip64
+\sf@bottom=\skip65
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/array.sty
+Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen170
+\ar@mcellbox=\box53
+\extrarowheight=\dimen171
+\NC@list=\toks25
+\extratabsurround=\skip66
+\backup@length=\skip67
+\ar@cellbox=\box54
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/mathcolor.ltx))
+\everycr=\toks26
+\minrowclearance=\skip68
+\rownum=\count290
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/chngcntr/chngcntr.sty
+Package: chngcntr 2018/04/09 v1.1a change counter resetting
+Package chngcntr Info: \counterwithout already defined.
+(chngcntr)             Quitting chngcntr on input line 21.
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip69
+\LTright=\skip70
+\LTpre=\skip71
+\LTpost=\skip72
+\LTchunksize=\count291
+\LTcapwidth=\dimen172
+\LT@head=\box55
+\LT@firsthead=\box56
+\LT@foot=\box57
+\LT@lastfoot=\box58
+\LT@gbox=\box59
+\LT@cols=\count292
+\LT@rows=\count293
+\c@LT@tables=\count294
+\c@LT@chunks=\count295
+\LT@p@ftn=\toks27
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fundus-calligra/calligra.sty
+Package: calligra 2012/04/10 v1.9 LaTeX package calligra
+)
+\c@definition=\count296
+\c@exercize=\count297
+\c@example=\count298
+\c@theorem=\count299
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count300
+\l__pdf_internal_box=\box60
+)
+
+LaTeX Warning: Unused global option(s):
+    [portrait].
+
+(/Users/matteofranchini/Library/CloudStorage/OneDrive-Universit^^c3^^a0degliStudidiParma/Universit^^c3^^a0/Appunti e slide/II anno/Matematica applicata/Appunti/Apputni Matematica Applicata.aux)
+\openout1 = `"Apputni Matematica Applicata.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(85.35826pt, 443.57848pt, 85.35826pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=443.57848pt
+* \textheight=681.15898pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-45.43198pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=49.79231pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \it@ocap on input line 39.
+LaTeX Info: Redefining \it@ccap on input line 39.
+
+File italian.ldf warning: 
+italian.ldf    With OT1 encoding guillemets are poorly faked
+italian.ldf    Use T1 encoding
+italian.ldf    or specify a font with command \CaporaliFrom
+italian.ldf    See the documentation concerning the babel-italian typesetting 
+italian.ldf    on input line 39.
+
+(/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count301
+\scratchdimen=\dimen173
+\scratchbox=\box61
+\nofMPsegments=\count302
+\nofMParguments=\count303
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count304
+\MPscratchDim=\dimen174
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
+\everyMPtoPDFconversion=\toks29
+) (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: longtable package is loaded.
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
+ (/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `T1/calligra/m/n' will be
+(Font)              scaled to size 17.28003pt on input line 40.
+LaTeX Font Info:    Font shape `T1/calligra/m/n' will be
+(Font)              scaled to size 24.88324pt on input line 40.
+ [1
+
+
+{/Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/calligra/m/n' will be
+(Font)              scaled to size 14.40002pt on input line 41.
+ [2
+
+] (/Users/matteofranchini/Library/CloudStorage/OneDrive-Universit^^c3^^a0degliStudidiParma/Universit^^c3^^a0/Appunti e slide/II anno/Matematica applicata/Appunti/Apputni Matematica Applicata.toc [3])
+\tf@toc=\write3
+\openout3 = `"Apputni Matematica Applicata.toc"'.
+
+ [4]
+Capitolo 1.
+<Foto/Schermata 2022-09-21 alle 16.55.03.png, id=21, 282.05376pt x 167.62625pt>
+File: Foto/Schermata 2022-09-21 alle 16.55.03.png Graphic file (type png)
+<use Foto/Schermata 2022-09-21 alle 16.55.03.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-21 alle 16.55.03.png  used on input line 83.
+(pdftex.def)             Requested size: 221.78923pt x 131.81197pt.
+<Foto/Schermata 2022-09-21 alle 16.55.06.png, id=23, 403.5075pt x 174.6525pt>
+File: Foto/Schermata 2022-09-21 alle 16.55.06.png Graphic file (type png)
+<use Foto/Schermata 2022-09-21 alle 16.55.06.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-21 alle 16.55.06.png  used on input line 84.
+(pdftex.def)             Requested size: 221.78923pt x 95.99786pt.
+
+Overfull \hbox (13.33333pt too wide) in paragraph at lines 83--84
+ [][][] 
+ []
+
+<Foto/Schermata 2022-09-21 alle 16.55.09.png, id=24, 435.6275pt x 220.825pt>
+File: Foto/Schermata 2022-09-21 alle 16.55.09.png Graphic file (type png)
+<use Foto/Schermata 2022-09-21 alle 16.55.09.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-21 alle 16.55.09.png  used on input line 85.
+(pdftex.def)             Requested size: 221.78923pt x 112.42719pt.
+<Foto/Schermata 2022-09-21 alle 16.55.14.png, id=25, 419.5675pt x 257.96375pt>
+File: Foto/Schermata 2022-09-21 alle 16.55.14.png Graphic file (type png)
+<use Foto/Schermata 2022-09-21 alle 16.55.14.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-21 alle 16.55.14.png  used on input line 86.
+(pdftex.def)             Requested size: 221.78923pt x 136.36192pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5
+
+]
+<Foto/Schermata 2022-09-21 alle 17.10.34.png, id=33, 721.69624pt x 297.11pt>
+File: Foto/Schermata 2022-09-21 alle 17.10.34.png Graphic file (type png)
+<use Foto/Schermata 2022-09-21 alle 17.10.34.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-21 alle 17.10.34.png  used on input line 103.
+(pdftex.def)             Requested size: 266.14978pt x 109.56628pt.
+ [6 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-21 alle 16.55.03.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-21 alle 16.55.06.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-21 alle 16.55.09.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-21 alle 16.55.14.png>]
+<Foto/Schermata 2022-09-21 alle 17.10.45.png, id=45, 512.91624pt x 336.25626pt>
+File: Foto/Schermata 2022-09-21 alle 17.10.45.png Graphic file (type png)
+<use Foto/Schermata 2022-09-21 alle 17.10.45.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-21 alle 17.10.45.png  used on input line 109.
+(pdftex.def)             Requested size: 266.14978pt x 174.4797pt.
+<Foto/Schermata 2022-09-21 alle 17.10.55.png, id=46, 478.78876pt x 284.06125pt>
+File: Foto/Schermata 2022-09-21 alle 17.10.55.png Graphic file (type png)
+<use Foto/Schermata 2022-09-21 alle 17.10.55.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-21 alle 17.10.55.png  used on input line 118.
+(pdftex.def)             Requested size: 266.14978pt x 157.90291pt.
+ [7 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-21 alle 17.10.34.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-21 alle 17.10.45.png>]
+<Foto/Schermata 2022-09-21 alle 17.21.49.png, id=54, 388.45125pt x 289.08pt>
+File: Foto/Schermata 2022-09-21 alle 17.21.49.png Graphic file (type png)
+<use Foto/Schermata 2022-09-21 alle 17.21.49.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-21 alle 17.21.49.png  used on input line 135.
+(pdftex.def)             Requested size: 266.14978pt x 198.06712pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
+
+ []
+
+[8 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-21 alle 17.10.55.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-21 alle 17.21.49.png>] [9] [10]
+Capitolo 2.
+[11
+
+]
+<Foto/Schermata 2022-09-24 alle 11.25.51.png, id=70, 600.2425pt x 455.7025pt>
+File: Foto/Schermata 2022-09-24 alle 11.25.51.png Graphic file (type png)
+<use Foto/Schermata 2022-09-24 alle 11.25.51.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-24 alle 11.25.51.png  used on input line 325.
+(pdftex.def)             Requested size: 177.42868pt x 134.70224pt.
+<Foto/Schermata 2022-09-24 alle 11.36.39.png, id=71, 523.9575pt x 253.94875pt>
+File: Foto/Schermata 2022-09-24 alle 11.36.39.png Graphic file (type png)
+<use Foto/Schermata 2022-09-24 alle 11.36.39.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-24 alle 11.36.39.png  used on input line 354.
+(pdftex.def)             Requested size: 266.14978pt x 128.99677pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-24 alle 11.25.51.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
+
+ []
+
+[13 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-24 alle 11.36.39.png>]
+Overfull \hbox (3.02112pt too wide) in paragraph at lines 412--413
+[]\OT1/cmr/m/it/10 Prendiamo 3 pun-ti di-stin-ti $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; y[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; y[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; y[]\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 e vo-glio co-strui-re un po-li-no-mio $\OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2
+ []
+
+<Foto/Schermata 2022-09-26 alle 10.44.01.png, id=81, 177.66376pt x 131.49126pt>
+File: Foto/Schermata 2022-09-26 alle 10.44.01.png Graphic file (type png)
+<use Foto/Schermata 2022-09-26 alle 10.44.01.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-26 alle 10.44.01.png  used on input line 430.
+(pdftex.def)             Requested size: 133.07489pt x 98.49379pt.
+<Foto/Schermata 2022-09-26 alle 11.05.21.png, id=82, 956.57375pt x 351.3125pt>
+File: Foto/Schermata 2022-09-26 alle 11.05.21.png Graphic file (type png)
+<use Foto/Schermata 2022-09-26 alle 11.05.21.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-26 alle 11.05.21.png  used on input line 442.
+(pdftex.def)             Requested size: 221.78923pt x 81.45416pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-26 alle 10.44.01.png>]
+<Foto/Schermata 2022-09-26 alle 11.13.06.png, id=87, 359.3425pt x 168.63pt>
+File: Foto/Schermata 2022-09-26 alle 11.13.06.png Graphic file (type png)
+<use Foto/Schermata 2022-09-26 alle 11.13.06.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-26 alle 11.13.06.png  used on input line 462.
+(pdftex.def)             Requested size: 266.14978pt x 124.90517pt.
+<Foto/Schermata 2022-09-26 alle 11.15.31.png, id=88, 373.395pt x 177.66376pt>
+File: Foto/Schermata 2022-09-26 alle 11.15.31.png Graphic file (type png)
+<use Foto/Schermata 2022-09-26 alle 11.15.31.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-26 alle 11.15.31.png  used on input line 476.
+(pdftex.def)             Requested size: 266.14978pt x 126.64095pt.
+ [15 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-26 alle 11.05.21.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-26 alle 11.13.06.png>] [16 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-26 alle 11.15.31.png>]
+Capitolo 3.
+<Foto/Schermata 2022-09-28 alle 17.59.20.png, id=100, 550.055pt x 335.2525pt>
+File: Foto/Schermata 2022-09-28 alle 17.59.20.png Graphic file (type png)
+<use Foto/Schermata 2022-09-28 alle 17.59.20.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-28 alle 17.59.20.png  used on input line 532.
+(pdftex.def)             Requested size: 266.14978pt x 162.2187pt.
+
+Underfull \vbox (badness 1102) has occurred while \output is active []
+
+ [17
+
+] [18 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-28 alle 17.59.20.png>]
+<Foto/Schermata 2022-09-28 alle 18.17.26.png, id=109, 617.30624pt x 334.24875pt>
+File: Foto/Schermata 2022-09-28 alle 18.17.26.png Graphic file (type png)
+<use Foto/Schermata 2022-09-28 alle 18.17.26.png>
+Package pdftex.def Info: Foto/Schermata 2022-09-28 alle 18.17.26.png  used on input line 564.
+(pdftex.def)             Requested size: 177.42868pt x 96.0677pt.
+ [19 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-09-28 alle 18.17.26.png>] [20
+
+]
+Capitolo 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--610
+
+ []
+
+<Foto/Schermata 2022-10-03 alle 21.58.33.png, id=119, 658.46pt x 563.10374pt>
+File: Foto/Schermata 2022-10-03 alle 21.58.33.png Graphic file (type png)
+<use Foto/Schermata 2022-10-03 alle 21.58.33.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-03 alle 21.58.33.png  used on input line 619.
+(pdftex.def)             Requested size: 221.78923pt x 189.66554pt.
+<Foto/Schermata 2022-10-03 alle 22.09.24.png, id=120, 429.605pt x 427.5975pt>
+File: Foto/Schermata 2022-10-03 alle 22.09.24.png Graphic file (type png)
+<use Foto/Schermata 2022-10-03 alle 22.09.24.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-03 alle 22.09.24.png  used on input line 625.
+(pdftex.def)             Requested size: 177.42868pt x 176.60146pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[21 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-03 alle 21.58.33.png>] [22 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-03 alle 22.09.24.png>]
+<Foto/Schermata 2022-10-03 alle 22.42.29.png, id=129, 599.23875pt x 132.495pt>
+File: Foto/Schermata 2022-10-03 alle 22.42.29.png Graphic file (type png)
+<use Foto/Schermata 2022-10-03 alle 22.42.29.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-03 alle 22.42.29.png  used on input line 694.
+(pdftex.def)             Requested size: 177.42868pt x 39.22922pt.
+ [23 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-03 alle 22.42.29.png>]
+<Foto/Schermata 2022-10-03 alle 22.44.58.png, id=134, 317.185pt x 293.095pt>
+File: Foto/Schermata 2022-10-03 alle 22.44.58.png Graphic file (type png)
+<use Foto/Schermata 2022-10-03 alle 22.44.58.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-03 alle 22.44.58.png  used on input line 703.
+(pdftex.def)             Requested size: 177.42868pt x 163.95764pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 707--708
+
+ []
+
+[24 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-03 alle 22.44.58.png>]
+Capitolo 5.
+<Foto/Schermata 2022-10-05 alle 18.21.30.png, id=139, 336.25626pt x 224.84pt>
+File: Foto/Schermata 2022-10-05 alle 18.21.30.png Graphic file (type png)
+<use Foto/Schermata 2022-10-05 alle 18.21.30.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-05 alle 18.21.30.png  used on input line 738.
+(pdftex.def)             Requested size: 177.42868pt x 118.63971pt.
+[25
+
+ </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-05 alle 18.21.30.png>]
+Overfull \hbox (6.63203pt too wide) detected at line 787
+[]
+ []
+
+[26]
+<Foto/Schermata 2022-10-05 alle 18.51.12.png, id=148, 328.22626pt x 164.615pt>
+File: Foto/Schermata 2022-10-05 alle 18.51.12.png Graphic file (type png)
+<use Foto/Schermata 2022-10-05 alle 18.51.12.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-05 alle 18.51.12.png  used on input line 800.
+(pdftex.def)             Requested size: 177.42868pt x 88.98622pt.
+<Foto/Schermata 2022-10-05 alle 19.15.36.png, id=149, 598.235pt x 358.33875pt>
+File: Foto/Schermata 2022-10-05 alle 19.15.36.png Graphic file (type png)
+<use Foto/Schermata 2022-10-05 alle 19.15.36.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-05 alle 19.15.36.png  used on input line 816.
+(pdftex.def)             Requested size: 266.14978pt x 159.4247pt.
+ [27 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-05 alle 18.51.12.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-05 alle 19.15.36.png>]
+<Foto/Schermata 2022-10-08 alle 09.46.43.png, id=155, 288.07625pt x 301.125pt>
+File: Foto/Schermata 2022-10-08 alle 09.46.43.png Graphic file (type png)
+<use Foto/Schermata 2022-10-08 alle 09.46.43.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-08 alle 09.46.43.png  used on input line 852.
+(pdftex.def)             Requested size: 177.42868pt x 185.47334pt.
+<Foto/Schermata 2022-10-08 alle 09.50.50.png, id=156, 526.96875pt x 265.99374pt>
+File: Foto/Schermata 2022-10-08 alle 09.50.50.png Graphic file (type png)
+<use Foto/Schermata 2022-10-08 alle 09.50.50.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-08 alle 09.50.50.png  used on input line 868.
+(pdftex.def)             Requested size: 221.78923pt x 111.95201pt.
+ [28 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-08 alle 09.46.43.png>]
+<Foto/Schermata 2022-10-08 alle 10.16.11.png, id=161, 350.30875pt x 266.9975pt>
+File: Foto/Schermata 2022-10-08 alle 10.16.11.png Graphic file (type png)
+<use Foto/Schermata 2022-10-08 alle 10.16.11.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-08 alle 10.16.11.png  used on input line 884.
+(pdftex.def)             Requested size: 177.42868pt x 135.23395pt.
+ [29 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-08 alle 09.50.50.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-08 alle 10.16.11.png>]
+<Foto/Schermata 2022-10-08 alle 10.31.16.png, id=167, 286.06876pt x 221.82875pt>
+File: Foto/Schermata 2022-10-08 alle 10.31.16.png Graphic file (type png)
+<use Foto/Schermata 2022-10-08 alle 10.31.16.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-08 alle 10.31.16.png  used on input line 916.
+(pdftex.def)             Requested size: 177.42868pt x 137.58655pt.
+<Foto/Schermata 2022-10-08 alle 10.35.03.png, id=168, 379.4175pt x 232.87pt>
+File: Foto/Schermata 2022-10-08 alle 10.35.03.png Graphic file (type png)
+<use Foto/Schermata 2022-10-08 alle 10.35.03.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-08 alle 10.35.03.png  used on input line 922.
+(pdftex.def)             Requested size: 133.07489pt x 81.67627pt.
+<Foto/Schermata 2022-10-08 alle 10.37.43.png, id=169, 509.905pt x 201.75375pt>
+File: Foto/Schermata 2022-10-08 alle 10.37.43.png Graphic file (type png)
+<use Foto/Schermata 2022-10-08 alle 10.37.43.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-08 alle 10.37.43.png  used on input line 928.
+(pdftex.def)             Requested size: 133.07489pt x 52.65483pt.
+<Foto/Schermata 2022-10-08 alle 10.40.06.png, id=170, 407.5225pt x 329.23pt>
+File: Foto/Schermata 2022-10-08 alle 10.40.06.png Graphic file (type png)
+<use Foto/Schermata 2022-10-08 alle 10.40.06.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-08 alle 10.40.06.png  used on input line 937.
+(pdftex.def)             Requested size: 221.78923pt x 179.17812pt.
+ [30 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-08 alle 10.31.16.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-08 alle 10.35.03.png>]
+<Foto/Schermata 2022-10-08 alle 11.55.00.png, id=176, 1064.97874pt x 304.13625pt>
+File: Foto/Schermata 2022-10-08 alle 11.55.00.png Graphic file (type png)
+<use Foto/Schermata 2022-10-08 alle 11.55.00.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-08 alle 11.55.00.png  used on input line 953.
+(pdftex.def)             Requested size: 310.50357pt x 88.6706pt.
+ [31 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-08 alle 10.37.43.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-08 alle 10.40.06.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-08 alle 11.55.00.png>]
+<Foto/Schermata 2022-10-10 alle 22.45.50.png, id=184, 648.4225pt x 203.76125pt>
+File: Foto/Schermata 2022-10-10 alle 22.45.50.png Graphic file (type png)
+<use Foto/Schermata 2022-10-10 alle 22.45.50.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-10 alle 22.45.50.png  used on input line 993.
+(pdftex.def)             Requested size: 443.57848pt x 139.39217pt.
+ [32 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-10 alle 22.45.50.png>]
+Capitolo 6.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33
+
+]
+Overfull \hbox (17.63051pt too wide) detected at line 1065
+[]\OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) + (\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x[]; x[]\OT1/cmr/m/n/10 ] + (\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x[]; x[]; x[]\OT1/cmr/m/n/10 ] + \OML/cmm/m/it/10 ::: \OT1/cmr/m/n/10 + (\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :::\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x[]; x[]; :::; x[]\OT1/cmr/m/n/10 ]
+ []
+
+[34] [35] [36
+
+]
+Capitolo 7.
+
+Overfull \hbox (14.4696pt too wide) detected at line 1104
+[]
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 1183--1185
+
+ []
+
+[38]
+<Foto/Schermata 2022-10-12 alle 17.32.41.png, id=210, 812.03375pt x 534.99875pt>
+File: Foto/Schermata 2022-10-12 alle 17.32.41.png Graphic file (type png)
+<use Foto/Schermata 2022-10-12 alle 17.32.41.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-12 alle 17.32.41.png  used on input line 1209.
+(pdftex.def)             Requested size: 310.50357pt x 204.56696pt.
+ [39 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-12 alle 17.32.41.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1238--1240
+
+ []
+
+<Foto/IMG_EBFD3669B184-1.jpeg, id=215, 1966.34625pt x 817.0525pt>
+File: Foto/IMG_EBFD3669B184-1.jpeg Graphic file (type jpg)
+<use Foto/IMG_EBFD3669B184-1.jpeg>
+Package pdftex.def Info: Foto/IMG_EBFD3669B184-1.jpeg  used on input line 1247.
+(pdftex.def)             Requested size: 354.86412pt x 147.44958pt.
+[40 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/IMG_EBFD3669B184-1.jpeg>] [41] [42
+
+]
+Capitolo 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1282--1283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1296--1300
+
+ []
+
+[43]
+<Foto/Schermata 2022-10-14 alle 18.38.47.png, id=231, 342.27875pt x 280.04625pt>
+File: Foto/Schermata 2022-10-14 alle 18.38.47.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 18.38.47.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 18.38.47.png  used on input line 1305.
+(pdftex.def)             Requested size: 133.07489pt x 108.88pt.
+<Foto/Schermata 2022-10-14 alle 18.38.50.png, id=232, 338.26375pt x 262.9825pt>
+File: Foto/Schermata 2022-10-14 alle 18.38.50.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 18.38.50.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 18.38.50.png  used on input line 1306.
+(pdftex.def)             Requested size: 133.07489pt x 103.46161pt.
+<Foto/Schermata 2022-10-14 alle 18.38.52.png, id=233, 316.18124pt x 262.9825pt>
+File: Foto/Schermata 2022-10-14 alle 18.38.52.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 18.38.52.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 18.38.52.png  used on input line 1307.
+(pdftex.def)             Requested size: 133.07489pt x 110.68463pt.
+<Foto/Schermata 2022-10-14 alle 18.38.54.png, id=234, 317.185pt x 278.03876pt>
+File: Foto/Schermata 2022-10-14 alle 18.38.54.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 18.38.54.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 18.38.54.png  used on input line 1308.
+(pdftex.def)             Requested size: 133.07489pt x 116.65244pt.
+<Foto/Schermata 2022-10-14 alle 18.47.38.png, id=235, 664.4825pt x 616.3025pt>
+File: Foto/Schermata 2022-10-14 alle 18.47.38.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 18.47.38.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 18.47.38.png  used on input line 1314.
+(pdftex.def)             Requested size: 221.78923pt x 205.70323pt.
+ [44 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 18.38.47.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 18.38.50.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 18.38.52.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 18.38.54.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 18.47.38.png>]
+<Foto/Schermata 2022-10-14 alle 18.53.16.png, id=244, 528.97626pt x 484.81125pt>
+File: Foto/Schermata 2022-10-14 alle 18.53.16.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 18.53.16.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 18.53.16.png  used on input line 1329.
+(pdftex.def)             Requested size: 177.42868pt x 162.61435pt.
+<Foto/Schermata 2022-10-14 alle 18.53.20.png, id=245, 579.16376pt x 502.87875pt>
+File: Foto/Schermata 2022-10-14 alle 18.53.20.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 18.53.20.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 18.53.20.png  used on input line 1330.
+(pdftex.def)             Requested size: 177.42868pt x 154.05687pt.
+ [45 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 18.53.16.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 18.53.20.png>]
+<Foto/Schermata 2022-10-14 alle 19.03.08.png, id=251, 585.18625pt x 287.0725pt>
+File: Foto/Schermata 2022-10-14 alle 19.03.08.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 19.03.08.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 19.03.08.png  used on input line 1344.
+(pdftex.def)             Requested size: 221.78923pt x 108.80396pt.
+<Foto/Schermata 2022-10-14 alle 19.06.03.png, id=252, 568.1225pt x 453.695pt>
+File: Foto/Schermata 2022-10-14 alle 19.06.03.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 19.06.03.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 19.06.03.png  used on input line 1350.
+(pdftex.def)             Requested size: 177.42868pt x 141.68933pt.
+<Foto/Schermata 2022-10-14 alle 19.06.08.png, id=253, 565.11125pt x 425.59pt>
+File: Foto/Schermata 2022-10-14 alle 19.06.08.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 19.06.08.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 19.06.08.png  used on input line 1351.
+(pdftex.def)             Requested size: 177.42868pt x 133.61996pt.
+<Foto/Schermata 2022-10-14 alle 19.06.14.png, id=254, 558.085pt x 412.54124pt>
+File: Foto/Schermata 2022-10-14 alle 19.06.14.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 19.06.14.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 19.06.14.png  used on input line 1352.
+(pdftex.def)             Requested size: 177.42868pt x 131.15349pt.
+<Foto/Schermata 2022-10-14 alle 19.06.26.png, id=255, 650.43pt x 615.29875pt>
+File: Foto/Schermata 2022-10-14 alle 19.06.26.png Graphic file (type png)
+<use Foto/Schermata 2022-10-14 alle 19.06.26.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-14 alle 19.06.26.png  used on input line 1359.
+(pdftex.def)             Requested size: 266.14978pt x 251.77652pt.
+ [46 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 19.03.08.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 19.06.03.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 19.06.08.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 19.06.14.png>] [47 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-14 alle 19.06.26.png>] [48]
+Capitolo 9.
+<Foto/Schermata 2022-10-17 alle 23.35.11.png, id=270, 521.95pt x 143.53625pt>
+File: Foto/Schermata 2022-10-17 alle 23.35.11.png Graphic file (type png)
+<use Foto/Schermata 2022-10-17 alle 23.35.11.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-17 alle 23.35.11.png  used on input line 1440.
+(pdftex.def)             Requested size: 177.42868pt x 48.79291pt.
+<Foto/Schermata 2022-10-17 alle 23.48.12.png, id=271, 566.115pt x 206.7725pt>
+File: Foto/Schermata 2022-10-17 alle 23.48.12.png Graphic file (type png)
+<use Foto/Schermata 2022-10-17 alle 23.48.12.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-17 alle 23.48.12.png  used on input line 1452.
+(pdftex.def)             Requested size: 221.78923pt x 81.00693pt.
+
+Overfull \hbox (62.99855pt too wide) detected at line 1465
+[]
+ []
+
+
+Underfull \vbox (badness 3601) has occurred while \output is active []
+
+ [49
+
+ </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-17 alle 23.35.11.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-17 alle 23.48.12.png>]
+<Foto/Schermata 2022-10-18 alle 00.34.40.png, id=278, 414.54875pt x 146.5475pt>
+File: Foto/Schermata 2022-10-18 alle 00.34.40.png Graphic file (type png)
+<use Foto/Schermata 2022-10-18 alle 00.34.40.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-18 alle 00.34.40.png  used on input line 1489.
+(pdftex.def)             Requested size: 177.42868pt x 62.72125pt.
+<Foto/Schermata 2022-10-18 alle 00.39.40.png, id=279, 604.2575pt x 195.73125pt>
+File: Foto/Schermata 2022-10-18 alle 00.39.40.png Graphic file (type png)
+<use Foto/Schermata 2022-10-18 alle 00.39.40.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-18 alle 00.39.40.png  used on input line 1500.
+(pdftex.def)             Requested size: 221.78923pt x 71.84001pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[50 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-18 alle 00.34.40.png>] [51 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-18 alle 00.39.40.png>] [52
+
+]
+Capitolo 10.
+<Foto/Schermata 2022-10-20 alle 09.48.43.png, id=291, 694.595pt x 330.23375pt>
+File: Foto/Schermata 2022-10-20 alle 09.48.43.png Graphic file (type png)
+<use Foto/Schermata 2022-10-20 alle 09.48.43.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-20 alle 09.48.43.png  used on input line 1508.
+(pdftex.def)             Requested size: 221.78923pt x 105.44516pt.
+<Foto/Schermata 2022-10-20 alle 09.52.56.png, id=292, 641.39626pt x 405.515pt>
+File: Foto/Schermata 2022-10-20 alle 09.52.56.png Graphic file (type png)
+<use Foto/Schermata 2022-10-20 alle 09.52.56.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-20 alle 09.52.56.png  used on input line 1517.
+(pdftex.def)             Requested size: 221.78923pt x 140.21838pt.
+[53 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-20 alle 09.48.43.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-20 alle 09.52.56.png>]
+<Foto/Schermata 2022-10-20 alle 10.06.13.png, id=298, 772.8875pt x 230.8625pt>
+File: Foto/Schermata 2022-10-20 alle 10.06.13.png Graphic file (type png)
+<use Foto/Schermata 2022-10-20 alle 10.06.13.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-20 alle 10.06.13.png  used on input line 1530.
+(pdftex.def)             Requested size: 266.14978pt x 79.49968pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1550--1553
+
+ []
+
+[54 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-20 alle 10.06.13.png>] [55] [56
+
+]
+Capitolo 11.
+<Foto/Schermata 2022-10-22 alle 10.55.23.png, id=310, 332.24126pt x 107.40125pt>
+File: Foto/Schermata 2022-10-22 alle 10.55.23.png Graphic file (type png)
+<use Foto/Schermata 2022-10-22 alle 10.55.23.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-22 alle 10.55.23.png  used on input line 1641.
+(pdftex.def)             Requested size: 221.78923pt x 71.69624pt.
+<Foto/Schermata 2022-10-22 alle 10.58.16.png, id=311, 352.31625pt x 127.47626pt>
+File: Foto/Schermata 2022-10-22 alle 10.58.16.png Graphic file (type png)
+<use Foto/Schermata 2022-10-22 alle 10.58.16.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-22 alle 10.58.16.png  used on input line 1642.
+(pdftex.def)             Requested size: 221.78923pt x 80.24821pt.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 1641--1643
+ [][][] 
+ []
+
+<Foto/Schermata 2022-10-22 alle 11.03.15.png, id=312, 431.6125pt x 247.92625pt>
+File: Foto/Schermata 2022-10-22 alle 11.03.15.png Graphic file (type png)
+<use Foto/Schermata 2022-10-22 alle 11.03.15.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-22 alle 11.03.15.png  used on input line 1649.
+(pdftex.def)             Requested size: 221.78923pt x 127.39781pt.
+<Foto/Schermata 2022-10-22 alle 11.08.09.png, id=313, 732.7375pt x 175.65625pt>
+File: Foto/Schermata 2022-10-22 alle 11.08.09.png Graphic file (type png)
+<use Foto/Schermata 2022-10-22 alle 11.08.09.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-22 alle 11.08.09.png  used on input line 1658.
+(pdftex.def)             Requested size: 221.78923pt x 53.16632pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[57 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-22 alle 10.55.23.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-22 alle 10.58.16.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-22 alle 11.03.15.png>]
+<Foto/Schermata 2022-10-22 alle 11.21.41.png, id=322, 317.185pt x 166.6225pt>
+File: Foto/Schermata 2022-10-22 alle 11.21.41.png Graphic file (type png)
+<use Foto/Schermata 2022-10-22 alle 11.21.41.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-22 alle 11.21.41.png  used on input line 1673.
+(pdftex.def)             Requested size: 221.78923pt x 116.51291pt.
+ [58 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-22 alle 11.08.09.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-22 alle 11.21.41.png>]
+<Foto/Schermata 2022-10-22 alle 14.59.15.png, id=328, 317.185pt x 165.61874pt>
+File: Foto/Schermata 2022-10-22 alle 14.59.15.png Graphic file (type png)
+<use Foto/Schermata 2022-10-22 alle 14.59.15.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-22 alle 14.59.15.png  used on input line 1717.
+(pdftex.def)             Requested size: 133.07489pt x 69.4861pt.
+ [59 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-22 alle 14.59.15.png>] [60
+
+]
+Capitolo 12.
+<Foto/Schermata 2022-10-24 alle 17.17.10.png, id=336, 688.5725pt x 166.6225pt>
+File: Foto/Schermata 2022-10-24 alle 17.17.10.png Graphic file (type png)
+<use Foto/Schermata 2022-10-24 alle 17.17.10.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-24 alle 17.17.10.png  used on input line 1757.
+(pdftex.def)             Requested size: 221.78923pt x 53.6686pt.
+
+Overfull \hbox (152.45882pt too wide) in paragraph at lines 1754--1762
+\OT1/cmr/m/n/10 DOMANDA: sup-po-nia-mo di con-si-de-ra-re un in-ter-val-lo $\OML/cmm/m/it/10 a; b$ \OT1/cmr/m/n/10 e una de-com-po-si-zio-ne $^^A = []$
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-24 alle 17.17.10.png>]
+<Foto/Schermata 2022-10-24 alle 17.58.26.png, id=342, 336.25626pt x 110.4125pt>
+File: Foto/Schermata 2022-10-24 alle 17.58.26.png Graphic file (type png)
+<use Foto/Schermata 2022-10-24 alle 17.58.26.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-24 alle 17.58.26.png  used on input line 1802.
+(pdftex.def)             Requested size: 221.78923pt x 72.82697pt.
+<Foto/Schermata 2022-10-24 alle 17.58.42.png, id=343, 332.24126pt x 170.6375pt>
+File: Foto/Schermata 2022-10-24 alle 17.58.42.png Graphic file (type png)
+<use Foto/Schermata 2022-10-24 alle 17.58.42.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-24 alle 17.58.42.png  used on input line 1808.
+(pdftex.def)             Requested size: 177.42868pt x 91.12741pt.
+
+Underfull \vbox (badness 1533) has occurred while \output is active []
+
+ [62 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-24 alle 17.58.26.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-24 alle 17.58.42.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1820--1821
+
+ []
+
+<Foto/Schermata 2022-10-24 alle 18.22.49.png, id=349, 644.4075pt x 300.12125pt>
+File: Foto/Schermata 2022-10-24 alle 18.22.49.png Graphic file (type png)
+<use Foto/Schermata 2022-10-24 alle 18.22.49.png>
+Package pdftex.def Info: Foto/Schermata 2022-10-24 alle 18.22.49.png  used on input line 1837.
+(pdftex.def)             Requested size: 221.78923pt x 103.29465pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1854--1857
+
+ []
+
+[63 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Schermata 2022-10-24 alle 18.22.49.png>] [64
+
+]
+Capitolo 13.
+[65]
+<Foto/Screenshot 2022-10-27 alle 11.52.28.png, id=360, 831.105pt x 486.81876pt>
+File: Foto/Screenshot 2022-10-27 alle 11.52.28.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-27 alle 11.52.28.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-27 alle 11.52.28.png  used on input line 1895.
+(pdftex.def)             Requested size: 310.50357pt x 181.87318pt.
+ [66 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-27 alle 11.52.28.png>]
+<Foto/Screenshot 2022-10-27 alle 12.02.58.png, id=365, 769.87625pt x 546.04pt>
+File: Foto/Screenshot 2022-10-27 alle 12.02.58.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-27 alle 12.02.58.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-27 alle 12.02.58.png  used on input line 1917.
+(pdftex.def)             Requested size: 266.14978pt x 188.7756pt.
+<Foto/Screenshot 2022-10-27 alle 12.07.03.png, id=366, 728.7225pt x 392.46625pt>
+File: Foto/Screenshot 2022-10-27 alle 12.07.03.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-27 alle 12.07.03.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-27 alle 12.07.03.png  used on input line 1924.
+(pdftex.def)             Requested size: 266.14978pt x 143.33582pt.
+<Foto/Screenshot 2022-10-27 alle 12.07.52.png, id=367, 730.73pt x 615.29875pt>
+File: Foto/Screenshot 2022-10-27 alle 12.07.52.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-27 alle 12.07.52.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-27 alle 12.07.52.png  used on input line 1929.
+(pdftex.def)             Requested size: 266.14978pt x 224.10805pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[67 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-27 alle 12.02.58.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-27 alle 12.07.03.png>]
+<Foto/Screenshot 2022-10-27 alle 12.11.14.png, id=374, 840.13875pt x 298.11375pt>
+File: Foto/Screenshot 2022-10-27 alle 12.11.14.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-27 alle 12.11.14.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-27 alle 12.11.14.png  used on input line 1941.
+(pdftex.def)             Requested size: 266.14978pt x 94.43854pt.
+<Foto/Screenshot 2022-10-27 alle 12.13.28.png, id=375, 960.58875pt x 556.0775pt>
+File: Foto/Screenshot 2022-10-27 alle 12.13.28.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-27 alle 12.13.28.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-27 alle 12.13.28.png  used on input line 1946.
+(pdftex.def)             Requested size: 266.14978pt x 154.0715pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[68 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-27 alle 12.07.52.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-27 alle 12.11.14.png>]
+<Foto/Screenshot 2022-10-27 alle 12.35.15.png, id=381, 872.25874pt x 375.4025pt>
+File: Foto/Screenshot 2022-10-27 alle 12.35.15.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-27 alle 12.35.15.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-27 alle 12.35.15.png  used on input line 1993.
+(pdftex.def)             Requested size: 266.14978pt x 114.54628pt.
+ [69 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-27 alle 12.13.28.png>] [70 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-27 alle 12.35.15.png>]
+Capitolo 14.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2017--2019
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2020--2021
+
+ []
+
+<Foto/Screenshot 2022-10-31 alle 17.07.13.png, id=390, 684.5575pt x 406.51875pt>
+File: Foto/Screenshot 2022-10-31 alle 17.07.13.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-31 alle 17.07.13.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-31 alle 17.07.13.png  used on input line 2033.
+(pdftex.def)             Requested size: 221.78923pt x 131.70763pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[71
+
+]
+<Foto/Screenshot 2022-10-31 alle 17.17.58.png, id=394, 919.435pt x 432.61626pt>
+File: Foto/Screenshot 2022-10-31 alle 17.17.58.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-31 alle 17.17.58.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-31 alle 17.17.58.png  used on input line 2055.
+(pdftex.def)             Requested size: 266.14978pt x 125.23106pt.
+<Foto/Screenshot 2022-10-31 alle 17.29.53.png, id=395, 666.49pt x 334.24875pt>
+File: Foto/Screenshot 2022-10-31 alle 17.29.53.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-31 alle 17.29.53.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-31 alle 17.29.53.png  used on input line 2061.
+(pdftex.def)             Requested size: 266.14978pt x 133.47781pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[72 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-31 alle 17.07.13.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-31 alle 17.17.58.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2069--2070
+
+ []
+
+<Foto/Screenshot 2022-10-31 alle 17.39.25.png, id=401, 740.7675pt x 511.9125pt>
+File: Foto/Screenshot 2022-10-31 alle 17.39.25.png Graphic file (type png)
+<use Foto/Screenshot 2022-10-31 alle 17.39.25.png>
+Package pdftex.def Info: Foto/Screenshot 2022-10-31 alle 17.39.25.png  used on input line 2080.
+(pdftex.def)             Requested size: 266.14978pt x 183.92123pt.
+
+Overfull \hbox (6.48163pt too wide) in paragraph at lines 2086--2088
+\OT1/cmr/m/n/24.88 MANCA L'UL-TI-MA PAR-TE PERCH[]E NON
+ []
+
+[73 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-31 alle 17.29.53.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-10-31 alle 17.39.25.png>] [74]
+Capitolo 15.
+[75
+
+]
+<Foto/Screenshot 2022-11-02 alle 18.15.36.png, id=414, 155.58125pt x 125.46875pt>
+File: Foto/Screenshot 2022-11-02 alle 18.15.36.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-02 alle 18.15.36.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-02 alle 18.15.36.png  used on input line 2128.
+(pdftex.def)             Requested size: 221.78923pt x 178.86372pt.
+ [76 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-02 alle 18.15.36.png>]
+<Foto/Screenshot 2022-11-02 alle 18.45.05.png, id=419, 174.6525pt x 134.5025pt>
+File: Foto/Screenshot 2022-11-02 alle 18.45.05.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-02 alle 18.45.05.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-02 alle 18.45.05.png  used on input line 2186.
+(pdftex.def)             Requested size: 177.42868pt x 136.6489pt.
+ [77 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-02 alle 18.45.05.png>] [78]
+Capitolo 16.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [79
+
+]
+<Foto/Screenshot 2022-11-06 alle 10.05.41.png, id=431, 406.51875pt x 338.26375pt>
+File: Foto/Screenshot 2022-11-06 alle 10.05.41.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-06 alle 10.05.41.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-06 alle 10.05.41.png  used on input line 2237.
+(pdftex.def)             Requested size: 221.78923pt x 184.5488pt.
+ [80 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-06 alle 10.05.41.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2261--2263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2263--2265
+
+ []
+
+<Foto/Screenshot 2022-11-06 alle 10.18.29.png, id=436, 245.91875pt x 120.45pt>
+File: Foto/Screenshot 2022-11-06 alle 10.18.29.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-06 alle 10.18.29.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-06 alle 10.18.29.png  used on input line 2279.
+(pdftex.def)             Requested size: 177.42868pt x 86.90771pt.
+[81 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-06 alle 10.18.29.png>]
+<Foto/Screenshot 2022-11-06 alle 10.35.54.png, id=441, 448.67625pt x 253.94875pt>
+File: Foto/Screenshot 2022-11-06 alle 10.35.54.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-06 alle 10.35.54.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-06 alle 10.35.54.png  used on input line 2315.
+(pdftex.def)             Requested size: 221.78923pt x 125.53258pt.
+ [82 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-06 alle 10.35.54.png>]
+Capitolo 17.
+[83
+
+]
+<Foto/Screenshot 2022-11-09 alle 18.33.50.png, id=449, 312.16624pt x 271.0125pt>
+File: Foto/Screenshot 2022-11-09 alle 18.33.50.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-09 alle 18.33.50.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-09 alle 18.33.50.png  used on input line 2376.
+(pdftex.def)             Requested size: 266.14978pt x 231.06883pt.
+ [84 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-09 alle 18.33.50.png>] [85]
+<Foto/Screenshot 2022-11-09 alle 18.59.23.png, id=458, 342.27875pt x 536.0025pt>
+File: Foto/Screenshot 2022-11-09 alle 18.59.23.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-09 alle 18.59.23.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-09 alle 18.59.23.png  used on input line 2412.
+(pdftex.def)             Requested size: 221.78923pt x 347.32608pt.
+ [86 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-09 alle 18.59.23.png>]
+<Foto/Screenshot 2022-11-09 alle 19.02.47.png, id=463, 316.18124pt x 257.96375pt>
+File: Foto/Screenshot 2022-11-09 alle 19.02.47.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-09 alle 19.02.47.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-09 alle 19.02.47.png  used on input line 2425.
+(pdftex.def)             Requested size: 221.78923pt x 180.95518pt.
+<Foto/Screenshot 2022-11-09 alle 19.10.31.png, id=464, 301.125pt x 259.97125pt>
+File: Foto/Screenshot 2022-11-09 alle 19.10.31.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-09 alle 19.10.31.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-09 alle 19.10.31.png  used on input line 2440.
+(pdftex.def)             Requested size: 301.12425pt x 259.97061pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Foto/Screenshot 2022-11-09 alle 19.14.38.png, id=465, 263.98625pt x 219.82124pt>
+File: Foto/Screenshot 2022-11-09 alle 19.14.38.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-09 alle 19.14.38.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-09 alle 19.14.38.png  used on input line 2451.
+(pdftex.def)             Requested size: 221.78923pt x 184.68211pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[87 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-09 alle 19.02.47.png>] [88 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-09 alle 19.10.31.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-09 alle 19.14.38.png>]
+Capitolo 18.
+<Foto/Screenshot 2022-11-09 alle 22.22.31.png, id=475, 380.42125pt x 237.88875pt>
+File: Foto/Screenshot 2022-11-09 alle 22.22.31.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-09 alle 22.22.31.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-09 alle 22.22.31.png  used on input line 2468.
+(pdftex.def)             Requested size: 221.78923pt x 138.69427pt.
+[89
+
+ </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-09 alle 22.22.31.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2486--2487
+
+ []
+
+<Foto/Screenshot 2022-11-09 alle 22.31.17.png, id=480, 429.605pt x 215.80624pt>
+File: Foto/Screenshot 2022-11-09 alle 22.31.17.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-09 alle 22.31.17.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-09 alle 22.31.17.png  used on input line 2494.
+(pdftex.def)             Requested size: 221.78923pt x 111.41312pt.
+[90 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-09 alle 22.31.17.png>]
+<Foto/Screenshot 2022-11-09 alle 22.45.24.png, id=485, 286.06876pt x 95.35625pt>
+File: Foto/Screenshot 2022-11-09 alle 22.45.24.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-09 alle 22.45.24.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-09 alle 22.45.24.png  used on input line 2521.
+(pdftex.def)             Requested size: 221.78923pt x 73.93086pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2536--2538
+
+ []
+
+[91 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-09 alle 22.45.24.png>]
+<Foto/Screenshot 2022-11-09 alle 23.04.34.png, id=491, 488.82625pt x 475.7775pt>
+File: Foto/Screenshot 2022-11-09 alle 23.04.34.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-09 alle 23.04.34.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-09 alle 23.04.34.png  used on input line 2552.
+(pdftex.def)             Requested size: 221.78923pt x 215.86926pt.
+ [92 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-09 alle 23.04.34.png>]
+Capitolo 19.
+[93
+
+]
+<Foto/Screenshot 2022-11-12 alle 18.07.31.png, id=499, 297.11pt x 194.7275pt>
+File: Foto/Screenshot 2022-11-12 alle 18.07.31.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-12 alle 18.07.31.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-12 alle 18.07.31.png  used on input line 2590.
+(pdftex.def)             Requested size: 221.78923pt x 145.36778pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2606--2608
+
+ []
+
+[94 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-12 alle 18.07.31.png>]
+<Foto/Screenshot 2022-11-12 alle 18.27.16.png, id=504, 446.66875pt x 193.72375pt>
+File: Foto/Screenshot 2022-11-12 alle 18.27.16.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-12 alle 18.27.16.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-12 alle 18.27.16.png  used on input line 2632.
+(pdftex.def)             Requested size: 446.66765pt x 193.72327pt.
+
+Overfull \hbox (3.08917pt too wide) in paragraph at lines 2632--2633
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2637--2640
+
+ []
+
+[95 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-12 alle 18.27.16.png>]
+<Foto/Screenshot 2022-11-12 alle 18.36.06.png, id=509, 482.80376pt x 177.66376pt>
+File: Foto/Screenshot 2022-11-12 alle 18.36.06.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-12 alle 18.36.06.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-12 alle 18.36.06.png  used on input line 2645.
+(pdftex.def)             Requested size: 221.78923pt x 81.61516pt.
+ [96 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-12 alle 18.36.06.png>]
+Capitolo 20.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2653--2655
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2678--2681
+
+ []
+
+[97
+
+] [98] [99] [100
+
+]
+Capitolo 21.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2773--2775
+
+ []
+
+[101]
+<Foto/Screenshot 2022-11-16 alle 22.54.54.png, id=531, 135.50626pt x 60.225pt>
+File: Foto/Screenshot 2022-11-16 alle 22.54.54.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-16 alle 22.54.54.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-16 alle 22.54.54.png  used on input line 2803.
+(pdftex.def)             Requested size: 221.78923pt x 98.57663pt.
+
+Overfull \hbox (103.20502pt too wide) detected at line 2811
+[]
+ []
+
+[102 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-16 alle 22.54.54.png>]
+<Foto/Screenshot 2022-11-16 alle 23.03.38.png, id=542, 635.37375pt x 364.36125pt>
+File: Foto/Screenshot 2022-11-16 alle 23.03.38.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-16 alle 23.03.38.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-16 alle 23.03.38.png  used on input line 2816.
+(pdftex.def)             Requested size: 310.50357pt x 178.066pt.
+<Foto/Screenshot 2022-11-16 alle 23.12.24.png, id=543, 548.0475pt x 758.835pt>
+File: Foto/Screenshot 2022-11-16 alle 23.12.24.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-16 alle 23.12.24.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-16 alle 23.12.24.png  used on input line 2825.
+(pdftex.def)             Requested size: 221.78923pt x 307.09492pt.
+<Foto/Screenshot 2022-11-16 alle 23.12.32.png, id=544, 570.13pt x 743.77875pt>
+File: Foto/Screenshot 2022-11-16 alle 23.12.32.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-16 alle 23.12.32.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-16 alle 23.12.32.png  used on input line 2826.
+(pdftex.def)             Requested size: 221.78923pt x 289.33485pt.
+ [103 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-16 alle 23.03.38.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-16 alle 23.12.24.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-16 alle 23.12.32.png>] [104]
+Capitolo 22.
+<Foto/Screenshot 2022-11-20 alle 23.58.21.png, id=555, 1009.7725pt x 463.7325pt>
+File: Foto/Screenshot 2022-11-20 alle 23.58.21.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-20 alle 23.58.21.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-20 alle 23.58.21.png  used on input line 2899.
+(pdftex.def)             Requested size: 221.78923pt x 101.85164pt.
+[105
+
+]
+<Foto/Screenshot 2022-11-20 alle 23.58.10.png, id=559, 895.345pt x 399.4925pt>
+File: Foto/Screenshot 2022-11-20 alle 23.58.10.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-20 alle 23.58.10.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-20 alle 23.58.10.png  used on input line 2922.
+(pdftex.def)             Requested size: 221.78923pt x 98.95851pt.
+ [106 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-20 alle 23.58.21.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-20 alle 23.58.10.png>] [107]
+<Foto/Screenshot 2022-11-21 alle 00.42.53.png, id=568, 782.925pt x 613.29124pt>
+File: Foto/Screenshot 2022-11-21 alle 00.42.53.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-21 alle 00.42.53.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-21 alle 00.42.53.png  used on input line 2983.
+(pdftex.def)             Requested size: 221.78923pt x 173.73235pt.
+<Foto/Screenshot 2022-11-21 alle 00.43.06.png, id=569, 786.94pt x 624.3325pt>
+File: Foto/Screenshot 2022-11-21 alle 00.43.06.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-21 alle 00.43.06.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-21 alle 00.43.06.png  used on input line 2990.
+(pdftex.def)             Requested size: 221.78923pt x 175.9551pt.
+ [108 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-21 alle 00.42.53.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-21 alle 00.43.06.png>] [109] [110
+
+]
+Capitolo 23.
+[111]
+<Foto/Screenshot 2022-11-21 alle 17.52.33.png, id=585, 271.0125pt x 210.7875pt>
+File: Foto/Screenshot 2022-11-21 alle 17.52.33.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-21 alle 17.52.33.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-21 alle 17.52.33.png  used on input line 3030.
+(pdftex.def)             Requested size: 221.78923pt x 172.50916pt.
+<Foto/Screenshot 2022-11-21 alle 17.52.43.png, id=586, 246.9225pt x 299.1175pt>
+File: Foto/Screenshot 2022-11-21 alle 17.52.43.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-21 alle 17.52.43.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-21 alle 17.52.43.png  used on input line 3031.
+(pdftex.def)             Requested size: 221.78923pt x 268.66925pt.
+ [112 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-21 alle 17.52.33.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-21 alle 17.52.43.png>]
+<Foto/Screenshot 2022-11-21 alle 18.07.49.png, id=592, 262.9825pt x 182.6825pt>
+File: Foto/Screenshot 2022-11-21 alle 18.07.49.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-21 alle 18.07.49.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-21 alle 18.07.49.png  used on input line 3039.
+(pdftex.def)             Requested size: 221.78923pt x 154.07385pt.
+<Foto/Screenshot 2022-11-21 alle 18.12.10.png, id=593, 246.9225pt x 152.57pt>
+File: Foto/Screenshot 2022-11-21 alle 18.12.10.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-21 alle 18.12.10.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-21 alle 18.12.10.png  used on input line 3046.
+(pdftex.def)             Requested size: 221.78923pt x 137.03935pt.
+<Foto/Screenshot 2022-11-21 alle 18.31.53.png, id=594, 237.88875pt x 184.69pt>
+File: Foto/Screenshot 2022-11-21 alle 18.31.53.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-21 alle 18.31.53.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-21 alle 18.31.53.png  used on input line 3068.
+(pdftex.def)             Requested size: 221.78923pt x 172.19954pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[113 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-21 alle 18.07.49.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-21 alle 18.12.10.png>]
+<Foto/Screenshot 2022-11-21 alle 18.37.34.png, id=600, 461.725pt x 428.60126pt>
+File: Foto/Screenshot 2022-11-21 alle 18.37.34.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-21 alle 18.37.34.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-21 alle 18.37.34.png  used on input line 3084.
+(pdftex.def)             Requested size: 221.78923pt x 205.87668pt.
+ [114 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-21 alle 18.31.53.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-21 alle 18.37.34.png>]
+Capitolo 24.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3093--3103
+
+ []
+
+[115
+
+]
+<Foto/Screenshot 2022-11-23 alle 23.42.49.png, id=610, 622.325pt x 359.3425pt>
+File: Foto/Screenshot 2022-11-23 alle 23.42.49.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-23 alle 23.42.49.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-23 alle 23.42.49.png  used on input line 3108.
+(pdftex.def)             Requested size: 221.78923pt x 128.06369pt.
+<Foto/Screenshot 2022-11-23 alle 23.45.46.png, id=611, 723.70375pt x 385.44pt>
+File: Foto/Screenshot 2022-11-23 alle 23.45.46.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-23 alle 23.45.46.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-23 alle 23.45.46.png  used on input line 3114.
+(pdftex.def)             Requested size: 221.78923pt x 118.1207pt.
+ [116 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-23 alle 23.42.49.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-23 alle 23.45.46.png>]
+<Foto/Blank diagram.jpeg, id=617, 447.17062pt x 572.28806pt>
+File: Foto/Blank diagram.jpeg Graphic file (type jpg)
+<use Foto/Blank diagram.jpeg>
+Package pdftex.def Info: Foto/Blank diagram.jpeg  used on input line 3122.
+(pdftex.def)             Requested size: 447.16953pt x 572.28665pt.
+
+Overfull \hbox (3.59105pt too wide) in paragraph at lines 3122--3123
+ [][] 
+ []
+
+[117 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Blank diagram.jpeg>]
+<Foto/Screenshot 2022-11-24 alle 00.45.55.png, id=621, 495.8525pt x 253.94875pt>
+File: Foto/Screenshot 2022-11-24 alle 00.45.55.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-24 alle 00.45.55.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-24 alle 00.45.55.png  used on input line 3151.
+(pdftex.def)             Requested size: 221.78923pt x 113.59001pt.
+ [118 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-24 alle 00.45.55.png>] [119] [120
+
+]
+Capitolo 25.
+<Foto/Screenshot 2022-11-27 alle 11.57.57.png, id=632, 553.06625pt x 339.2675pt>
+File: Foto/Screenshot 2022-11-27 alle 11.57.57.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-27 alle 11.57.57.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-27 alle 11.57.57.png  used on input line 3188.
+(pdftex.def)             Requested size: 177.42868pt x 108.837pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3200--3203
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [121 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-27 alle 11.57.57.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3222--3224
+
+ []
+
+<Foto/Screenshot 2022-11-27 alle 12.39.45.png, id=638, 772.8875pt x 469.755pt>
+File: Foto/Screenshot 2022-11-27 alle 12.39.45.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-27 alle 12.39.45.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-27 alle 12.39.45.png  used on input line 3234.
+(pdftex.def)             Requested size: 221.78923pt x 134.79906pt.
+[122 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-27 alle 12.39.45.png>]
+Capitolo 26.
+<Foto/Screenshot 2022-11-28 alle 23.28.20.png, id=643, 400.49625pt x 228.855pt>
+File: Foto/Screenshot 2022-11-28 alle 23.28.20.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-28 alle 23.28.20.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-28 alle 23.28.20.png  used on input line 3241.
+(pdftex.def)             Requested size: 221.78923pt x 126.73665pt.
+<Foto/Screenshot 2022-11-28 alle 23.31.44.png, id=644, 371.3875pt x 240.9pt>
+File: Foto/Screenshot 2022-11-28 alle 23.31.44.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-28 alle 23.31.44.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-28 alle 23.31.44.png  used on input line 3259.
+(pdftex.def)             Requested size: 221.78923pt x 143.86475pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3270--3272
+
+ []
+
+[123
+
+ </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-28 alle 23.28.20.png>]
+<Foto/Screenshot 2022-11-28 alle 23.35.38.png, id=649, 381.425pt x 241.90375pt>
+File: Foto/Screenshot 2022-11-28 alle 23.35.38.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-28 alle 23.35.38.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-28 alle 23.35.38.png  used on input line 3276.
+(pdftex.def)             Requested size: 221.78923pt x 140.65862pt.
+<Foto/Screenshot 2022-11-28 alle 23.37.54.png, id=650, 398.48875pt x 245.91875pt>
+File: Foto/Screenshot 2022-11-28 alle 23.37.54.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-28 alle 23.37.54.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-28 alle 23.37.54.png  used on input line 3287.
+(pdftex.def)             Requested size: 398.48778pt x 245.91814pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[124 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-28 alle 23.31.44.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-28 alle 23.35.38.png>]
+<Foto/Screenshot 2022-11-28 alle 23.41.22.png, id=656, 469.755pt x 355.3275pt>
+File: Foto/Screenshot 2022-11-28 alle 23.41.22.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-28 alle 23.41.22.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-28 alle 23.41.22.png  used on input line 3295.
+(pdftex.def)             Requested size: 221.78923pt x 167.763pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3298--3299
+
+ []
+
+[125 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-28 alle 23.37.54.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-28 alle 23.41.22.png>]
+<Foto/Screenshot 2022-11-28 alle 23.46.43.png, id=662, 398.48875pt x 280.04625pt>
+File: Foto/Screenshot 2022-11-28 alle 23.46.43.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-28 alle 23.46.43.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-28 alle 23.46.43.png  used on input line 3310.
+(pdftex.def)             Requested size: 221.78923pt x 155.86763pt.
+<Foto/Screenshot 2022-11-28 alle 23.53.57.png, id=663, 406.51875pt x 205.76875pt>
+File: Foto/Screenshot 2022-11-28 alle 23.53.57.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-28 alle 23.53.57.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-28 alle 23.53.57.png  used on input line 3319.
+(pdftex.def)             Requested size: 221.78923pt x 112.26262pt.
+<Foto/Screenshot 2022-11-28 alle 23.57.43.png, id=664, 431.6125pt x 254.9525pt>
+File: Foto/Screenshot 2022-11-28 alle 23.57.43.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-28 alle 23.57.43.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-28 alle 23.57.43.png  used on input line 3326.
+(pdftex.def)             Requested size: 221.78923pt x 131.00827pt.
+<Foto/Screenshot 2022-11-28 alle 23.59.40.png, id=665, 409.53pt x 103.38625pt>
+File: Foto/Screenshot 2022-11-28 alle 23.59.40.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-28 alle 23.59.40.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-28 alle 23.59.40.png  used on input line 3334.
+(pdftex.def)             Requested size: 221.78923pt x 55.99179pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[126 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-28 alle 23.46.43.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-28 alle 23.53.57.png>]
+<Foto/Screenshot 2022-11-29 alle 00.05.12.png, id=671, 380.42125pt x 211.79124pt>
+File: Foto/Screenshot 2022-11-29 alle 00.05.12.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-29 alle 00.05.12.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-29 alle 00.05.12.png  used on input line 3348.
+(pdftex.def)             Requested size: 221.78923pt x 123.47887pt.
+ [127 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-28 alle 23.57.43.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-28 alle 23.59.40.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-29 alle 00.05.12.png>]
+<Foto/Screenshot 2022-11-29 alle 00.11.16.png, id=679, 455.7025pt x 219.82124pt>
+File: Foto/Screenshot 2022-11-29 alle 00.11.16.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-29 alle 00.11.16.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-29 alle 00.11.16.png  used on input line 3376.
+(pdftex.def)             Requested size: 455.70137pt x 219.8207pt.
+
+Overfull \hbox (12.1229pt too wide) in paragraph at lines 3376--3377
+ [][] 
+ []
+
+<Foto/Screenshot 2022-11-29 alle 00.11.19.png, id=680, 495.8525pt x 237.88875pt>
+File: Foto/Screenshot 2022-11-29 alle 00.11.19.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-29 alle 00.11.19.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-29 alle 00.11.19.png  used on input line 3382.
+(pdftex.def)             Requested size: 221.78923pt x 106.40645pt.
+[128 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-29 alle 00.11.16.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-29 alle 00.11.19.png>]
+Capitolo 27.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3403--3405
+
+ []
+
+[129
+
+]
+<Foto/Screenshot 2022-11-30 alle 18.29.41.png, id=689, 1059.96pt x 234.8775pt>
+File: Foto/Screenshot 2022-11-30 alle 18.29.41.png Graphic file (type png)
+<use Foto/Screenshot 2022-11-30 alle 18.29.41.png>
+Package pdftex.def Info: Foto/Screenshot 2022-11-30 alle 18.29.41.png  used on input line 3436.
+(pdftex.def)             Requested size: 354.86412pt x 78.63516pt.
+ [130 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-11-30 alle 18.29.41.png>] [131] [132
+
+]
+Capitolo 28.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3499--3502
+
+ []
+
+<Foto/Screenshot 2022-12-14 alle 09.17.09.png, id=700, 419.5675pt x 255.95625pt>
+File: Foto/Screenshot 2022-12-14 alle 09.17.09.png Graphic file (type png)
+<use Foto/Screenshot 2022-12-14 alle 09.17.09.png>
+Package pdftex.def Info: Foto/Screenshot 2022-12-14 alle 09.17.09.png  used on input line 3510.
+(pdftex.def)             Requested size: 419.56647pt x 255.95561pt.
+<Foto/Screenshot 2022-12-14 alle 09.18.44.png, id=701, 497.86pt x 211.79124pt>
+File: Foto/Screenshot 2022-12-14 alle 09.18.44.png Graphic file (type png)
+<use Foto/Screenshot 2022-12-14 alle 09.18.44.png>
+Package pdftex.def Info: Foto/Screenshot 2022-12-14 alle 09.18.44.png  used on input line 3517.
+(pdftex.def)             Requested size: 248.92938pt x 105.89536pt.
+<Foto/Screenshot 2022-12-14 alle 17.25.47.png, id=702, 327.2225pt x 228.855pt>
+File: Foto/Screenshot 2022-12-14 alle 17.25.47.png Graphic file (type png)
+<use Foto/Screenshot 2022-12-14 alle 17.25.47.png>
+Package pdftex.def Info: Foto/Screenshot 2022-12-14 alle 17.25.47.png  used on input line 3525.
+(pdftex.def)             Requested size: 310.50357pt x 217.16307pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[133 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-12-14 alle 09.17.09.png>]
+<Foto/Screenshot 2022-12-14 alle 18.00.46.png, id=708, 375.4025pt x 244.915pt>
+File: Foto/Screenshot 2022-12-14 alle 18.00.46.png Graphic file (type png)
+<use Foto/Screenshot 2022-12-14 alle 18.00.46.png>
+Package pdftex.def Info: Foto/Screenshot 2022-12-14 alle 18.00.46.png  used on input line 3544.
+(pdftex.def)             Requested size: 354.86412pt x 231.53183pt.
+ [134 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-12-14 alle 09.18.44.png> </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-12-14 alle 17.25.47.png>] [135 </Users/matteofranchini/Library/CloudStorage/OneDrive-UniversitàdegliStudidiParma/Università/Appunti e slide/II anno/Matematica applicata/Appunti/Foto/Screenshot 2022-12-14 alle 18.00.46.png>] (/Users/matteofranchini/Library/CloudStorage/OneDrive-Universit^^c3^^a0degliStudidiParma/Universit^^c3^^a0/Appunti e slide/II anno/Matematica applicata/Appunti/Apputni Matematica Applicata.aux) ) 
+Here is how much of TeX's memory you used:
+ 7747 strings out of 475381
+ 161134 string characters out of 2763596
+ 493374 words of memory out of 3000000
+ 28899 multiletter control sequences out of 15000+600000
+ 483271 words of font info for 78 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 55i,23n,63p,948b,485s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ </Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk> </Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/calligra/dpi691/callig15.pk> </Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/calligra/dpi995/callig15.pk></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr9.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy5.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy9.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti10.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti7.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti8.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/latxfont/line10.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></Users/matteofranchini/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "/Users/matteofranchini/Library/CloudStorage/OneDrive-Universit^^c3^^a0degliStudidiParma/Universit^^c3^^a0/Appunti e slide/II anno/Matematica applicata/Appunti/Apputni Matematica Applicata.pdf" (135 pages, 10941448 bytes).
+PDF statistics:
+ 880 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 641 words of extra memory for PDF output out of 10000 (max. 10000000)
+
